@@ -1,0 +1,5 @@
+PLL_Name	nco:clk50M_PLL|altpll:altpll_component|nco_altpll:auto_generated|pll1
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+

@@ -1,0 +1,46 @@
+Quartus II Archive log --	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qarlog
+
+Archive:	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qar
+Date:		Mon Nov 10 21:57:32 2014
+Quartus II 32-bit		11.1 Build 173 11/01/2011 SJ Full Version
+
+	=========== Files Selected: ===========
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.qpf
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.qsf
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.sdc
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.v
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/incremental_db/compiled_partitions/VitaPolyOne.db_info
+D:/FPGA_Projects/fpga-synth/VitaPolyOne/nco.v
+D:/FPGA_Projects/fpga-synth/modules/adsr32.v
+D:/FPGA_Projects/fpga-synth/modules/dds32.v
+D:/FPGA_Projects/fpga-synth/modules/ds8dac1.v
+D:/FPGA_Projects/fpga-synth/modules/fpga4fun_ds8dac1.v
+D:/FPGA_Projects/fpga-synth/modules/frq1divmod1.v
+D:/FPGA_Projects/fpga-synth/modules/lin2exp_t.v
+D:/FPGA_Projects/fpga-synth/modules/midi_in.v
+D:/FPGA_Projects/fpga-synth/modules/note2dds.v
+D:/FPGA_Projects/fpga-synth/modules/note_pitch2dds.v
+D:/FPGA_Projects/fpga-synth/modules/opencores/uart/baud_gen.v
+D:/FPGA_Projects/fpga-synth/modules/opencores/uart/uart_rx.v
+D:/FPGA_Projects/fpga-synth/modules/pwm8dac1.v
+D:/FPGA_Projects/fpga-synth/modules/reg1.v
+D:/FPGA_Projects/fpga-synth/modules/reg14.v
+D:/FPGA_Projects/fpga-synth/modules/reg14w.v
+D:/FPGA_Projects/fpga-synth/modules/reg32.v
+D:/FPGA_Projects/fpga-synth/modules/reg7.v
+D:/FPGA_Projects/fpga-synth/modules/reg_rs.v
+D:/FPGA_Projects/fpga-synth/modules/rnd1.v
+D:/FPGA_Projects/fpga-synth/modules/rnd8.v
+D:/FPGA_Projects/fpga-synth/modules/udsdac1.v
+D:/FPGA_Projects/fpga-synth/modules/vca8.v
+d:/altera/11.1/quartus/bin/assignment_defaults.qdf
+	======= Total: 29 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Nov 10 21:57:34 2014
+Source archive file:	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qar
+Archive was extracted into	D:/FPGA_Projects/fpga-synth/ModuleTester/
+		 - successfully.
