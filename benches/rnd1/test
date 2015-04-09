@@ -1,0 +1,97 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0003A840 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v0003AA38_0 .net "out_val", 0 0, v0003FDB0_0;  1 drivers
+v0003AA90_0 .var "tb_clk", 0 0;
+S_0003FC88 .scope module, "rnd1_gen" "rnd1" 2 7, 3 1 0, S_0003A840;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /OUTPUT 1 "sout"
+v0003FD58_0 .net "clk", 0 0, v0003AA90_0;  1 drivers
+v0003E150_0 .var "d0", 31 0;
+v0003FDB0_0 .var "sout", 0 0;
+E_00033B10 .event posedge, v0003FD58_0;
+    .scope S_0003FC88;
+T_0 ;
+    %movi 8, 445801842, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v0003E150_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0003FDB0_0, 0, 0;
+    %end;
+    .thread T_0;
+    .scope S_0003FC88;
+T_1 ;
+    %wait E_00033B10;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.0, 4;
+    %load/x1p 40, v0003E150_0, 1;
+    %jmp T_1.1;
+T_1.0 ;
+    %mov 40, 2, 1;
+T_1.1 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.2, 4;
+    %load/x1p 41, v0003E150_0, 1;
+    %jmp T_1.3;
+T_1.2 ;
+    %mov 41, 2, 1;
+T_1.3 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v0003E150_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v0003E150_0, 0, 8;
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.4, 4;
+    %load/x1p 8, v0003E150_0, 1;
+    %jmp T_1.5;
+T_1.4 ;
+    %mov 8, 2, 1;
+T_1.5 ;
+; Save base=8 wid=1 in lookaside.
+    %ix/load 0, 1, 0;
+    %assign/v0 v0003FDB0_0, 0, 8;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0003A840;
+T_2 ;
+    %vpi_call 2 11 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 12 "$dumpvars", 1'sb0, S_0003A840 {0 0};
+    %vpi_call 2 14 "$display", "starting testbench!!!!" {0 0};
+    %ix/load 0, 1, 0;
+    %assign/v0 v0003AA90_0, 0, 0;
+    %movi 8, 200000, 19;
+T_2.0 %cmp/s 0, 8, 19;
+    %jmp/0xz T_2.1, 5;
+    %add 8, 1, 19;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0003AA90_0, 0, 1;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0003AA90_0, 0, 0;
+    %jmp T_2.0;
+T_2.1 ;
+    %vpi_call 2 24 "$display", "finished OK!" {0 0};
+    %vpi_call 2 25 "$finish" {0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "../../modules/rnd1.v";

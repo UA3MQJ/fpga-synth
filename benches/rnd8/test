@@ -1,0 +1,349 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0087AA90 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v0087E0A8_0 .net "out_val", 7 0, v0087E050_0;  1 drivers
+v0087E100_0 .var "tb_clk", 0 0;
+S_00798D08 .scope module, "rnd8_gen" "rnd8" 2 7, 3 1 0, S_0087AA90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /OUTPUT 8 "sout"
+v00798DD8_0 .net "clk", 0 0, v0087E100_0;  1 drivers
+v00879FE8_0 .var "d0", 31 0;
+v007AB730_0 .var "d1", 31 0;
+v00875360_0 .var "d2", 31 0;
+v008753B8_0 .var "d3", 31 0;
+v00875410_0 .var "d4", 31 0;
+v00875468_0 .var "d5", 31 0;
+v008754C0_0 .var "d6", 31 0;
+v0087DFF8_0 .var "d7", 31 0;
+v0087E050_0 .var "sout", 7 0;
+E_0087D728 .event posedge, v00798DD8_0;
+    .scope S_00798D08;
+T_0 ;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0087E050_0, 0, 0;
+    %movi 8, 445801842, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v00879FE8_0, 0, 8;
+    %movi 8, 715740338, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v007AB730_0, 0, 8;
+    %movi 8, 710235434, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875360_0, 0, 8;
+    %movi 8, 711349653, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v008753B8_0, 0, 8;
+    %movi 8, 710235734, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875410_0, 0, 8;
+    %movi 8, 1231375188, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875468_0, 0, 8;
+    %movi 8, 714295978, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v008754C0_0, 0, 8;
+    %movi 8, 710240597, 32;
+    %ix/load 0, 32, 0;
+    %assign/v0 v0087DFF8_0, 0, 8;
+    %end;
+    .thread T_0;
+    .scope S_00798D08;
+T_1 ;
+    %wait E_0087D728;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.0, 4;
+    %load/x1p 40, v00879FE8_0, 1;
+    %jmp T_1.1;
+T_1.0 ;
+    %mov 40, 2, 1;
+T_1.1 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.2, 4;
+    %load/x1p 41, v00879FE8_0, 1;
+    %jmp T_1.3;
+T_1.2 ;
+    %mov 41, 2, 1;
+T_1.3 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v00879FE8_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v00879FE8_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.4, 4;
+    %load/x1p 40, v007AB730_0, 1;
+    %jmp T_1.5;
+T_1.4 ;
+    %mov 40, 2, 1;
+T_1.5 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.6, 4;
+    %load/x1p 41, v007AB730_0, 1;
+    %jmp T_1.7;
+T_1.6 ;
+    %mov 41, 2, 1;
+T_1.7 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v007AB730_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v007AB730_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.8, 4;
+    %load/x1p 40, v00875360_0, 1;
+    %jmp T_1.9;
+T_1.8 ;
+    %mov 40, 2, 1;
+T_1.9 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.10, 4;
+    %load/x1p 41, v00875360_0, 1;
+    %jmp T_1.11;
+T_1.10 ;
+    %mov 41, 2, 1;
+T_1.11 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v00875360_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875360_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.12, 4;
+    %load/x1p 40, v008753B8_0, 1;
+    %jmp T_1.13;
+T_1.12 ;
+    %mov 40, 2, 1;
+T_1.13 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.14, 4;
+    %load/x1p 41, v008753B8_0, 1;
+    %jmp T_1.15;
+T_1.14 ;
+    %mov 41, 2, 1;
+T_1.15 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v008753B8_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v008753B8_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.16, 4;
+    %load/x1p 40, v00875410_0, 1;
+    %jmp T_1.17;
+T_1.16 ;
+    %mov 40, 2, 1;
+T_1.17 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.18, 4;
+    %load/x1p 41, v00875410_0, 1;
+    %jmp T_1.19;
+T_1.18 ;
+    %mov 41, 2, 1;
+T_1.19 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v00875410_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875410_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.20, 4;
+    %load/x1p 40, v00875468_0, 1;
+    %jmp T_1.21;
+T_1.20 ;
+    %mov 40, 2, 1;
+T_1.21 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.22, 4;
+    %load/x1p 41, v00875468_0, 1;
+    %jmp T_1.23;
+T_1.22 ;
+    %mov 41, 2, 1;
+T_1.23 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v00875468_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v00875468_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.24, 4;
+    %load/x1p 40, v008754C0_0, 1;
+    %jmp T_1.25;
+T_1.24 ;
+    %mov 40, 2, 1;
+T_1.25 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.26, 4;
+    %load/x1p 41, v008754C0_0, 1;
+    %jmp T_1.27;
+T_1.26 ;
+    %mov 41, 2, 1;
+T_1.27 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v008754C0_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v008754C0_0, 0, 8;
+    %ix/load 1, 30, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.28, 4;
+    %load/x1p 40, v0087DFF8_0, 1;
+    %jmp T_1.29;
+T_1.28 ;
+    %mov 40, 2, 1;
+T_1.29 ;
+; Save base=40 wid=1 in lookaside.
+    %ix/load 1, 27, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.30, 4;
+    %load/x1p 41, v0087DFF8_0, 1;
+    %jmp T_1.31;
+T_1.30 ;
+    %mov 41, 2, 1;
+T_1.31 ;
+; Save base=41 wid=1 in lookaside.
+    %xor 40, 41, 1;
+    %mov 8, 40, 1;
+    %load/v 9, v0087DFF8_0, 31; Select 31 out of 32 bits
+    %ix/load 0, 32, 0;
+    %assign/v0 v0087DFF8_0, 0, 8;
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.32, 4;
+    %load/x1p 16, v0087DFF8_0, 1;
+    %jmp T_1.33;
+T_1.32 ;
+    %mov 16, 2, 1;
+T_1.33 ;
+    %mov 8, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.34, 4;
+    %load/x1p 16, v008754C0_0, 1;
+    %jmp T_1.35;
+T_1.34 ;
+    %mov 16, 2, 1;
+T_1.35 ;
+    %mov 9, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.36, 4;
+    %load/x1p 16, v00875468_0, 1;
+    %jmp T_1.37;
+T_1.36 ;
+    %mov 16, 2, 1;
+T_1.37 ;
+    %mov 10, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.38, 4;
+    %load/x1p 16, v00875410_0, 1;
+    %jmp T_1.39;
+T_1.38 ;
+    %mov 16, 2, 1;
+T_1.39 ;
+    %mov 11, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.40, 4;
+    %load/x1p 16, v008753B8_0, 1;
+    %jmp T_1.41;
+T_1.40 ;
+    %mov 16, 2, 1;
+T_1.41 ;
+    %mov 12, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.42, 4;
+    %load/x1p 16, v00875360_0, 1;
+    %jmp T_1.43;
+T_1.42 ;
+    %mov 16, 2, 1;
+T_1.43 ;
+    %mov 13, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.44, 4;
+    %load/x1p 16, v007AB730_0, 1;
+    %jmp T_1.45;
+T_1.44 ;
+    %mov 16, 2, 1;
+T_1.45 ;
+    %mov 14, 16, 1; Move signal select into place
+    %ix/load 1, 5, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_1.46, 4;
+    %load/x1p 16, v00879FE8_0, 1;
+    %jmp T_1.47;
+T_1.46 ;
+    %mov 16, 2, 1;
+T_1.47 ;
+    %mov 15, 16, 1; Move signal select into place
+    %ix/load 0, 8, 0;
+    %assign/v0 v0087E050_0, 0, 8;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0087AA90;
+T_2 ;
+    %vpi_call 2 11 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 12 "$dumpvars", 1'sb0, S_0087AA90 {0 0};
+    %vpi_call 2 14 "$display", "starting testbench!!!!" {0 0};
+    %ix/load 0, 1, 0;
+    %assign/v0 v0087E100_0, 0, 0;
+    %movi 8, 2000, 12;
+T_2.0 %cmp/s 0, 8, 12;
+    %jmp/0xz T_2.1, 5;
+    %add 8, 1, 12;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0087E100_0, 0, 1;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0087E100_0, 0, 0;
+    %jmp T_2.0;
+T_2.1 ;
+    %vpi_call 2 24 "$display", "finished OK!" {0 0};
+    %vpi_call 2 25 "$finish" {0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "../../modules/rnd8.v";

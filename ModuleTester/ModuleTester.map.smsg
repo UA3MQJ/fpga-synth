@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at midi_in.v(73): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at frq1divmod1.v(15): always construct contains both blocking and non-blocking assignments

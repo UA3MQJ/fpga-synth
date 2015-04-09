@@ -1,0 +1,41 @@
+$date
+	Tue Feb 24 20:33:16 2015
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 7 ! out_val [6:0] $end
+$var reg 64 " in_val [63:0] $end
+$scope module bcntr $end
+$var wire 64 # in_word [63:0] $end
+$var wire 7 $ bits [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11 $
+b1001010 #
+b1001010 "
+b11 !
+$end
+#100
+b100 !
+b100 $
+b10000000000001001010 "
+b10000000000001001010 #
+#200
+b101 !
+b101 $
+b110000000001001010 "
+b110000000001001010 #
+#300
+b110 !
+b110 $
+b1110000000000000001001010 "
+b1110000000000000001001010 #
+#400
