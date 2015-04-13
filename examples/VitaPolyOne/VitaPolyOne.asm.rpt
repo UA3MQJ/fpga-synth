@@ -1,5 +1,5 @@
 Assembler report for VitaPolyOne
-Tue Apr 07 00:54:11 2015
+Fri Apr 10 20:22:45 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -10,7 +10,7 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.sof
+  5. Assembler Device Options: D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Apr 07 00:54:11 2015 ;
+; Assembler Status      ; Successful - Fri Apr 10 20:22:45 2015 ;
 ; Revision Name         ; VitaPolyOne                           ;
 ; Top-level Entity Name ; VitaPolyOne                           ;
 ; Family                ; Cyclone IV E                          ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------+
-; Assembler Generated Files                               ;
-+---------------------------------------------------------+
-; File Name                                               ;
-+---------------------------------------------------------+
-; D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.sof ;
-+---------------------------------------------------------+
++-----------------------------------------------------------------------+
+; Assembler Generated Files                                             ;
++-----------------------------------------------------------------------+
+; File Name                                                             ;
++-----------------------------------------------------------------------+
+; D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.sof ;
++-----------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Assembler Device Options: D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.sof ;
-+----------------+------------------------------------------------------------------+
-; Option         ; Setting                                                          ;
-+----------------+------------------------------------------------------------------+
-; Device         ; EP4CE10E22C8                                                     ;
-; JTAG usercode  ; 0xFFFFFFFF                                                       ;
-; Checksum       ; 0x00120051                                                       ;
-+----------------+------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.sof ;
++----------------+--------------------------------------------------------------------------------+
+; Option         ; Setting                                                                        ;
++----------------+--------------------------------------------------------------------------------+
+; Device         ; EP4CE10E22C8                                                                   ;
+; JTAG usercode  ; 0xFFFFFFFF                                                                     ;
+; Checksum       ; 0x000D28D7                                                                     ;
++----------------+--------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Tue Apr 07 00:54:10 2015
+    Info: Processing started: Fri Apr 10 20:22:44 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off VitaPolyOne -c VitaPolyOne
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 280 megabytes
-    Info: Processing ended: Tue Apr 07 00:54:11 2015
+    Info: Peak virtual memory: 279 megabytes
+    Info: Processing ended: Fri Apr 10 20:22:45 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

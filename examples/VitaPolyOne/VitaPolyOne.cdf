@@ -3,8 +3,8 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Cfg)
-		Device PartName(EP4CE10E22) Path("D:/FPGA_Projects/fpga-synth/VitaPolyOne/") File("VitaPolyOne.sof") MfrSpec(OpMask(1));
+	P ActionCode(Ign)
+		Device PartName(EP4CE10E22) MfrSpec(OpMask(0) FullPath("D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.sof"));
 
 ChainEnd;
 

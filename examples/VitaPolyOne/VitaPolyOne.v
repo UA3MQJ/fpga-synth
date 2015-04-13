@@ -105,15 +105,16 @@ pwm8dac1 dac1(clk50PLL, vcaout1, pwm1out_d);
 
 //ext VCO
 wire pwm1out;
-rnd8dac1 dac1_vco(clk50PLL, vco1out[31:31-7], pwm1out);
+//rnd8dac1 dac1_vco(clk50PLL, vco1out[31:31-7], pwm1out);
 //ds8dac1 dac1_vco(clk50PLL, vco1out[31:31-7], pwm1out);
-//pwm8dac1 dac1_vco(clk50PLL, vco1out[31:31-7], pwm1out);
+pwm8dac1 dac1_vco(clk50PLL, vco1out[31:31-7], pwm1out);
 
 wire pwm1vca_out;
 pwm8dac1 dac1_vca(clk50PLL, adsr1out[31:31-7], pwm1vca_out);
 
-assign pwm_out_1 = (sw0==0) ?  pwm1vca_out : 1;
-assign pwm_out_0 = (sw0==0) ? ~pwm1vca_out : 0;
+//assign pwm_out_1 = (sw0==0) ?  pwm1vca_out : 1;
+//assign pwm_out_0 = (sw0==0) ? ~pwm1vca_out : 0;
+pwm8dac1 dac_test0(clk50PLL, 8'd127, pwm_out_0);
 
 
 initial begin
