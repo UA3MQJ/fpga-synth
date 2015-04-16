@@ -1,10 +1,12 @@
 module testbench();
 
-reg [63:0] in_val; 
+reg clk;
 
-wire [6:0] out_val;
+reg key;
 
-bit_cntr bcntr(in_val, out_val);
+wire reset_sig;
+
+powerup_reset RS_GEN(.key(key), .clk(clk), .rst(reset_sig));
 
 initial
 begin
@@ -13,17 +15,23 @@ begin
 
     $display("starting testbench!!!!");
 	
-	in_val <= 64'b0000000000000001001010;
-	#100;
-	in_val <= 64'b00010000000000001001010;
-	#100;
-	in_val <= 64'b000000110000000001001010;
-	#100;
-	in_val <= 64'b1110000000000000001001010;
-	#100;
+	repeat (300) begin
+		#10;
+		clk <= 1;
+		#10;
+		clk <= 0; 
+	end
 	
     $display("finished OK!");
     $finish;
+end
+
+initial
+begin
+	#1900;
+	key <= 1;
+	#90;
+	key <= 0;
 end
 	
 endmodule

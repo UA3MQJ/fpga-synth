@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VitaPolyOne
-Fri Apr 10 20:22:39 2015
+Tue Apr 14 22:50:58 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -19,26 +19,23 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
  11. State Machine - |VitaPolyOne|note_pitch2dds:transl1|state
  12. State Machine - |VitaPolyOne|midi_in:midiin|rcv_state
  13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Parameter Settings for User Entity Instance: nco:clk50M_PLL|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: adsr32:adsr1
- 20. Parameter Settings for Inferred Entity Instance: note_pitch2dds:transl1|lpm_mult:Mult0
- 21. altpll Parameter Settings by Entity Instance
- 22. lpm_mult Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "pwm8dac1:dac_test0"
- 24. Port Connectivity Checks: "pwm8dac1:dac1_vca"
- 25. Port Connectivity Checks: "pwm8dac1:dac1"
- 26. Port Connectivity Checks: "adsr32:adsr1"
- 27. Port Connectivity Checks: "lin2exp_t:exp"
- 28. Port Connectivity Checks: "dds32:vco1"
- 29. Port Connectivity Checks: "midi_in:midiin|baud_gen:BG"
- 30. Port Connectivity Checks: "midi_in:midiin"
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: nco:clk50M_PLL|altpll:altpll_component
+ 18. Parameter Settings for User Entity Instance: adsr32:adsr1
+ 19. Parameter Settings for Inferred Entity Instance: note_pitch2dds:transl1|lpm_mult:Mult0
+ 20. altpll Parameter Settings by Entity Instance
+ 21. lpm_mult Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "pwm8dac1:dac1"
+ 23. Port Connectivity Checks: "adsr32:adsr1"
+ 24. Port Connectivity Checks: "lin2exp_t:exp"
+ 25. Port Connectivity Checks: "dds32:vco1"
+ 26. Port Connectivity Checks: "midi_in:midiin|baud_gen:BG"
+ 27. Port Connectivity Checks: "midi_in:midiin"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+ 30. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -64,15 +61,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 10 20:22:39 2015     ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 14 22:50:58 2015     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; VitaPolyOne                               ;
 ; Top-level Entity Name              ; VitaPolyOne                               ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 500                                       ;
-;     Total combinational functions  ; 391                                       ;
-;     Dedicated logic registers      ; 265                                       ;
-; Total registers                    ; 265                                       ;
+; Total logic elements               ; 905                                       ;
+;     Total combinational functions  ; 754                                       ;
+;     Dedicated logic registers      ; 365                                       ;
+; Total registers                    ; 365                                       ;
 ; Total pins                         ; 28                                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
@@ -199,6 +196,7 @@ applicable agreement for further details.
 ; ../../modules/note_pitch2dds.v          ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/note_pitch2dds.v             ;
 ; ../../modules/midi_in.v                 ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/midi_in.v                    ;
 ; ../../modules/lin2exp_t.v               ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/lin2exp_t.v                  ;
+; ../../modules/ds8dac1.v                 ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/ds8dac1.v                    ;
 ; ../../modules/dds32.v                   ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/dds32.v                      ;
 ; ../../modules/adsr32.v                  ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/adsr32.v                     ;
 ; nco.v                                   ; yes             ; User Wizard-Generated File   ; D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/nco.v           ;
@@ -223,20 +221,20 @@ applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 500                                                                               ;
+; Estimated Total logic elements              ; 905                                                                               ;
 ;                                             ;                                                                                   ;
-; Total combinational functions               ; 391                                                                               ;
+; Total combinational functions               ; 754                                                                               ;
 ; Logic element usage by number of LUT inputs ;                                                                                   ;
-;     -- 4 input functions                    ; 119                                                                               ;
-;     -- 3 input functions                    ; 163                                                                               ;
-;     -- <=2 input functions                  ; 109                                                                               ;
+;     -- 4 input functions                    ; 285                                                                               ;
+;     -- 3 input functions                    ; 264                                                                               ;
+;     -- <=2 input functions                  ; 205                                                                               ;
 ;                                             ;                                                                                   ;
 ; Logic elements by mode                      ;                                                                                   ;
-;     -- normal mode                          ; 235                                                                               ;
-;     -- arithmetic mode                      ; 156                                                                               ;
+;     -- normal mode                          ; 477                                                                               ;
+;     -- arithmetic mode                      ; 277                                                                               ;
 ;                                             ;                                                                                   ;
-; Total registers                             ; 265                                                                               ;
-;     -- Dedicated logic registers            ; 265                                                                               ;
+; Total registers                             ; 365                                                                               ;
+;     -- Dedicated logic registers            ; 365                                                                               ;
 ;     -- I/O registers                        ; 0                                                                                 ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 28                                                                                ;
@@ -245,9 +243,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; nco:clk50M_PLL|altpll:altpll_component|nco_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 266                                                                               ;
-; Total fan-out                               ; 2028                                                                              ;
-; Average fan-out                             ; 2.83                                                                              ;
+; Maximum fan-out                             ; 366                                                                               ;
+; Total fan-out                               ; 3533                                                                              ;
+; Average fan-out                             ; 2.99                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
@@ -256,23 +254,29 @@ applicable agreement for further details.
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
-; |VitaPolyOne                         ; 391 (18)          ; 265 (0)      ; 0           ; 3            ; 1       ; 1         ; 28   ; 0            ; |VitaPolyOne                                                                  ;              ;
+; |VitaPolyOne                         ; 754 (25)          ; 365 (0)      ; 0           ; 3            ; 1       ; 1         ; 28   ; 0            ; |VitaPolyOne                                                                  ;              ;
+;    |adsr32:adsr1|                    ; 235 (235)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|adsr32:adsr1                                                     ;              ;
 ;    |dds32:vco1|                      ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|dds32:vco1                                                       ;              ;
+;    |ds8dac1:dac1_vco|                ; 9 (9)             ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|ds8dac1:dac1_vco                                                 ;              ;
+;    |lin2exp_t:exp|                   ; 115 (115)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|lin2exp_t:exp                                                    ;              ;
 ;    |midi_in:midiin|                  ; 87 (32)           ; 84 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|midi_in:midiin                                                   ;              ;
 ;       |baud_gen:BG|                  ; 37 (37)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|midi_in:midiin|baud_gen:BG                                       ;              ;
 ;       |uart_rx:URX|                  ; 18 (18)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|midi_in:midiin|uart_rx:URX                                       ;              ;
 ;    |nco:clk50M_PLL|                  ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|nco:clk50M_PLL                                                   ;              ;
 ;       |altpll:altpll_component|      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|nco:clk50M_PLL|altpll:altpll_component                           ;              ;
 ;          |nco_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|nco:clk50M_PLL|altpll:altpll_component|nco_altpll:auto_generated ;              ;
-;    |note_pitch2dds:transl1|          ; 234 (112)         ; 109 (101)    ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1                                           ;              ;
+;    |note_pitch2dds:transl1|          ; 233 (112)         ; 109 (101)    ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1                                           ;              ;
 ;       |lpm_mult:Mult0|               ; 10 (0)            ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1|lpm_mult:Mult0                            ;              ;
 ;          |mult_nbt:auto_generated|   ; 10 (10)           ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1|lpm_mult:Mult0|mult_nbt:auto_generated    ;              ;
-;       |note2dds:note2dds_table|      ; 112 (112)         ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table                   ;              ;
-;    |pwm8dac1:dac1_vco|               ; 16 (16)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|pwm8dac1:dac1_vco                                                ;              ;
-;    |pwm8dac1:dac_test0|              ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|pwm8dac1:dac_test0                                               ;              ;
+;       |note2dds:note2dds_table|      ; 111 (111)         ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table                   ;              ;
+;    |pwm8dac1:dac1_vca|               ; 16 (16)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|pwm8dac1:dac1_vca                                                ;              ;
+;    |reg14w:A1reg|                    ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg14w:A1reg                                                     ;              ;
+;    |reg14w:D1reg|                    ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg14w:D1reg                                                     ;              ;
+;    |reg14w:R1reg|                    ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg14w:R1reg                                                     ;              ;
 ;    |reg14w:pitch_reg|                ; 0 (0)             ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg14w:pitch_reg                                                 ;              ;
 ;    |reg7:NOTEreg|                    ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg7:NOTEreg                                                     ;              ;
-;    |reg_rs:GATEreg|                  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg_rs:GATEreg                                                   ;              ;
+;    |reg7:S1reg|                      ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg7:S1reg                                                       ;              ;
+;    |reg_rs:GATEreg|                  ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VitaPolyOne|reg_rs:GATEreg                                                   ;              ;
 +--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -344,61 +348,28 @@ Encoding Type:  One-Hot
 +--------------------+--------------------+--------------------+--------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; pwm8dac1:dac_test0|in_data_buff[0..6]   ; Stuck at VCC due to stuck port data_in ;
-; pwm8dac1:dac_test0|in_data_buff[7]      ; Stuck at GND due to stuck port data_in ;
-; reg14w:R1reg|DATA_OUT[13]               ; Stuck at GND due to stuck port data_in ;
-; reg14w:D1reg|DATA_OUT[13]               ; Stuck at GND due to stuck port data_in ;
-; reg14w:A1reg|DATA_OUT[13]               ; Stuck at GND due to stuck port data_in ;
-; note_pitch2dds:transl1|ADDER[25..31]    ; Stuck at GND due to stuck port data_in ;
-; pwm8dac1:dac_test0|cnt[0]               ; Merged with pwm8dac1:dac1_vco|cnt[0]   ;
-; pwm8dac1:dac_test0|cnt[1]               ; Merged with pwm8dac1:dac1_vco|cnt[1]   ;
-; pwm8dac1:dac_test0|cnt[2]               ; Merged with pwm8dac1:dac1_vco|cnt[2]   ;
-; pwm8dac1:dac_test0|cnt[3]               ; Merged with pwm8dac1:dac1_vco|cnt[3]   ;
-; pwm8dac1:dac_test0|cnt[4]               ; Merged with pwm8dac1:dac1_vco|cnt[4]   ;
-; pwm8dac1:dac_test0|cnt[5]               ; Merged with pwm8dac1:dac1_vco|cnt[5]   ;
-; pwm8dac1:dac_test0|cnt[6]               ; Merged with pwm8dac1:dac1_vco|cnt[6]   ;
-; pwm8dac1:dac_test0|cnt[7]               ; Merged with pwm8dac1:dac1_vco|cnt[7]   ;
-; adsr32:adsr1|state~7                    ; Lost fanout                            ;
-; adsr32:adsr1|state~8                    ; Lost fanout                            ;
-; note_pitch2dds:transl1|state~2          ; Lost fanout                            ;
-; note_pitch2dds:transl1|state~3          ; Lost fanout                            ;
-; note_pitch2dds:transl1|state~5          ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~7              ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~8              ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~9              ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~10             ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~11             ; Lost fanout                            ;
-; midi_in:midiin|rcv_state~12             ; Lost fanout                            ;
-; adsr32:adsr1|sout[0..31]                ; Lost fanout                            ;
-; reg14w:A1reg|DATA_OUT[0..12]            ; Lost fanout                            ;
-; reg7:S1reg|DATA_OUT[0..6]               ; Lost fanout                            ;
-; reg14w:R1reg|DATA_OUT[0..12]            ; Lost fanout                            ;
-; reg14w:D1reg|DATA_OUT[0..12]            ; Lost fanout                            ;
-; adsr32:adsr1|state.RELEASE              ; Lost fanout                            ;
-; adsr32:adsr1|state.000                  ; Lost fanout                            ;
-; adsr32:adsr1|state.ATTACK               ; Lost fanout                            ;
-; adsr32:adsr1|state.DECAY                ; Lost fanout                            ;
-; adsr32:adsr1|state.SUSTAIN              ; Lost fanout                            ;
-; Total Number of Removed Registers = 120 ;                                        ;
-+-----------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                  ;
-+---------------------------+---------------------------+----------------------------------------------------------------------+
-; Register name             ; Reason for Removal        ; Registers Removed due to This Register                               ;
-+---------------------------+---------------------------+----------------------------------------------------------------------+
-; reg14w:R1reg|DATA_OUT[13] ; Stuck at GND              ; adsr32:adsr1|sout[24], adsr32:adsr1|sout[25], adsr32:adsr1|sout[26], ;
-;                           ; due to stuck port data_in ; adsr32:adsr1|sout[27], adsr32:adsr1|sout[28], adsr32:adsr1|sout[29], ;
-;                           ;                           ; adsr32:adsr1|sout[30], adsr32:adsr1|sout[31]                         ;
-; reg14w:D1reg|DATA_OUT[13] ; Stuck at GND              ; reg7:S1reg|DATA_OUT[6]                                               ;
-;                           ; due to stuck port data_in ;                                                                      ;
-+---------------------------+---------------------------+----------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; reg14w:R1reg|DATA_OUT[13]              ; Stuck at GND due to stuck port data_in ;
+; reg14w:D1reg|DATA_OUT[13]              ; Stuck at GND due to stuck port data_in ;
+; reg14w:A1reg|DATA_OUT[13]              ; Stuck at GND due to stuck port data_in ;
+; note_pitch2dds:transl1|ADDER[25..31]   ; Stuck at GND due to stuck port data_in ;
+; adsr32:adsr1|state~7                   ; Lost fanout                            ;
+; adsr32:adsr1|state~8                   ; Lost fanout                            ;
+; note_pitch2dds:transl1|state~2         ; Lost fanout                            ;
+; note_pitch2dds:transl1|state~3         ; Lost fanout                            ;
+; note_pitch2dds:transl1|state~5         ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~7             ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~8             ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~9             ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~10            ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~11            ; Lost fanout                            ;
+; midi_in:midiin|rcv_state~12            ; Lost fanout                            ;
+; Total Number of Removed Registers = 21 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -406,12 +377,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 265   ;
-; Number of registers using Synchronous Clear  ; 37    ;
-; Number of registers using Synchronous Load   ; 25    ;
+; Total registers                              ; 365   ;
+; Number of registers using Synchronous Clear  ; 62    ;
+; Number of registers using Synchronous Load   ; 50    ;
 ; Number of registers using Asynchronous Clear ; 45    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 166   ;
+; Number of registers using Clock Enable       ; 243   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -421,8 +392,8 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; midi_in:midiin|uart_rx:URX|in_sync[1]  ; 5       ;
 ; note_pitch2dds:transl1|PITCH_local[13] ; 1       ;
+; midi_in:midiin|uart_rx:URX|in_sync[1]  ; 5       ;
 ; midi_in:midiin|uart_rx:URX|in_sync[0]  ; 1       ;
 ; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
@@ -433,24 +404,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                              ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------------------------+----------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|addr[0]     ;                            ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; |VitaPolyOne|note_pitch2dds:transl1|ADDER_sum[8]                        ;                            ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; |VitaPolyOne|midi_in:midiin|NOTE[1]                                     ;                            ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; |VitaPolyOne|midi_in:midiin|MSB[1]                                      ;                            ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; |VitaPolyOne|midi_in:midiin|LSB[1]                                      ;                            ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; |VitaPolyOne|midi_in:midiin|CH_MESSAGE[2]                               ;                            ;
-; 10:1               ; 25 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; |VitaPolyOne|adsr32:adsr1|sout[4]                                       ;                            ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; |VitaPolyOne|adsr32:adsr1|sout[26]                                      ;                            ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; |VitaPolyOne|note_pitch2dds:transl1|ADDER_mul[5]                        ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|addr[1]     ;                            ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; |VitaPolyOne|note_pitch2dds:transl1|ADDER_sum[26]                       ;                            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; |VitaPolyOne|midi_in:midiin|NOTE[2]                                     ;                            ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; |VitaPolyOne|midi_in:midiin|MSB[4]                                      ;                            ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 7 LEs                ; 28 LEs                 ; |VitaPolyOne|midi_in:midiin|LSB[0]                                      ;                            ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; |VitaPolyOne|midi_in:midiin|CH_MESSAGE[1]                               ;                            ;
+; 10:1               ; 25 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; |VitaPolyOne|adsr32:adsr1|sout[12]                                      ;                            ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; |VitaPolyOne|adsr32:adsr1|sout[27]                                      ;                            ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; |VitaPolyOne|note_pitch2dds:transl1|ADDER_mul[7]                        ;                            ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|ShiftRight0 ;                            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|NOTE_n[3]                           ;                            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|NOTE_n[5]                           ;                            ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|ShiftRight0 ;                            ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|ShiftRight0 ;                            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|state                               ;                            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|state                               ;                            ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|diap[3]     ;                            ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|diap[1]     ;                            ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; |VitaPolyOne|adsr32:adsr1|Selector4                                     ;                            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|diap[2]     ;                            ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |VitaPolyOne|note_pitch2dds:transl1|note2dds:note2dds_table|diap[0]     ;                            ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; |VitaPolyOne|adsr32:adsr1|Selector2                                     ;                            ;
 ; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; |VitaPolyOne|adsr32:adsr1|Selector0                                     ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------------------------------------+----------------------------+
 
@@ -915,25 +886,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+---------------------------------------+
 
 
-+-------------------------------------------------+
-; Port Connectivity Checks: "pwm8dac1:dac_test0"  ;
-+---------------+-------+----------+--------------+
-; Port          ; Type  ; Severity ; Details      ;
-+---------------+-------+----------+--------------+
-; in_data[6..0] ; Input ; Info     ; Stuck at VCC ;
-; in_data[7]    ; Input ; Info     ; Stuck at GND ;
-+---------------+-------+----------+--------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pwm8dac1:dac1_vca"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; sout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "pwm8dac1:dac1"                                                                      ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1005,7 +957,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1015,7 +967,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Fri Apr 10 20:22:35 2015
+    Info: Processing started: Tue Apr 14 22:50:52 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VitaPolyOne -c VitaPolyOne
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v
@@ -1167,7 +1119,7 @@ Info (12128): Elaborating entity "lin2exp_t" for hierarchy "lin2exp_t:exp"
 Info (12128): Elaborating entity "adsr32" for hierarchy "adsr32:adsr1"
 Info (12128): Elaborating entity "vca8" for hierarchy "vca8:vca_1"
 Info (12128): Elaborating entity "pwm8dac1" for hierarchy "pwm8dac1:dac1"
-Info (13005): Duplicate registers merged to single register
+Info (12128): Elaborating entity "ds8dac1" for hierarchy "ds8dac1:dac1_vco"
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "note_pitch2dds:transl1|note2dds:note2dds_table|ADDER_tbl" is uninferred due to inappropriate RAM size
 Info (278001): Inferred 1 megafunctions from design logic
@@ -1201,7 +1153,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "pwm_out_1" is stuck at GND
     Warning (13410): Pin "SEG[7]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 94 registers lost all their fanouts during netlist optimizations. The first 94 are displayed below.
+Info (17049): 11 registers lost all their fanouts during netlist optimizations. The first 11 are displayed below.
     Info (17050): Register "adsr32:adsr1|state~7" lost all its fanouts during netlist optimizations.
     Info (17050): Register "adsr32:adsr1|state~8" lost all its fanouts during netlist optimizations.
     Info (17050): Register "note_pitch2dds:transl1|state~2" lost all its fanouts during netlist optimizations.
@@ -1213,110 +1165,26 @@ Info (17049): 94 registers lost all their fanouts during netlist optimizations. 
     Info (17050): Register "midi_in:midiin|rcv_state~10" lost all its fanouts during netlist optimizations.
     Info (17050): Register "midi_in:midiin|rcv_state~11" lost all its fanouts during netlist optimizations.
     Info (17050): Register "midi_in:midiin|rcv_state~12" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[3]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[2]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[1]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[4]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[5]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[6]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[7]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[13]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[14]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[15]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[16]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[17]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[18]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[19]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[20]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[21]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[22]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[23]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[24]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[25]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[26]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[27]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[28]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[29]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[30]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|sout[31]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[7]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[6]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[5]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[4]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[3]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[2]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[1]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:A1reg|DATA_OUT[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[6]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[5]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[4]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[3]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[2]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[1]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg7:S1reg|DATA_OUT[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[7]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[6]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[5]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[4]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[3]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[2]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[1]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:R1reg|DATA_OUT[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[12]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[11]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[10]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[9]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[8]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[7]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[6]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[5]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[4]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[3]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[2]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[1]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "reg14w:D1reg|DATA_OUT[0]" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|state.RELEASE" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|state.000" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|state.ATTACK" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|state.DECAY" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "adsr32:adsr1|state.SUSTAIN" lost all its fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "nco:clk50M_PLL|altpll:altpll_component|nco_altpll:auto_generated|pll1"
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key0"
     Warning (15610): No output dependent on input pin "key1"
-    Warning (15610): No output dependent on input pin "sw0"
     Warning (15610): No output dependent on input pin "sw1"
     Warning (15610): No output dependent on input pin "sw2"
     Warning (15610): No output dependent on input pin "sw3"
-Info (21057): Implemented 543 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 961 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 20 output pins
-    Info (21061): Implemented 511 logic cells
+    Info (21061): Implemented 929 logic cells
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 306 megabytes
-    Info: Processing ended: Fri Apr 10 20:22:39 2015
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 308 megabytes
+    Info: Processing ended: Tue Apr 14 22:50:58 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +------------------------------------------+

@@ -1,3 +1,3 @@
-iverilog -o test bit_cntr.v testbench.v
+iverilog -o test -I./ -y./ testbench.v
 vvp test
 pause
