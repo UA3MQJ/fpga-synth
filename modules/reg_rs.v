@@ -1,19 +1,19 @@
-module reg_rs(CLK, S, R, DOUT);
+module reg_rs(clk, s, r, data_out);
 
-input wire CLK;
-input wire S;
-input wire R;
-output reg DOUT;
+input wire clk;
+input wire s;
+input wire r;
+output reg data_out;
 
 initial begin
-	DOUT <= 0;
+	data_out <= 0;
 end
 
-always @ (posedge CLK) begin
-	if (S==1) begin
-		DOUT <= 1;
-	end else if (R==1) begin
-		DOUT <= 0;
+always @ (posedge clk) begin
+	if (s==1) begin
+		data_out <= 1;
+	end else if (r==1) begin
+		data_out <= 0;
 	end	
 end
 

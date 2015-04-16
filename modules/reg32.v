@@ -1,17 +1,17 @@
-module reg32(CLK, WR, DATA, DATA_OUT);
+module reg32(clk, wr, data, data_out);
 
-input wire CLK;
-input wire [31:0] DATA;
-input wire WR;
-output reg [31:0] DATA_OUT;
+input wire clk;
+input wire [31:0] data;
+input wire wr;
+output reg [31:0] data_out;
 
 initial begin
-	DATA_OUT <= 32'd0;
+	data_out <= 32'd0;
 end
 
-always @ (posedge CLK) begin
-	if (WR==1) begin
-		DATA_OUT <= DATA;
+always @ (posedge clk) begin
+	if (wr==1) begin
+		data_out <= data;
 	end
 end
 

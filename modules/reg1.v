@@ -1,15 +1,15 @@
-module reg1(DATA, WR, DATA_OUT);
+module reg1(data, wr, data_out);
 
-input wire DATA;
-input wire WR;
-output reg DATA_OUT;
+input wire data;
+input wire wr;
+output reg data_out;
 
 initial begin
-	DATA_OUT <= 0;
+	data_out <= 0;
 end
 
-always @ (posedge WR) begin
-	DATA_OUT <= DATA;
+always @ (posedge wr) begin
+	data_out <= data;
 end
 
 endmodule

@@ -1,19 +1,19 @@
-module reg14(CLK, WR_LSB, WR_MSB, DATA, DATA_OUT);
+module reg14(clk, wr_lsb, wr_msb, data, data_out);
 
-input wire CLK;
-input wire [6:0] DATA;
-input wire WR_LSB, WR_MSB;
-output reg [13:0] DATA_OUT;
+input wire clk;
+input wire [6:0] data;
+input wire wr_lsb, wr_msb;
+output reg [13:0] data_out;
 
 initial begin
-	DATA_OUT <= 7'd0;
+	data_out <= 7'd0;
 end
 
-always @ (posedge CLK) begin
-	if (WR_LSB==1) begin
-		DATA_OUT[6:0] <= DATA;
-	end else if (WR_MSB==1) begin
-		DATA_OUT[13:7] <= DATA;
+always @ (posedge clk) begin
+	if (wr_lsb==1) begin
+		data_out[6:0] <= data;
+	end else if (wr_msb==1) begin
+		data_out[13:7] <= data;
 	end
 end
 
