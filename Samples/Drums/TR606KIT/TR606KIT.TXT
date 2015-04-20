@@ -1,0 +1,18 @@
+The file TR606KIT.ZIP is a complete sample set of the Roland TR-606 Drumatix. 
+All samples are Mono, 44.1Khz .WAV files.
+
+606BASS.WAV - BASS DRUM
+606SNAR.WAV - SNARE
+606OHAT.WAV - OPEN HI HAT
+606CHAT.WAV - CLOSED HI HAT
+606MHAT.WAV - OPEN/CLOSED COMBI HI HAT
+606LTOM.WAV - LOW TOM
+606HTOM.WAV - HIGH TOM
+606CYMB.WAV - CYMBAL
+
+Ed Vargo - May 1995
+dspeade@postoffice.ptd.net
+
+http://bedroomproducersblog.com/2010/09/16/free-sample-shootout-5-the-best-free-drum-machine-samples/
+
+http://machines.hyperreal.org/manufacturers/Roland/TR-606/
