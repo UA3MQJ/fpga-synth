@@ -6,90 +6,121 @@
 :vpi_module "vhdl_sys";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_00B6F270 .scope module, "testbench" "testbench" 2 1;
+S_008AAB90 .scope module, "testbench" "testbench" 2 1;
  .timescale 0 0;
-v00B63768_0 .var "clk", 0 0;
-v00B637C0_0 .var "key", 0 0;
-v00B63818_0 .net "reset_sig", 0 0, v00B636B8_0;  1 drivers
-S_00B6F340 .scope module, "RS_GEN" "powerup_reset" 2 9, 3 1 0, S_00B6F270;
+v008CCE98_0 .var "clk", 0 0;
+v008CCEF0_0 .var "in_cv", 7 0;
+v008CCF48_0 .var "in_sig", 7 0;
+v008CCFA0_0 .net "signal_out", 7 0, v008CCE40_0;  1 drivers
+S_00834E68 .scope module, "vca" "svca" 2 14, 3 2 0, S_008AAB90;
  .timescale 0 0;
-    .port_info 0 /INPUT 1 "key"
-    .port_info 1 /INPUT 1 "clk"
-    .port_info 2 /OUTPUT 1 "rst"
-P_00B6E678 .param/l "TICK" 0 3 2, +C4<01111>;
-v00B6B2D8_0 .net "clk", 0 0, v00B63768_0;  1 drivers
-v00B63660_0 .net "key", 0 0, v00B637C0_0;  1 drivers
-v00B636B8_0 .var "rst", 0 0;
-v00B63710_0 .var "tick_timer", 3 0;
-E_00B6E6F0 .event posedge, v00B6B2D8_0;
-    .scope S_00B6F340;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /INPUT 8 "in"
+    .port_info 2 /INPUT 8 "cv"
+    .port_info 3 /OUTPUT 8 "signal_out"
+P_008AA728 .param/l "WIDTH" 0 3 3, +C4<01000>;
+v00834F38_0 .net *"_s0", 8 0, L_008CCFF8;  1 drivers
+v00834F90_0 .net *"_s12", 6 0, L_008CD100;  1 drivers
+L_008CDD20 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00834FE8_0 .net *"_s14", 0 0, L_008CDD20;  1 drivers
+L_008CDCD0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0083DFE8_0 .net *"_s3", 0 0, L_008CDCD0;  1 drivers
+L_008CDCF8 .functor BUFT 1, C4<010000000>, C4<0>, C4<0>, C4<0>;
+v0083E040_0 .net/2u *"_s4", 8 0, L_008CDCF8;  1 drivers
+v0083E098_0 .net *"_s6", 8 0, L_008CD050;  1 drivers
+v0083E0F0_0 .net "clk", 0 0, v008CCE98_0;  1 drivers
+v0083E148_0 .net "cv", 7 0, v008CCEF0_0;  1 drivers
+v008CCCE0_0 .net "in", 7 0, v008CCF48_0;  1 drivers
+v008CCD38_0 .var/s "result", 15 0;
+v008CCD90_0 .net/s "s_cv", 7 0, L_008CD158;  1 drivers
+v008CCDE8_0 .net/s "s_in", 7 0, L_008CD0A8;  1 drivers
+v008CCE40_0 .var "signal_out", 7 0;
+E_008AA750 .event posedge, v0083E0F0_0;
+L_008CCFF8 .concat [ 8 1 0 0], v008CCF48_0, L_008CDCD0;
+L_008CD050 .arith/sub 9, L_008CCFF8, L_008CDCF8;
+L_008CD0A8 .part L_008CD050, 0, 8;
+L_008CD100 .part v008CCEF0_0, 1, 7;
+L_008CD158 .concat [ 7 1 0 0], L_008CD100, L_008CDD20;
+    .scope S_00834E68;
 T_0 ;
-    %ix/load 0, 1, 0;
-    %assign/v0 v00B636B8_0, 0, 1;
-    %ix/load 0, 4, 0;
-    %assign/v0 v00B63710_0, 0, 1;
-    %end;
+    %wait E_008AA750;
+    %load/v 8, v008CCDE8_0, 8;
+    %pad 16, 15, 8;
+    %load/v 24, v008CCD90_0, 8;
+    %pad 32, 31, 8;
+    %mul 8, 24, 16;
+    %set/v v008CCD38_0, 8, 16;
+    %movi 8, 128, 16;
+    %load/v 24, v008CCD38_0, 16;
+    %ix/load 0, 7, 0;
+    %mov 4, 0, 1;
+    %shiftr/s/i0  24, 16;
+    %sub 8, 24, 16;
+    %set/v v008CCE40_0, 8, 8;
+    %jmp T_0;
     .thread T_0;
-    .scope S_00B6F340;
+    .scope S_008AAB90;
 T_1 ;
-    %wait E_00B6E6F0;
-    %load/v 8, v00B63660_0, 1;
-    %jmp/0xz  T_1.0, 8;
-    %ix/load 0, 4, 0;
-    %assign/v0 v00B63710_0, 0, 1;
-    %ix/load 0, 1, 0;
-    %assign/v0 v00B636B8_0, 0, 1;
-    %jmp T_1.1;
-T_1.0 ;
-    %load/v 8, v00B63710_0, 4;
-    %cmpi/u 8, 0, 4;
-    %jmp/0xz  T_1.2, 4;
-    %ix/load 0, 1, 0;
-    %assign/v0 v00B636B8_0, 0, 0;
-    %jmp T_1.3;
-T_1.2 ;
-    %load/v 8, v00B63710_0, 4;
-    %subi 8, 1, 4;
-    %ix/load 0, 4, 0;
-    %assign/v0 v00B63710_0, 0, 8;
-T_1.3 ;
-T_1.1 ;
-    %jmp T_1;
+    %ix/load 0, 8, 0;
+    %assign/v0 v008CCF48_0, 0, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v008CCEF0_0, 0, 0;
+    %end;
     .thread T_1;
-    .scope S_00B6F270;
+    .scope S_008AAB90;
 T_2 ;
-    %vpi_call 2 13 "$dumpfile", "bench.vcd" {0 0};
-    %vpi_call 2 14 "$dumpvars", 1'sb0, S_00B6F270 {0 0};
-    %vpi_call 2 16 "$display", "starting testbench!!!!" {0 0};
-    %movi 8, 300, 10;
-T_2.0 %cmp/s 0, 8, 10;
+    %vpi_call 2 18 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 19 "$dumpvars", 1'sb0, S_008AAB90 {0 0};
+    %vpi_call 2 21 "$display", "starting testbench!!!!" {0 0};
+    %movi 8, 3000, 13;
+T_2.0 %cmp/s 0, 8, 13;
     %jmp/0xz T_2.1, 5;
-    %add 8, 1, 10;
+    %add 8, 1, 13;
     %delay 10, 0;
     %ix/load 0, 1, 0;
-    %assign/v0 v00B63768_0, 0, 1;
+    %assign/v0 v008CCE98_0, 0, 1;
     %delay 10, 0;
     %ix/load 0, 1, 0;
-    %assign/v0 v00B63768_0, 0, 0;
+    %assign/v0 v008CCE98_0, 0, 0;
     %jmp T_2.0;
 T_2.1 ;
-    %vpi_call 2 25 "$display", "finished OK!" {0 0};
-    %vpi_call 2 26 "$finish" {0 0};
+    %vpi_call 2 30 "$display", "finished OK!" {0 0};
     %end;
     .thread T_2;
-    .scope S_00B6F270;
+    .scope S_008AAB90;
 T_3 ;
-    %delay 1900, 0;
-    %ix/load 0, 1, 0;
-    %assign/v0 v00B637C0_0, 0, 1;
-    %delay 90, 0;
-    %ix/load 0, 1, 0;
-    %assign/v0 v00B637C0_0, 0, 0;
+    %movi 8, 300, 10;
+T_3.0 %cmp/s 0, 8, 10;
+    %jmp/0xz T_3.1, 5;
+    %add 8, 1, 10;
+    %delay 100, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v008CCF48_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v008CCF48_0, 0, 1;
+    %jmp T_3.0;
+T_3.1 ;
     %end;
     .thread T_3;
+    .scope S_008AAB90;
+T_4 ;
+    %movi 8, 1024, 12;
+T_4.0 %cmp/s 0, 8, 12;
+    %jmp/0xz T_4.1, 5;
+    %add 8, 1, 12;
+    %delay 80, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0 20, v008CCEF0_0, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v008CCEF0_0, 0, 20;
+    %jmp T_4.0;
+T_4.1 ;
+    %end;
+    .thread T_4;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
     "<interactive>";
     "testbench.v";
-    ".//powerup_reset.v";
+    ".//svca.v";
