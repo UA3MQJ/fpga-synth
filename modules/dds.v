@@ -1,18 +1,18 @@
-module dds(clk, add, sout);
+module dds(clk, adder, signal_out);
 parameter WIDTH = 32;
 
 input wire clk;
-input [(WIDTH - 1):0] add;
+input [(WIDTH - 1):0] adder;
 
-output reg [(WIDTH - 1):0] sout;
+output reg [(WIDTH - 1):0] signal_out;
 
 initial 
 begin
-	sout <= 0;
+	signal_out <= 0;
 end
 
 always @(posedge clk) begin
-	sout <= sout + add;
+	signal_out <= signal_out + adder;
 end
 
 
