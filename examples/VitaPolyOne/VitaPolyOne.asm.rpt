@@ -1,5 +1,5 @@
 Assembler report for VitaPolyOne
-Tue Apr 14 22:51:07 2015
+Sun Apr 19 23:05:24 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Apr 14 22:51:07 2015 ;
+; Assembler Status      ; Successful - Sun Apr 19 23:05:24 2015 ;
 ; Revision Name         ; VitaPolyOne                           ;
 ; Top-level Entity Name ; VitaPolyOne                           ;
 ; Family                ; Cyclone IV E                          ;
@@ -93,7 +93,7 @@ applicable agreement for further details.
 +----------------+--------------------------------------------------------------------------------+
 ; Device         ; EP4CE10E22C8                                                                   ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                                     ;
-; Checksum       ; 0x0010B3C6                                                                     ;
+; Checksum       ; 0x001CBB51                                                                     ;
 +----------------+--------------------------------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Tue Apr 14 22:51:06 2015
+    Info: Processing started: Sun Apr 19 23:05:22 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off VitaPolyOne -c VitaPolyOne
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 280 megabytes
-    Info: Processing ended: Tue Apr 14 22:51:07 2015
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 285 megabytes
+    Info: Processing ended: Sun Apr 19 23:05:24 2015
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
