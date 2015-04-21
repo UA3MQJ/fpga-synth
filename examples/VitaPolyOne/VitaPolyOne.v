@@ -115,7 +115,7 @@ reg7 N1reg(clk50PLL, N1_lsb, N1_value, N1);
 wire [7:0] square_out = (vco1out[31:31-7] > 127) ? 8'b11111111 : 1'b00000000;
 wire [7:0] saw_out    = vco1out[31:31-7];
 wire [7:0] t_wave_form  = (sw0) ? saw_out : square_out;
-wire [7:0] wave_form  = (sw3) ? t_wave_form : 8'd127;
+wire [7:0] wave_form  = (sw3) ? ((t_wave_form >> 1) + 6'd63) : 8'd127;
 
 //digi VCA
 wire [7:0] vco_with_digital_vca;
@@ -125,7 +125,8 @@ svca #(.WIDTH(8)) digital_vca_1(.clk(clk50M), .in(wave_form) , .cv(adsr1out[31:3
 wire out1bit;
 //rnd8dac1 dac1_vco(clk50PLL, wave_form, out1bit);
 //ds8dac1 dac1_vco(clk50PLL, wave_form, out1bit);
-ds8dac1 dac1_vco(clk50PLL, (sw1) ? wave_form : vco_with_digital_vca, out1bit);
+//ds8dac1 dac1_vco(clk50PLL, (sw1) ? wave_form : vco_with_digital_vca, out1bit);
+pwm8dac1 dac1_vco(clk50PLL, (sw1) ? wave_form : vco_with_digital_vca, out1bit);
 
 
 wire [31:0] adsr1out;
@@ -136,10 +137,11 @@ adsr32 adsr1(clk50PLL, GATE, A1, D1, {S1,25'b0}, R1, adsr1out);
 //pwm8dac1 dac1(clk50PLL, vcaout1, pwm1out_d);
 
 
-//wire pwm1vca_out;
-//pwm8dac1 dac1_vca(clk50PLL, adsr1out[31:31-7], pwm1vca_out);
-//assign pwm_out_0 = (sw1) ? ~pwm1vca_out : 0 ; //vca всесгда открыт (тут получилось с инверсией)
-assign pwm_out_0 = pwm_q_out;
+wire pwm1vca_out;
+wire [7:0] adsr8 = adsr1out[31:31-7];
+vca_pwm8dac1 dac1_vca(clk50PLL, adsr8, pwm1vca_out);
+assign pwm_out_0 = (sw1) ? ~pwm1vca_out : 0 ; //vca всесгда открыт (тут получилось с инверсией)
+//assign pwm_out_0 = pwm_q_out;
 
 wire pwm_q_out;
 pwm8dac1 dac2(clk50PLL, {Q1,1'b0}, pwm_q_out);

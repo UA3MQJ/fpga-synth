@@ -90,6 +90,7 @@ set_location_assignment PIN_141 -to pwm_out_1
 set_location_assignment PIN_142 -to pwm_out_0
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE ../../modules/vca_pwm8dac1.v
 set_global_assignment -name VERILOG_FILE ../../modules/svca.v
 set_global_assignment -name MIF_FILE ../../Samples/Drums/TR606KIT/606SNAR.mif
 set_global_assignment -name VERILOG_FILE ../../modules/dds.v
