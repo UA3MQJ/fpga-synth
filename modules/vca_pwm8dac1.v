@@ -1,4 +1,4 @@
-module pwm8dac1(clk, in_data, sout);
+module vca_pwm8dac1(clk, in_data, sout);
 			
 input clk; 
 input [7:0] in_data; 
@@ -17,7 +17,11 @@ always @(posedge clk) begin
 	cnt  <= cnt + 1'b1;
 	sout <= (saved_data>cnt);
 	if (cnt==8'd0) begin
-   	saved_data <= in_data;
+		if (saved_data<in_data) begin
+			saved_data <= saved_data + 1'b1;
+		end else if (saved_data>in_data) begin
+			saved_data <= saved_data - 1'b1;
+		end
 	end
 end
 
