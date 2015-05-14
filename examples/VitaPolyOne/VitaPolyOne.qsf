@@ -133,4 +133,6 @@ set_global_assignment -name VERILOG_FILE VitaPolyOne.v
 set_global_assignment -name QIP_FILE snare.qip
 set_global_assignment -name QIP_FILE snar.qip
 set_global_assignment -name VERILOG_FILE snar.v
+set_global_assignment -name QIP_FILE bass.qip
+set_global_assignment -name QIP_FILE ohat.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

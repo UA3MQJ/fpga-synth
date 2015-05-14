@@ -48,11 +48,26 @@ midi_in midiin(clk50PLL, ~locked, MIDI_IN, CH_MESSAGE, CHAN, NOTE, VELOCITY, LSB
 //без PLL
 //midi_in midiin(clk50M, 1'b0, MIDI_IN, NOTE_OFF, NOTE_ON, PRESSURE, CONTROL, PROGRAM, CHPRESSURE, PICH, CHAN, NOTE, VELOCITY, LSB, MSB);
 
-wire NOTE_ON  = (CH_MESSAGE==4'b1001); //признак появления сообщения note on
-wire NOTE_OFF = (CH_MESSAGE==4'b1000); //признак появления сообщения note off
+wire NOTE_ON  = ((CH_MESSAGE==4'b1001)&&(CHAN!=4'd9)); //признак появления сообщения note on
+wire NOTE_OFF = ((CH_MESSAGE==4'b1000)&&(CHAN!=4'd9)); //признак появления сообщения note off
 
 wire GATE; // сигнал GATE в единице между note on и note off
 reg_rs GATEreg(.clk(clk50PLL), .s(NOTE_ON), .r(NOTE_OFF), .data_out(GATE));
+
+//DRUM CHANEL
+wire DRUM_ON  = ((CH_MESSAGE==4'b1001)&&(CHAN==4'd9)); //признак появления сообщения note on
+wire DRUM_OFF = ((CH_MESSAGE==4'b1000)&&(CHAN==4'd9)); //признак появления сообщения note off
+
+wire BASS_DRUM_ON  = (DRUM_ON) &&(NOTE==7'd035);
+wire BASS_DRUM_OFF = (DRUM_OFF)&&(NOTE==7'd035);
+wire BASS_DRUM_GATE; // сигнал GATE в единице между note on и note off
+reg_rs BASS_DRUM_GATE_reg(.clk(clk50PLL), .s(BASS_DRUM_ON), .r(BASS_DRUM_OFF), .data_out(BASS_DRUM_GATE));
+
+wire SNAR_DRUM_ON  = (DRUM_ON) &&(NOTE==7'd038);
+wire SNAR_DRUM_OFF = (DRUM_OFF)&&(NOTE==7'd038);
+wire SNAR_DRUM_GATE; // сигнал GATE в единице между note on и note off
+reg_rs SNAR_DRUM_GATE_reg(.clk(clk50PLL), .s(SNAR_DRUM_ON), .r(SNAR_DRUM_OFF), .data_out(SNAR_DRUM_GATE));
+//DRUM CHANEL
 
 wire [6:0] LAST_NOTE; //последняя полученная нота
 reg7 NOTEreg(.clk(clk50PLL), .wr(NOTE_ON), .data(NOTE), .data_out(LAST_NOTE));
@@ -115,7 +130,7 @@ reg7 N1reg(clk50PLL, N1_lsb, N1_value, N1);
 wire [7:0] square_out = (vco1out[31:31-7] > 127) ? 8'b11111111 : 1'b00000000;
 wire [7:0] saw_out    = vco1out[31:31-7];
 wire [7:0] t_wave_form  = (sw0) ? saw_out : square_out;
-wire [7:0] wave_form  = (sw3) ? ((t_wave_form >> 1) + 6'd63) : 8'd127;
+wire [7:0] wave_form  = ((t_wave_form >> 1) + 6'd63);
 
 //digi VCA
 wire [7:0] vco_with_digital_vca;
@@ -149,41 +164,68 @@ assign pwm_out_1 = ~pwm_q_out;
 
 
 
-//SNAR
+//DRUM 44100 GENERATOR
 wire clk44100;
 frq1divmod1 divider1(clk50PLL, 566, clk44100); //50000000 / 44100 = 1134
 reg [1:0] clk44100_pre=2'b00;
 always @(posedge clk50PLL) clk44100_pre <= {clk44100_pre[0], clk44100};
 wire clk44100_posege = (clk44100_pre==2'b01);
 
-
+//SNAR
 reg [12:0] ram_snare_addr;
 initial ram_snare_addr <= 14'd0;
 wire [7:0] ram_snare_data;
 
 always @(posedge clk50PLL) begin
-	if (clk44100_posege) begin
-		if (ram_snare_addr==8190) begin
-			ram_snare_addr <= 13'd0;
-		end else begin
-			ram_snare_addr <= ram_snare_addr + 1'b1;
+	
+	if (SNAR_DRUM_GATE) begin
+		if (clk44100_posege) begin
+			if (ram_snare_addr!=8190) begin
+				ram_snare_addr <= ram_snare_addr + 1'b1;
+			end		
 		end
-		
-	end
+	end else begin
+		ram_snare_addr <= 13'd0;
+	end	
 end
 
 snar snare_rom(.address(ram_snare_addr),
 					 .q(ram_snare_data),
 					 .clock(clk44100_posege));
 
-wire out_noise1bit;
-ds8dac1 dac1_noise(clk50PLL, ram_snare_data, out_noise1bit); // sync (!)
-//SNAR
+wire out_snar1bit;
+ds8dac1 dac1_snar(clk50PLL, ram_snare_data, out_snar1bit); // sync (!)
+
+//BASS					 
+reg [12:0] ram_bass_addr;
+initial ram_bass_addr <= 14'd0;
+wire [7:0] ram_bass_data;					 
+
+always @(posedge clk50PLL) begin
+	if (BASS_DRUM_GATE) begin
+		if (clk44100_posege) begin
+			if (ram_bass_addr!=8190) begin
+				ram_bass_addr <= ram_bass_addr + 1'b1;
+			end
+		end
+	end else begin
+		ram_bass_addr <= 13'd0;
+	end
+end
+					 
+bass bass_rom(.address(ram_bass_addr),
+					 .q(ram_bass_data),
+					 .clock(clk44100_posege));
+					 
+wire out_bass1bit;
+ds8dac1 dac1_bass(clk50PLL, ram_bass_data, out_bass1bit); // sync (!)
+					 
+//DRUMS
 
 
 assign snd_0 = out1bit;
-assign snd_1 = (sw2) ? out_noise1bit : 1'b0;
-assign snd_2 = 1'b0;
+assign snd_1 = out_snar1bit;
+assign snd_2 = out_bass1bit;
 assign snd_3 = 1'b0;
 assign snd_4 = 1'b0;
 assign snd_5 = 1'b0;

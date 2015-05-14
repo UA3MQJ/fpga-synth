@@ -1,5 +1,5 @@
 Flow report for VitaPolyOne
-Tue Apr 21 23:45:41 2015
+Tue May 12 19:59:06 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -38,20 +38,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Tue Apr 21 23:45:41 2015     ;
+; Flow Status                        ; Successful - Tue May 12 19:59:06 2015     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; VitaPolyOne                               ;
 ; Top-level Entity Name              ; VitaPolyOne                               ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE10E22C8                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 994 / 10,320 ( 10 % )                     ;
-;     Total combinational functions  ; 916 / 10,320 ( 9 % )                      ;
-;     Dedicated logic registers      ; 435 / 10,320 ( 4 % )                      ;
-; Total registers                    ; 435                                       ;
+; Total logic elements               ; 1,036 / 10,320 ( 10 % )                   ;
+;     Total combinational functions  ; 947 / 10,320 ( 9 % )                      ;
+;     Dedicated logic registers      ; 476 / 10,320 ( 5 % )                      ;
+; Total registers                    ; 476                                       ;
 ; Total pins                         ; 28 / 92 ( 30 % )                          ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 65,528 / 423,936 ( 15 % )                 ;
+; Total memory bits                  ; 131,064 / 423,936 ( 31 % )                ;
 ; Embedded Multiplier 9-bit elements ; 4 / 46 ( 9 % )                            ;
 ; Total PLLs                         ; 1 / 2 ( 50 % )                            ;
 +------------------------------------+-------------------------------------------+
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/21/2015 23:45:19 ;
+; Start date & time ; 05/12/2015 19:58:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VitaPolyOne         ;
 +-------------------+---------------------+
@@ -73,10 +73,14 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 105996038739929.142964911904068       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 105996038739929.143144989406488       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                           ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; ROM: 1-PORT                           ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; ROM: 1-PORT                           ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 11.1                                  ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 11.1                                  ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 11.1                                  ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
@@ -97,12 +101,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 313 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:05     ; 2.5                     ; 446 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 285 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 327 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 271 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:20                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 316 MB              ; 00:00:10                           ;
+; Fitter                    ; 00:00:15     ; 1.0                     ; 446 MB              ; 00:00:08                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 285 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 2.6                     ; 328 MB              ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 272 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:46     ; --                      ; --                  ; 00:00:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
