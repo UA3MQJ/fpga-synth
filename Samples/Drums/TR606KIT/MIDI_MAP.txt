@@ -1,0 +1,8 @@
+C3  - BASS
+D3  - SNAR
+E3  - LTOM
+F3  - HTOM
+F#3 - CHAT
+G3  - CYMB
+G#3 - MHAT
+A#3 - OHAT
