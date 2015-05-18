@@ -1,5 +1,5 @@
 module powerup_reset(key, clk, rst);
-parameter TICK = 15; // tick's delay 0..15
+parameter TICK = 4'd15; // tick's delay 0..15
 		
 input wire key;
 input wire clk;

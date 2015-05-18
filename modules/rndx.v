@@ -1,9 +1,9 @@
-module rndx(clk, sout);
+module rndx(clk, signal_out);
 parameter WIDTH = 1; // 1..32 
 parameter [31:0] INIT_VAL = 32'h12345678;
 
 input wire clk;
-output reg [(WIDTH - 1):0] sout;
+output reg [(WIDTH - 1):0] signal_out;
 
 reg [(WIDTH - 1):0] tsout;
 
@@ -15,7 +15,7 @@ integer i;
 reg [31:0] init_val;
 initial
 begin
-	sout <= 8'd0;
+	signal_out <= 8'd0;
 	tsout <= 8'd0;
 	init_val = INIT_VAL;
 	for(i=0; i<WIDTH ; i=i+1) begin
@@ -29,7 +29,7 @@ always @(posedge clk) begin
 		dx[i] <= { dx[i][30:0], dx[i][30] ^ dx[i][27] };
 		tsout = (tsout << 1) + dx[i][5:5];
 	end
-	sout <= tsout;
+	signal_out <= tsout;
 end
 
 endmodule

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue May 12 19:58:30 2015
+Analysis & Synthesis Status : Successful - Sun May 17 01:05:21 2015
 Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
 Revision Name : VitaPolyOne
 Top-level Entity Name : VitaPolyOne
 Family : Cyclone IV E
-Total logic elements : 1,110
-    Total combinational functions : 946
-    Dedicated logic registers : 484
-Total registers : 484
+Total logic elements : 1,307
+    Total combinational functions : 1,061
+    Dedicated logic registers : 628
+Total registers : 628
 Total pins : 28
 Total virtual pins : 0
-Total memory bits : 131,064
+Total memory bits : 2,090
 Embedded Multiplier 9-bit elements : 4
 Total PLLs : 1

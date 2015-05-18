@@ -38,8 +38,6 @@ wire [6:0] VELOCITY;
 wire [6:0] LSB;
 wire [6:0] MSB;
 
-wire keys;
-assign keys = key0 & key1 & sw0 & sw1 & sw2 & sw3;
 
 //PLL
 //midi_in midiin(clk50PLL, ~locked, MIDI_IN, NOTE_OFF, NOTE_ON, PRESSURE, CONTROL, PROGRAM, CHPRESSURE, PICH, CHAN, NOTE, VELOCITY, LSB, MSB);
@@ -80,11 +78,7 @@ reg14w pitch_reg(.clk(clk50PLL), .wr(ptch_strobe), .data({MSB,LSB}), .data_out(p
 wire [31:0] adder1;
 note_pitch2dds  transl1(clk50PLL, LAST_NOTE, pitch_val, adder1); 
 
-wire [31:0] vco1out;
-//dds32 vco1(clk50PLL, adder1, vco1out);
-dds #(.WIDTH(32)) vco1(.clk(clk50PLL), .adder(adder1), .signal_out(vco1out));
-
-//масштабирование
+//масштабирование 
 wire [31:0] add_value;
 lin2exp_t exp(.data_in(MSB), .data_out(add_value));
 
@@ -113,119 +107,53 @@ wire R1_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd019))||rst; // control change & 1
 wire [13:0] R1_value =  (rst) ? 14'd07540 : add_value[13:0];
 reg14w R1reg(clk50PLL, R1_lsb, R1_value, R1);
 
-//Q
-wire [6:0] Q1;
-wire Q1_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd048))||rst; // control change & 48 control - LSB
-wire [6:0] Q1_value =  (rst) ? 7'b0111111 : MSB;
-reg7 Q1reg(clk50PLL, Q1_lsb, Q1_value, Q1);
-
-//noise
-wire [6:0] N1;
-wire N1_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd049))||rst; // control change & 49 control - LSB
-wire [6:0] N1_value =  (rst) ? 7'd01 : MSB;
-reg7 N1reg(clk50PLL, N1_lsb, N1_value, N1);
+//WAVE FORM
+wire [6:0] W_FORM;
+wire W_FORM_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd048))||rst; // control change & 48 control - LSB
+wire [6:0] W_FORM_value =  (rst) ? 7'd0 : MSB;
+reg7 W_FORM_reg(clk50PLL, W_FORM_lsb, W_FORM_value, W_FORM);
 
 
+//ONE VOICE
+wire [7:0] voice1_wave_form;
+voice voice1(.clk(clk50PLL),
+			    .adder(adder1),
+				 .wave_form(W_FORM[2:0]),
+				 .signal_out(voice1_wave_form));
 
-wire [7:0] square_out = (vco1out[31:31-7] > 127) ? 8'b11111111 : 1'b00000000;
-wire [7:0] saw_out    = vco1out[31:31-7];
-wire [7:0] t_wave_form  = (sw0) ? saw_out : square_out;
-wire [7:0] wave_form  = ((t_wave_form >> 1) + 6'd63);
-
-//digi VCA
-wire [7:0] vco_with_digital_vca;
-svca #(.WIDTH(8)) digital_vca_1(.clk(clk50M), .in(wave_form) , .cv(adsr1out[31:31-7]), .signal_out(vco_with_digital_vca));
-
-//ext VCO
-wire out1bit;
-//rnd8dac1 dac1_vco(clk50PLL, wave_form, out1bit);
-//ds8dac1 dac1_vco(clk50PLL, wave_form, out1bit);
-//ds8dac1 dac1_vco(clk50PLL, (sw1) ? wave_form : vco_with_digital_vca, out1bit);
-pwm8dac1 dac1_vco(clk50PLL, (sw1) ? wave_form : vco_with_digital_vca, out1bit);
-
-
+//ADSR
 wire [31:0] adsr1out;
 adsr32 adsr1(clk50PLL, GATE, A1, D1, {S1,25'b0}, R1, adsr1out);
 
+//digi VCA
+wire [7:0] voice1_with_digital_vca;
+svca #(.WIDTH(8)) digital_vca_1(.clk(clk50M), .in(voice1_wave_form) , .cv(adsr1out[31:31-7]), .signal_out(voice1_with_digital_vca));
 
-//wire pwm1out_d;
-//pwm8dac1 dac1(clk50PLL, vcaout1, pwm1out_d);
-
-
+//analog VCA -> вывод управляющего сигнала на вывод pwm_out_0
 wire pwm1vca_out;
 wire [7:0] adsr8 = adsr1out[31:31-7];
 vca_pwm8dac1 dac1_vca(clk50PLL, adsr8, pwm1vca_out);
-assign pwm_out_0 = (sw1) ? ~pwm1vca_out : 0 ; //vca всесгда открыт (тут получилось с инверсией)
-//assign pwm_out_0 = pwm_q_out;
+assign pwm_out_0 = (sw3) ? ~pwm1vca_out : 1'b0 ; //vca всесгда открыт (тут получилось с инверсией)
 
-wire pwm_q_out;
-pwm8dac1 dac2(clk50PLL, {Q1,1'b0}, pwm_q_out);
-assign pwm_out_1 = ~pwm_q_out;
+//вывод сигнала VCO (либо на всю шкалу, либо масштабированным в цифровом виде)
+wire out1bit;
+pwm8dac1 ds8dac1(clk50PLL, (sw3) ? voice1_wave_form : voice1_with_digital_vca, out1bit); //pwm8dac1, ds8dac1, rnd8dac1
 
-
-
-//DRUM 44100 GENERATOR
-wire clk44100;
-frq1divmod1 divider1(clk50PLL, 566, clk44100); //50000000 / 44100 = 1134
-reg [1:0] clk44100_pre=2'b00;
-always @(posedge clk50PLL) clk44100_pre <= {clk44100_pre[0], clk44100};
-wire clk44100_posege = (clk44100_pre==2'b01);
-
-//SNAR
-reg [12:0] ram_snare_addr;
-initial ram_snare_addr <= 14'd0;
-wire [7:0] ram_snare_data;
-
-always @(posedge clk50PLL) begin
-	
-	if (SNAR_DRUM_GATE) begin
-		if (clk44100_posege) begin
-			if (ram_snare_addr!=8190) begin
-				ram_snare_addr <= ram_snare_addr + 1'b1;
-			end		
-		end
-	end else begin
-		ram_snare_addr <= 13'd0;
-	end	
-end
-
-snar snare_rom(.address(ram_snare_addr),
-					 .q(ram_snare_data),
-					 .clock(clk44100_posege));
-
-wire out_snar1bit;
-ds8dac1 dac1_snar(clk50PLL, ram_snare_data, out_snar1bit); // sync (!)
-
-//BASS					 
-reg [12:0] ram_bass_addr;
-initial ram_bass_addr <= 14'd0;
-wire [7:0] ram_bass_data;					 
-
-always @(posedge clk50PLL) begin
-	if (BASS_DRUM_GATE) begin
-		if (clk44100_posege) begin
-			if (ram_bass_addr!=8190) begin
-				ram_bass_addr <= ram_bass_addr + 1'b1;
-			end
-		end
-	end else begin
-		ram_bass_addr <= 13'd0;
-	end
-end
-					 
-bass bass_rom(.address(ram_bass_addr),
-					 .q(ram_bass_data),
-					 .clock(clk44100_posege));
-					 
-wire out_bass1bit;
-ds8dac1 dac1_bass(clk50PLL, ram_bass_data, out_bass1bit); // sync (!)
-					 
-//DRUMS
+//Q для управления фильтром -> вывод управляющего сигнала на вывод pwm_out_1
+//Q
+//wire [6:0] Q1;
+//wire Q1_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd048))||rst; // control change & 48 control - LSB
+//wire [6:0] Q1_value =  (rst) ? 7'b0111111 : MSB;
+//reg7 Q1reg(clk50PLL, Q1_lsb, Q1_value, Q1);
+//wire pwm_q_out;
+//pwm8dac1 dac2(clk50PLL, {Q1,1'b0}, pwm_q_out);
+//assign pwm_out_1 = ~pwm_q_out;
 
 
+//аналоговые выводы
 assign snd_0 = out1bit;
-assign snd_1 = out_snar1bit;
-assign snd_2 = out_bass1bit;
+assign snd_1 = out1bit;
+assign snd_2 = 1'b0;
 assign snd_3 = 1'b0;
 assign snd_4 = 1'b0;
 assign snd_5 = 1'b0;
@@ -236,8 +164,6 @@ assign led0 = GATE;
 assign led1 = ~MIDI_IN;
 
 assign SEG = (GATE) ? {1'b0,SEG_buf} : 8'd0;
-//assign SEG = {~MIDI_IN,SEG_buf};
-
 
 reg [6:0] SEG_buf;
 
