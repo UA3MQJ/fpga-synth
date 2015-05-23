@@ -1,19 +1,17 @@
 // not signed, symmetric max/2
-module svca(clk, in, cv, signal_out); //
+module svca(in, cv, signal_out); //
 parameter WIDTH = 8; //
 
-input wire clk;
 input wire [(WIDTH-1):0] in, cv;
-output reg [(WIDTH-1):0] signal_out;
-reg signed [((WIDTH*2)-1):0] result;
+output wire [(WIDTH-1):0] signal_out;
 
-wire signed [(WIDTH-1):0] s_in = in - 8'd128; // 0..255 -> signed -128..127
-wire signed [(WIDTH-1):0] s_cv = cv >> 1;
 
-always @(posedge clk)
-begin
-  result = s_in * s_cv;
-  signal_out = 8'd128 - (result >>> 7);
-end
+wire signed [(WIDTH):0] s_in = in - 8'd128; // 0..255 -> signed -128..127
+wire signed [(WIDTH):0] s_cv = cv;
+
+wire signed [(WIDTH*2):0] result_s = s_in * s_cv;
+wire signed [(WIDTH*2):0]   result_ss = result_s >>> 8;
+wire [(WIDTH*2):0]   result_sss = result_ss + 8'd128;
+assign signal_out = result_sss[(WIDTH-1):0];
 
 endmodule
