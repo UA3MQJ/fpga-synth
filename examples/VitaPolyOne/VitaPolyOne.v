@@ -75,8 +75,8 @@ wire ptch_strobe = (CH_MESSAGE==4'b1110); //сообщение PITCH
 wire [13:0] pitch_val; // значение PITCH
 reg14w pitch_reg(.clk(clk50PLL), .wr(ptch_strobe), .data({MSB,LSB}), .data_out(pitch_val));
 
-wire [31:0] adder1;
-note_pitch2dds  transl1(clk50PLL, LAST_NOTE, pitch_val, adder1); 
+//wire [31:0] adder1;
+//note_pitch2dds  transl1(clk50PLL, LAST_NOTE, pitch_val, adder1); 
 
 //масштабирование 
 wire [31:0] add_value;
@@ -113,13 +113,38 @@ wire W_FORM_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd048))||rst; // control change
 wire [6:0] W_FORM_value =  (rst) ? 7'd0 : MSB;
 reg7 W_FORM_reg(clk50PLL, W_FORM_lsb, W_FORM_value, W_FORM);
 
+//SSAW DETUNE
+wire [6:0] SS_DETUNE;
+wire SS_DETUNE_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd049))||rst; // control change & 49 control - LSB
+wire [6:0] SS_DETUNE_value =  (rst) ? 7'd0 : MSB;
+reg7 SS_DETUNE_reg(clk50PLL, SS_DETUNE_lsb, SS_DETUNE_value, SS_DETUNE);
+//detune table
+wire [7:0] sine_out;
+wire [7:0] converted_detune;
+detune_rom sine_rom0(.address(SS_DETUNE),
+						   .q(converted_detune),
+							.clock(clk50PLL));
+
+//SSAW MIX
+wire [6:0] SS_MIX;
+wire SS_MIX_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd050))||rst; // control change & 50 control - LSB
+wire [6:0] SS_MIX_value =  (rst) ? 7'd0 : MSB;
+reg7 SS_MIX_reg(clk50PLL, SS_MIX_lsb, SS_MIX_value, SS_MIX);
+
 
 //ONE VOICE
 wire [7:0] voice1_wave_form;
+wire [7:0] ss1,ss2,ss3,ss4,ss5,ss6,ss7;
 voice voice1(.clk(clk50PLL),
-			    .adder(adder1),
+			    .gate(GATE),
+			    //.adder(adder1),
+				 .note(LAST_NOTE),
+				 .pitch(pitch_val),
+				 .detune(converted_detune),
+				 .mix(SS_MIX),
 				 .wave_form(W_FORM[2:0]),
-				 .signal_out(voice1_wave_form));
+				 .signal_out(voice1_wave_form),
+				 .ss1(ss1), .ss2(ss2), .ss3(ss3), .ss4(ss4), .ss5(ss5), .ss6(ss6), .ss7(ss7));
 
 //ADSR
 wire [31:0] adsr1out;
@@ -127,7 +152,7 @@ adsr32 adsr1(clk50PLL, GATE, A1, D1, {S1,25'b0}, R1, adsr1out);
 
 //digi VCA
 wire [7:0] voice1_with_digital_vca;
-svca #(.WIDTH(8)) digital_vca_1(.clk(clk50M), .in(voice1_wave_form) , .cv(adsr1out[31:31-7]), .signal_out(voice1_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_1(.in(voice1_wave_form) , .cv(adsr1out[31:31-7]), .signal_out(voice1_with_digital_vca));
 
 //analog VCA -> вывод управляющего сигнала на вывод pwm_out_0
 wire pwm1vca_out;
@@ -138,6 +163,48 @@ assign pwm_out_0 = (sw3) ? ~pwm1vca_out : 1'b0 ; //vca всесгда откры
 //вывод сигнала VCO (либо на всю шкалу, либо масштабированным в цифровом виде)
 wire out1bit;
 pwm8dac1 ds8dac1(clk50PLL, (sw3) ? voice1_wave_form : voice1_with_digital_vca, out1bit); //pwm8dac1, ds8dac1, rnd8dac1
+
+//digi VCA
+wire [7:0] voice1ss_with_digital_vca;
+wire [7:0] voice2ss_with_digital_vca;
+wire [7:0] voice3ss_with_digital_vca;
+wire [7:0] voice4ss_with_digital_vca;
+wire [7:0] voice5ss_with_digital_vca;
+wire [7:0] voice6ss_with_digital_vca;
+wire [7:0] voice7ss_with_digital_vca;
+
+svca #(.WIDTH(8)) digital_vca_ss1(.in(ss1) , .cv(adsr1out[31:31-7]), .signal_out(voice1ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss2(.in(ss2) , .cv(adsr1out[31:31-7]), .signal_out(voice2ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss3(.in(ss3) , .cv(adsr1out[31:31-7]), .signal_out(voice3ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss4(.in(ss4) , .cv(adsr1out[31:31-7]), .signal_out(voice4ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss5(.in(ss5) , .cv(adsr1out[31:31-7]), .signal_out(voice5ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss6(.in(ss6) , .cv(adsr1out[31:31-7]), .signal_out(voice6ss_with_digital_vca));
+svca #(.WIDTH(8)) digital_vca_ss7(.in(ss7) , .cv(adsr1out[31:31-7]), .signal_out(voice7ss_with_digital_vca)); 
+
+
+//assign voice1ss_with_digital_vca = ss1;
+//assign voice2ss_with_digital_vca = ss2;
+//assign voice3ss_with_digital_vca = ss3;
+//assign voice4ss_with_digital_vca = ss4;
+//assign voice5ss_with_digital_vca = ss5;
+//assign voice6ss_with_digital_vca = ss6;
+//assign voice7ss_with_digital_vca = ss7;
+
+wire out1bitss1;
+pwm8dac1 ds8dac1ss1(clk50PLL, voice1ss_with_digital_vca, out1bitss1);
+wire out1bitss2;
+pwm8dac1 ds8dac1ss2(clk50PLL, voice2ss_with_digital_vca, out1bitss2);
+wire out1bitss3;
+pwm8dac1 ds8dac1ss3(clk50PLL, voice3ss_with_digital_vca, out1bitss3);
+wire out1bitss4;
+pwm8dac1 ds8dac1ss4(clk50PLL, voice4ss_with_digital_vca, out1bitss4);
+wire out1bitss5;
+pwm8dac1 ds8dac1ss5(clk50PLL, voice5ss_with_digital_vca, out1bitss5);
+wire out1bitss6;
+pwm8dac1 ds8dac1ss6(clk50PLL, voice6ss_with_digital_vca, out1bitss6);
+wire out1bitss7;
+pwm8dac1 ds8dac1ss7(clk50PLL, voice7ss_with_digital_vca, out1bitss7);
+
 
 //Q для управления фильтром -> вывод управляющего сигнала на вывод pwm_out_1
 //Q
@@ -152,13 +219,16 @@ pwm8dac1 ds8dac1(clk50PLL, (sw3) ? voice1_wave_form : voice1_with_digital_vca, o
 
 //аналоговые выводы
 assign snd_0 = out1bit;
-assign snd_1 = out1bit;
-assign snd_2 = 1'b0;
-assign snd_3 = 1'b0;
-assign snd_4 = 1'b0;
-assign snd_5 = 1'b0;
-assign snd_6 = 1'b0;
-assign snd_7 = 1'b0;
+
+
+
+assign snd_1 = out1bitss1;
+assign snd_2 = out1bitss2;
+assign snd_3 = out1bitss3;
+assign snd_4 = out1bitss4;
+assign snd_5 = out1bitss5;
+assign snd_6 = out1bitss6;
+assign snd_7 = out1bitss7;
 
 assign led0 = GATE;
 assign led1 = ~MIDI_IN;

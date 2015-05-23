@@ -1,46 +1,77 @@
-Quartus II Archive log --	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qarlog
+Quartus II Archive log --	D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne_tmp_archive.qarlog
 
-Archive:	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qar
-Date:		Mon Nov 10 21:57:32 2014
+Archive:	D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne_tmp_archive.qar
+Date:		Sat May 23 12:39:32 2015
 Quartus II 32-bit		11.1 Build 173 11/01/2011 SJ Full Version
 
 	=========== Files Selected: ===========
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.qpf
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.qsf
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.sdc
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne.v
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/incremental_db/compiled_partitions/VitaPolyOne.db_info
-D:/FPGA_Projects/fpga-synth/VitaPolyOne/nco.v
-D:/FPGA_Projects/fpga-synth/modules/adsr32.v
-D:/FPGA_Projects/fpga-synth/modules/dds32.v
-D:/FPGA_Projects/fpga-synth/modules/ds8dac1.v
-D:/FPGA_Projects/fpga-synth/modules/fpga4fun_ds8dac1.v
-D:/FPGA_Projects/fpga-synth/modules/frq1divmod1.v
-D:/FPGA_Projects/fpga-synth/modules/lin2exp_t.v
-D:/FPGA_Projects/fpga-synth/modules/midi_in.v
-D:/FPGA_Projects/fpga-synth/modules/note2dds.v
-D:/FPGA_Projects/fpga-synth/modules/note_pitch2dds.v
-D:/FPGA_Projects/fpga-synth/modules/opencores/uart/baud_gen.v
-D:/FPGA_Projects/fpga-synth/modules/opencores/uart/uart_rx.v
-D:/FPGA_Projects/fpga-synth/modules/pwm8dac1.v
-D:/FPGA_Projects/fpga-synth/modules/reg1.v
-D:/FPGA_Projects/fpga-synth/modules/reg14.v
-D:/FPGA_Projects/fpga-synth/modules/reg14w.v
-D:/FPGA_Projects/fpga-synth/modules/reg32.v
-D:/FPGA_Projects/fpga-synth/modules/reg7.v
-D:/FPGA_Projects/fpga-synth/modules/reg_rs.v
-D:/FPGA_Projects/fpga-synth/modules/rnd1.v
-D:/FPGA_Projects/fpga-synth/modules/rnd8.v
-D:/FPGA_Projects/fpga-synth/modules/udsdac1.v
-D:/FPGA_Projects/fpga-synth/modules/vca8.v
+D:/FPGA_Projects/fpga-synth(git)/Samples/Drums/TR606KIT/606SNAR.mif
+D:/FPGA_Projects/fpga-synth(git)/Samples/Sine/sine8x8.mif
+D:/FPGA_Projects/fpga-synth(git)/Samples/Supersaw/supersaw_8080.mif
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.qpf
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.qsf
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.sdc
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/bass.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/bass.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/detune.mif
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/detune_rom.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/detune_rom.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/incremental_db/compiled_partitions/VitaPolyOne.db_info
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/nco.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/ohat.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/ohat.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/sine.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/sine.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/snar.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/snar.v
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/supersaw.qip
+D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/supersaw.v
+D:/FPGA_Projects/fpga-synth(git)/modules/adsr32.v
+D:/FPGA_Projects/fpga-synth(git)/modules/dds.v
+D:/FPGA_Projects/fpga-synth(git)/modules/dds32.v
+D:/FPGA_Projects/fpga-synth(git)/modules/ds8dac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/fpga4fun_ds8dac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/frq1divmod1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/lin2exp.v
+D:/FPGA_Projects/fpga-synth(git)/modules/lin2exp_t.v
+D:/FPGA_Projects/fpga-synth(git)/modules/midi_in.v
+D:/FPGA_Projects/fpga-synth(git)/modules/mov.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note2dds.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note2dds_1st_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note2dds_2st_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note2dds_3st_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note_pitch2dds.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note_pitch2dds_1st_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/note_pitch2dds_2st_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v
+D:/FPGA_Projects/fpga-synth(git)/modules/powerup_reset.v
+D:/FPGA_Projects/fpga-synth(git)/modules/pwm8dac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg14.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg14w.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg32.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg7.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg_rs.v
+D:/FPGA_Projects/fpga-synth(git)/modules/rnd1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/rnd8.v
+D:/FPGA_Projects/fpga-synth(git)/modules/rnd8dac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/rndx.v
+D:/FPGA_Projects/fpga-synth(git)/modules/sin.v
+D:/FPGA_Projects/fpga-synth(git)/modules/svca.v
+D:/FPGA_Projects/fpga-synth(git)/modules/udsdac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/vca8.v
+D:/FPGA_Projects/fpga-synth(git)/modules/vca_pwm8dac1.v
+D:/FPGA_Projects/fpga-synth(git)/modules/voice.v
 d:/altera/11.1/quartus/bin/assignment_defaults.qdf
-	======= Total: 29 files to archive =======
+	======= Total: 60 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.
 
 
-******* Archived project restoration attempt on Mon Nov 10 21:57:34 2014
-Source archive file:	D:/FPGA_Projects/fpga-synth/VitaPolyOne/VitaPolyOne_tmp_archive.qar
-Archive was extracted into	D:/FPGA_Projects/fpga-synth/ModuleTester/
+******* Archived project restoration attempt on Sat May 23 12:39:34 2015
+Source archive file:	D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolyOne/VitaPolyOne_tmp_archive.qar
+Archive was extracted into	D:/FPGA_Projects/fpga-synth(git)/examples/VitaPolySimple/
 		 - successfully.
