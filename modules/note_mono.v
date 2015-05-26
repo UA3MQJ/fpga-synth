@@ -1,4 +1,4 @@
-module note_mono(clk, note_on, note_off, note, out_note, out_gate);
+module note_mono(clk, rst, note_on, note_off, note, out_note, out_gate);
 parameter MAX_NOTES = 32;
 parameter MNOTES = MAX_NOTES - 1;
 parameter BIT_WIDTH  = (MAX_NOTES[7:7]==1'b1) ? 8 : 
@@ -12,7 +12,7 @@ parameter BIT_WIDTH  = (MAX_NOTES[7:7]==1'b1) ? 8 :
 					   				   
 
 //inputs outputs
-input wire clk, note_on, note_off;
+input wire clk, rst, note_on, note_off;
 input wire [6:0] note;
 output wire [6:0] out_note;
 output reg out_gate;
@@ -32,12 +32,6 @@ reg [6:0] t_out_note;
 reg [6:0] max_note;
 
 assign out_note = (out_gate) ? t_out_note : 7'd0;
-
-//debug
-wire [6:0] A = list[0];
-wire [6:0] B = list[1];
-wire [6:0] C = list[2];
-wire [6:0] D = list[3];
 
 //state list
 parameter INITIAL  = 2'd0;
@@ -72,6 +66,9 @@ always @(posedge clk) begin
 end
 
 always @(posedge clk) begin
+	if (rst) begin
+		state<=INITIAL;
+	end else
 	if (state==INITIAL) begin
 		addr <= 0;
 		top_ptr <= 0;
@@ -98,10 +95,8 @@ always @(posedge clk) begin
 				top_ptr <= top_ptr + 1'b1;
 				state <= READY;
 			end else begin
-				max_note <= t_note; //инициируем max_note для поиска наибольшей ноты из всех
-				addr <= addr + 1'b1;
+				max_note <= 0; //инициируем max_note для поиска наибольшей ноты из всех
 				note_on_state <= IN_SEARCH;
-				if (list[addr]==t_note) searched <= 1;
 			end
 		end else if (note_on_state == IN_SEARCH) begin
 			if (addr==top_ptr) begin //значит весь массив уже пройден. элемент по адресу уже не анализируется (тк top_ptr на 1 больше)
@@ -116,7 +111,8 @@ always @(posedge clk) begin
 				state <= READY;
 			end else begin // если не нашли, значит 1) добавляем
 				list[top_ptr] <= t_note;
-				t_out_note <= max_note;
+				t_out_note <= (t_note > max_note) ? t_note : max_note;
+				//t_out_note <= max_note;
 				out_gate <= 1;
 				top_ptr <= top_ptr + 1'b1;
 				note_on_state <= GETMAX;
