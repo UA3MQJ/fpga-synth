@@ -48,19 +48,19 @@ reg [1:0] state;
 initial state <= INITIAL;
 
 //note_on state list
-parameter ST_SEARCH  = 2'd0; //íà÷àëî ïîèñêà
-parameter IN_SEARCH  = 2'd1; //ïðîöåñ ïîèñêà
-parameter END_SEARCH = 2'd2; //åñëè íå íàøëè, òî äîáàâëÿåì
-parameter GETMAX   = 2'd3; //èùåì ìàêñèìàëüíóþ
+parameter ST_SEARCH  = 2'd0; //Ð½Ð°Ñ‡Ð°Ð»Ð¾ Ð¿Ð¾Ð¸ÑÐºÐ°
+parameter IN_SEARCH  = 2'd1; //Ð¿Ñ€Ð¾Ñ†ÐµÑ Ð¿Ð¾Ð¸ÑÐºÐ°
+parameter END_SEARCH = 2'd2; //ÐµÑÐ»Ð¸ Ð½Ðµ Ð½Ð°ÑˆÐ»Ð¸, Ñ‚Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼
+parameter GETMAX   = 2'd3; //Ð¸Ñ‰ÐµÐ¼ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½ÑƒÑŽ
 reg [1:0] note_on_state;
 initial note_on_state <= 0;
 reg searched;
 
 //note_off state list
-//parameter ST_SEARCH  = 2'd0; //íà÷àëî ïîèñêà
-//parameter IN_SEARCH  = 2'd1; //ïðîöåñ ïîèñêà
-//parameter END_SEARCH = 2'd2; //åñëè íå íàøëè, òî äîáàâëÿåì
-//parameter GETMAX   = 2'd3; //èùåì ìàêñèìàëüíóþ
+//parameter ST_SEARCH  = 2'd0; //Ð½Ð°Ñ‡Ð°Ð»Ð¾ Ð¿Ð¾Ð¸ÑÐºÐ°
+//parameter IN_SEARCH  = 2'd1; //Ð¿Ñ€Ð¾Ñ†ÐµÑ Ð¿Ð¾Ð¸ÑÐºÐ°
+//parameter END_SEARCH = 2'd2; //ÐµÑÐ»Ð¸ Ð½Ðµ Ð½Ð°ÑˆÐ»Ð¸, Ñ‚Ð¾ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼
+//parameter GETMAX   = 2'd3; //Ð¸Ñ‰ÐµÐ¼ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½ÑƒÑŽ
 reg [1:0] note_off_state;
 initial note_off_state <= 0;
 
@@ -91,20 +91,20 @@ always @(posedge clk) begin
 		end
 	end else if (state==NOTE_ON) begin
 		if (note_on_state == ST_SEARCH) begin
-			if (top_ptr==0) begin //ñëó÷àé, êîãäà íîò íåò
+			if (top_ptr==0) begin //ÑÐ»ÑƒÑ‡Ð°Ð¹, ÐºÐ¾Ð³Ð´Ð° Ð½Ð¾Ñ‚ Ð½ÐµÑ‚
 				out_gate <= 1;
 				t_out_note <= t_note;
 				list[addr] <= t_note;
 				top_ptr <= top_ptr + 1'b1;
 				state <= READY;
 			end else begin
-				max_note <= t_note; //èíèöèèðóåì max_note äëÿ ïîèñêà íàèáîëüøåé íîòû èç âñåõ
+				max_note <= t_note; //Ð¸Ð½Ð¸Ñ†Ð¸Ð¸Ñ€ÑƒÐµÐ¼ max_note Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ° Ð½Ð°Ð¸Ð±Ð¾Ð»ÑŒÑˆÐµÐ¹ Ð½Ð¾Ñ‚Ñ‹ Ð¸Ð· Ð²ÑÐµÑ…
 				addr <= addr + 1'b1;
 				note_on_state <= IN_SEARCH;
 				if (list[addr]==t_note) searched <= 1;
 			end
 		end else if (note_on_state == IN_SEARCH) begin
-			if (addr==top_ptr) begin //çíà÷èò âåñü ìàññèâ óæå ïðîéäåí. ýëåìåíò ïî àäðåñó óæå íå àíàëèçèðóåòñÿ (òê top_ptr íà 1 áîëüøå)
+			if (addr==top_ptr) begin //Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ Ð²ÐµÑÑŒ Ð¼Ð°ÑÑÐ¸Ð² ÑƒÐ¶Ðµ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½. ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¿Ð¾ Ð°Ð´Ñ€ÐµÑÑƒ ÑƒÐ¶Ðµ Ð½Ðµ Ð°Ð½Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÑ‚ÑÑ (Ñ‚Ðº top_ptr Ð½Ð° 1 Ð±Ð¾Ð»ÑŒÑˆÐµ)
 				note_on_state <= END_SEARCH;
 			end else begin
 				if (list[addr] > max_note) max_note <= list[addr];
@@ -112,9 +112,9 @@ always @(posedge clk) begin
 				addr <= addr + 1'b1;
 			end
 		end else if (note_on_state == END_SEARCH) begin
-			if (searched) begin //åñëè íàøëè, çíà÷èò óæå íàæàòà, íå äîáàâëÿåì è íè÷åãî íå äåëàåì
+			if (searched) begin //ÐµÑÐ»Ð¸ Ð½Ð°ÑˆÐ»Ð¸, Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ ÑƒÐ¶Ðµ Ð½Ð°Ð¶Ð°Ñ‚Ð°, Ð½Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð¸ Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð´ÐµÐ»Ð°ÐµÐ¼
 				state <= READY;
-			end else begin // åñëè íå íàøëè, çíà÷èò 1) äîáàâëÿåì
+			end else begin // ÐµÑÐ»Ð¸ Ð½Ðµ Ð½Ð°ÑˆÐ»Ð¸, Ð·Ð½Ð°Ñ‡Ð¸Ñ‚ 1) Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼
 				list[top_ptr] <= t_note;
 				t_out_note <= max_note;
 				out_gate <= 1;
@@ -126,10 +126,10 @@ always @(posedge clk) begin
 		end
 	end else if (state==NOTE_OFF) begin
 		if (note_off_state == ST_SEARCH) begin
-			if (top_ptr==0) begin //ñëó÷àé, êîãäà íîò íåò, íî çà÷åì-òî õîòÿò ïîãàñèòü - íè÷åãî íå äåëàåì
+			if (top_ptr==0) begin //ÑÐ»ÑƒÑ‡Ð°Ð¹, ÐºÐ¾Ð³Ð´Ð° Ð½Ð¾Ñ‚ Ð½ÐµÑ‚, Ð½Ð¾ Ð·Ð°Ñ‡ÐµÐ¼-Ñ‚Ð¾ Ñ…Ð¾Ñ‚ÑÑ‚ Ð¿Ð¾Ð³Ð°ÑÐ¸Ñ‚ÑŒ - Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ Ð´ÐµÐ»Ð°ÐµÐ¼
 				state <= READY;
 			end else begin
-				addr <= 0; //èíèöèèðóåì addr è íà÷èíàåì ïîèñê
+				addr <= 0; //Ð¸Ð½Ð¸Ñ†Ð¸Ð¸Ñ€ÑƒÐµÐ¼ addr Ð¸ Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÐ¼ Ð¿Ð¾Ð¸ÑÐº
 				max_note <= 0; 
 				note_off_state <= IN_SEARCH;
 			end
@@ -138,9 +138,9 @@ always @(posedge clk) begin
 				note_off_state <= END_SEARCH;
 				if (searched) top_ptr <= top_ptr - 1'b1;
 			end else begin
-				if (list[addr]==t_note) begin // åñëè âñåòàêè íàøëè - óäàëÿåì, ïåðåìåùàÿ ïîñëåäíèé íà ýòî ìåñòî
+				if (list[addr]==t_note) begin // ÐµÑÐ»Ð¸ Ð²ÑÐµÑ‚Ð°ÐºÐ¸ Ð½Ð°ÑˆÐ»Ð¸ - ÑƒÐ´Ð°Ð»ÑÐµÐ¼, Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰Ð°Ñ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ Ð½Ð° ÑÑ‚Ð¾ Ð¼ÐµÑÑ‚Ð¾
 					list[addr] <= list[top_ptr-1'b1];
-					searched <= 1; // ïîòîì!  top_ptr <= top_ptr - 1'b1; //óìåíüøàåì êîë-âî ýëåìåíòîâ â ñïèñêå
+					searched <= 1; // Ð¿Ð¾Ñ‚Ð¾Ð¼!  top_ptr <= top_ptr - 1'b1; //ÑƒÐ¼ÐµÐ½ÑŒÑˆÐ°ÐµÐ¼ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÐ¿Ð¸ÑÐºÐµ
 				end
 				
 				if ((list[addr] > max_note)&&(list[addr]!=t_note)) max_note <= list[addr];
