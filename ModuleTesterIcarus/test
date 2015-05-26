@@ -6,115 +6,387 @@
 :vpi_module "vhdl_sys";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_008ACB08 .scope module, "testbench" "testbench" 2 1;
+S_00C1BD18 .scope module, "testbench" "testbench" 2 1;
  .timescale 0 0;
-v0078CFF0_0 .var "clk", 0 0;
-v0078D048_0 .var "in_cv", 7 0;
-v0078D0A0_0 .var "in_sig", 7 0;
-v0078D0F8_0 .net "signal_out", 7 0, v008AE138_0;  1 drivers
-S_008A4E68 .scope module, "vca" "svca" 2 14, 3 2 0, S_008ACB08;
+v00C5E410_0 .var "clk", 0 0;
+v00C5E468_0 .var "get", 0 0;
+S_007B3800 .scope module, "fgl1" "fgl" 2 6, 3 1 0, S_00C1BD18;
  .timescale 0 0;
     .port_info 0 /INPUT 1 "clk"
-    .port_info 1 /INPUT 8 "in"
-    .port_info 2 /INPUT 8 "cv"
-    .port_info 3 /OUTPUT 8 "signal_out"
-P_008AC6A8 .param/l "WIDTH" 0 3 3, +C4<01000>;
-L_0078DFE0 .functor BUFT 1, C4<10000000>, C4<0>, C4<0>, C4<0>;
-v008ABFB0_0 .net/2u *"_s0", 7 0, L_0078DFE0;  1 drivers
-v0078CF80_0 .net *"_s6", 6 0, L_0078D1A8;  1 drivers
-L_0078E008 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
-v008ABDA0_0 .net *"_s8", 0 0, L_0078E008;  1 drivers
-v008A4F38_0 .net "clk", 0 0, v0078CFF0_0;  1 drivers
-v008A4F90_0 .net "cv", 7 0, v0078D048_0;  1 drivers
-v008A4FE8_0 .net "in", 7 0, v0078D0A0_0;  1 drivers
-v008AE030_0 .var/s "result", 15 0;
-v008AE088_0 .net/s "s_cv", 7 0, L_0078D200;  1 drivers
-v008AE0E0_0 .net/s "s_in", 7 0, L_0078D150;  1 drivers
-v008AE138_0 .var "signal_out", 7 0;
-E_008AC6D0 .event posedge, v008A4F38_0;
-L_0078D150 .arith/sub 8, v0078D0A0_0, L_0078DFE0;
-L_0078D1A8 .part v0078D048_0, 1, 7;
-L_0078D200 .concat [ 7 1 0 0], L_0078D1A8, L_0078E008;
-    .scope S_008A4E68;
+    .port_info 1 /INPUT 1 "get"
+    .port_info 2 /OUTPUT 1 "no_voices"
+    .port_info 3 /OUTPUT 1 "num_strobe"
+    .port_info 4 /OUTPUT 2 "get_num"
+    .port_info 5 /INPUT 1 "free"
+    .port_info 6 /INPUT 2 "free_num"
+P_007B38D0 .param/l "BIT_WIDTH" 0 3 4, +C4<010>;
+P_007B38F0 .param/l "FREE" 0 3 19, C4<11>;
+P_007B3910 .param/l "GENERATORS" 0 3 2, +C4<0100>;
+P_007B3930 .param/l "GENS" 0 3 3, +C4<011>;
+P_007B3950 .param/l "GET" 0 3 18, C4<10>;
+P_007B3970 .param/l "INITIAL" 0 3 16, C4<00>;
+P_007B3990 .param/l "READY" 0 3 17, C4<01>;
+L_007BF728 .functor BUFZ 2, L_00C5E4C0, C4<00>, C4<00>, C4<00>;
+v00C5E200_0 .array/port v00C5E200, 0;
+L_007BF770 .functor BUFZ 2, v00C5E200_0, C4<00>, C4<00>, C4<00>;
+v00C5E200_1 .array/port v00C5E200, 1;
+L_007BF7B8 .functor BUFZ 2, v00C5E200_1, C4<00>, C4<00>, C4<00>;
+v00C5E200_2 .array/port v00C5E200, 2;
+L_007BF800 .functor BUFZ 2, v00C5E200_2, C4<00>, C4<00>, C4<00>;
+v00C5E200_3 .array/port v00C5E200, 3;
+L_007BF848 .functor BUFZ 2, v00C5E200_3, C4<00>, C4<00>, C4<00>;
+L_007BF890 .functor AND 1, L_00C5E570, L_00C5E5C8, C4<1>, C4<1>;
+L_007BF8D8 .functor AND 1, L_00C5E728, L_00C5E7D8, C4<1>, C4<1>;
+v00C2AE28_0 .net "A", 1 0, L_007BF770;  1 drivers
+v00C2B198_0 .net "B", 1 0, L_007BF7B8;  1 drivers
+v00C2B1F0_0 .var "BW", 7 0;
+v00C2B248_0 .net "C", 1 0, L_007BF800;  1 drivers
+v00C2B2A0_0 .net "D", 1 0, L_007BF848;  1 drivers
+v00C2B2F8_0 .var "GET_substate", 1 0;
+v00C2B350_0 .net *"_s0", 1 0, L_00C5E4C0;  1 drivers
+v00C2B3A8_0 .net *"_s2", 3 0, L_00C5E518;  1 drivers
+L_00C5F008 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v00C2B400_0 .net/2u *"_s20", 1 0, L_00C5F008;  1 drivers
+v00C2B458_0 .net *"_s22", 0 0, L_00C5E570;  1 drivers
+L_00C5F030 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v00C2B4B0_0 .net/2u *"_s24", 1 0, L_00C5F030;  1 drivers
+v00C2B508_0 .net *"_s26", 0 0, L_00C5E5C8;  1 drivers
+v00C2B560_0 .net *"_s30", 7 0, L_00C5E620;  1 drivers
+L_00C5F058 .functor BUFT 1, C4<000000>, C4<0>, C4<0>, C4<0>;
+v00C2B5B8_0 .net *"_s33", 5 0, L_00C5F058;  1 drivers
+o00C3511C .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v00C2B610_0 name=_s34
+v00C2B668_0 .net *"_s36", 7 0, L_00C5E678;  1 drivers
+L_00C5F080 .functor BUFT 1, C4<11>, C4<0>, C4<0>, C4<0>;
+v00C2B6C0_0 .net/2u *"_s40", 1 0, L_00C5F080;  1 drivers
+v00C2B718_0 .net *"_s42", 0 0, L_00C5E728;  1 drivers
+v00C2B770_0 .net *"_s44", 3 0, L_00C5E780;  1 drivers
+L_00C5F0A8 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00C2B7C8_0 .net *"_s47", 0 0, L_00C5F0A8;  1 drivers
+L_00C5F0D0 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v00C2B820_0 .net/2u *"_s48", 3 0, L_00C5F0D0;  1 drivers
+L_00C5EFE0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v00C2B878_0 .net *"_s5", 1 0, L_00C5EFE0;  1 drivers
+v00C2B8D0_0 .net *"_s50", 0 0, L_00C5E7D8;  1 drivers
+v00C2B928_0 .var "addr", 1 0;
+v00C5DFF0_0 .net "clk", 0 0, v00C5E410_0;  1 drivers
+v00C5E048_0 .net "data", 1 0, L_007BF728;  1 drivers
+o00C3523C .functor BUFZ 1, C4<z>; HiZ drive
+v00C5E0A0_0 .net "free", 0 0, o00C3523C;  0 drivers
+o00C35254 .functor BUFZ 2, C4<zz>; HiZ drive
+v00C5E0F8_0 .net "free_num", 1 0, o00C35254;  0 drivers
+v00C5E150_0 .net "get", 0 0, v00C5E468_0;  1 drivers
+v00C5E1A8_0 .net "get_num", 1 0, L_00C5E6D0;  1 drivers
+v00C5E200 .array "list", 3 0, 1 0;
+v00C5E258_0 .net "no_voices", 0 0, L_007BF8D8;  1 drivers
+v00C5E2B0_0 .net "num_strobe", 0 0, L_007BF890;  1 drivers
+v00C5E308_0 .var "state", 1 0;
+v00C5E360_0 .var "t_get_num", 1 0;
+v00C5E3B8_0 .var "top_ptr", 2 0;
+E_00C1B7D8 .event posedge, v00C5DFF0_0;
+L_00C5E4C0 .array/port v00C5E200, L_00C5E518;
+L_00C5E518 .concat [ 2 2 0 0], v00C2B928_0, L_00C5EFE0;
+L_00C5E570 .cmp/eq 2, v00C5E308_0, L_00C5F008;
+L_00C5E5C8 .cmp/eq 2, v00C2B2F8_0, L_00C5F030;
+L_00C5E620 .concat [ 2 6 0 0], v00C5E360_0, L_00C5F058;
+L_00C5E678 .functor MUXZ 8, o00C3511C, L_00C5E620, L_007BF890, C4<>;
+L_00C5E6D0 .part L_00C5E678, 0, 2;
+L_00C5E728 .cmp/eq 2, v00C2B2F8_0, L_00C5F080;
+L_00C5E780 .concat [ 3 1 0 0], v00C5E3B8_0, L_00C5F0A8;
+L_00C5E7D8 .cmp/eq 4, L_00C5E780, L_00C5F0D0;
+    .scope S_007B3800;
 T_0 ;
-    %wait E_008AC6D0;
-    %load/v 8, v008AE0E0_0, 8;
-    %pad 16, 15, 8;
-    %load/v 24, v008AE088_0, 8;
-    %pad 32, 31, 8;
-    %mul 8, 24, 16;
-    %set/v v008AE030_0, 8, 16;
-    %movi 8, 128, 16;
-    %load/v 24, v008AE030_0, 16;
-    %ix/load 0, 7, 0;
-    %mov 4, 0, 1;
-    %shiftr/i0  24, 16;
-    %sub 8, 24, 16;
-    %set/v v008AE138_0, 8, 8;
-    %jmp T_0;
+    %movi 8, 2, 8;
+    %set/v v00C2B1F0_0, 8, 8;
+    %end;
     .thread T_0;
-    .scope S_008ACB08;
+    .scope S_007B3800;
 T_1 ;
-    %ix/load 0, 8, 0;
-    %assign/v0 v0078D0A0_0, 0, 0;
-    %ix/load 0, 8, 0;
-    %assign/v0 v0078D048_0, 0, 0;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 0;
     %end;
     .thread T_1;
-    .scope S_008ACB08;
+    .scope S_007B3800;
 T_2 ;
-    %vpi_call 2 18 "$dumpfile", "bench.vcd" {0 0};
-    %vpi_call 2 19 "$dumpvars", 1'sb0, S_008ACB08 {0 0};
-    %vpi_call 2 21 "$display", "starting testbench!!!!" {0 0};
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 0;
+    %end;
+    .thread T_2;
+    .scope S_007B3800;
+T_3 ;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B928_0, 0, 0;
+    %end;
+    .thread T_3;
+    .scope S_007B3800;
+T_4 ;
+    %movi 8, 4, 3;
+    %ix/load 0, 3, 0;
+    %assign/v0 v00C5E3B8_0, 0, 8;
+    %end;
+    .thread T_4;
+    .scope S_007B3800;
+T_5 ;
+    %wait E_00C1B7D8;
+    %load/v 8, v00C5E308_0, 2;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_5.0, 4;
+    %load/v 8, v00C2B928_0, 2;
+    %load/v 10, v00C2B928_0, 2;
+    %pad 12, 0, 2;
+    %ix/get 3, 10, 4;
+    %jmp/1 t_0, 4;
+    %ix/load 0, 2, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v00C5E200, 0, 8;
+t_0 ;
+    %ix/load 0, 1, 0;
+    %load/vp0 8, v00C2B928_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B928_0, 0, 8;
+    %movi 8, 4, 3;
+    %ix/load 0, 3, 0;
+    %assign/v0 v00C5E3B8_0, 0, 8;
+    %load/v 11, v00C2B928_0, 2;
+    %pad 13, 0, 2;
+    %cmpi/u 11, 3, 4;
+    %mov 11, 4, 1;
+    %jmp/0  T_5.2, 11;
+    %movi 12, 1, 2;
+    %jmp/1  T_5.4, 11;
+T_5.2 ; End of true expr.
+    %load/v 8, v00C5E308_0, 2;
+    %jmp/0  T_5.3, 11;
+ ; End of false expr.
+    %blend  12, 8, 2; Condition unknown.
+    %jmp  T_5.4;
+T_5.3 ;
+    %mov 12, 8, 2; Return false value
+T_5.4 ;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 12;
+    %jmp T_5.1;
+T_5.0 ;
+    %load/v 8, v00C5E308_0, 2;
+    %cmpi/u 8, 1, 2;
+    %jmp/0xz  T_5.5, 4;
+    %load/v 8, v00C5E0A0_0, 1;
+    %jmp/0xz  T_5.7, 8;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 1;
+    %jmp T_5.8;
+T_5.7 ;
+    %load/v 8, v00C5E150_0, 1;
+    %jmp/0xz  T_5.9, 8;
+    %movi 8, 2, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 8;
+    %jmp T_5.10;
+T_5.9 ;
+    %load/v 8, v00C5E308_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 8;
+T_5.10 ;
+T_5.8 ;
+    %jmp T_5.6;
+T_5.5 ;
+    %load/v 8, v00C5E308_0, 2;
+    %cmpi/u 8, 2, 2;
+    %jmp/0xz  T_5.11, 4;
+    %load/v 8, v00C2B2F8_0, 2;
+    %cmpi/u 8, 0, 2;
+    %jmp/0xz  T_5.13, 4;
+    %load/v 8, v00C5E3B8_0, 3;
+    %pad 11, 0, 1;
+    %cmpi/u 8, 0, 4;
+    %jmp/0xz  T_5.15, 4;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 1;
+    %jmp T_5.16;
+T_5.15 ;
+    %load/v 8, v00C5E3B8_0, 3;
+    %subi 8, 1, 3;
+    %ix/load 0, 3, 0;
+    %assign/v0 v00C5E3B8_0, 0, 8;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B928_0, 0, 0;
+    %movi 8, 1, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 8;
+    %ix/load 3, 0, 0;
+    %mov 4, 0, 1;
+    %load/av 8, v00C5E200, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E360_0, 0, 8;
+T_5.16 ;
+    %jmp T_5.14;
+T_5.13 ;
+    %load/v 8, v00C2B2F8_0, 2;
+    %cmpi/u 8, 1, 2;
+    %jmp/0xz  T_5.17, 4;
+    %ix/load 0, 1, 0;
+    %load/vp0 14, v00C2B928_0, 2;
+    %mov 10, 14, 2;
+    %pad 12, 0, 2;
+    %ix/get 3, 10, 4;
+    %load/av 8, v00C5E200, 2;
+    %load/v 10, v00C2B928_0, 2;
+    %pad 12, 0, 2;
+    %ix/get 3, 10, 4;
+    %jmp/1 t_1, 4;
+    %ix/load 0, 2, 0; word width
+    %ix/load 1, 0, 0; part off
+    %assign/av v00C5E200, 0, 8;
+t_1 ;
+    %load/v 8, v00C2B928_0, 2;
+    %pad 10, 0, 3;
+    %cmpi/u 8, 2, 5;
+    %jmp/0xz  T_5.19, 4;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B928_0, 0, 0;
+    %movi 8, 2, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 8;
+    %jmp T_5.20;
+T_5.19 ;
+    %ix/load 0, 1, 0;
+    %load/vp0 8, v00C2B928_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B928_0, 0, 8;
+    %load/v 8, v00C2B2F8_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 8;
+T_5.20 ;
+    %jmp T_5.18;
+T_5.17 ;
+    %load/v 8, v00C2B2F8_0, 2;
+    %cmpi/u 8, 2, 2;
+    %jmp/0xz  T_5.21, 4;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 0;
+    %jmp T_5.22;
+T_5.21 ;
+    %load/v 8, v00C2B2F8_0, 2;
+    %cmpi/u 8, 3, 2;
+    %jmp/0xz  T_5.23, 4;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C2B2F8_0, 0, 0;
+T_5.23 ;
+T_5.22 ;
+T_5.18 ;
+T_5.14 ;
+    %load/v 8, v00C2B2F8_0, 2;
+    %cmpi/u 8, 2, 2;
+    %mov 8, 4, 1;
+    %load/v 9, v00C2B2F8_0, 2;
+    %cmpi/u 9, 3, 2;
+    %or 8, 4, 1;
+    %jmp/0  T_5.25, 8;
+    %movi 9, 1, 2;
+    %jmp/1  T_5.27, 8;
+T_5.25 ; End of true expr.
+    %load/v 11, v00C5E308_0, 2;
+    %jmp/0  T_5.26, 8;
+ ; End of false expr.
+    %blend  9, 11, 2; Condition unknown.
+    %jmp  T_5.27;
+T_5.26 ;
+    %mov 9, 11, 2; Return false value
+T_5.27 ;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 9;
+    %jmp T_5.12;
+T_5.11 ;
+    %load/v 8, v00C5E308_0, 2;
+    %cmpi/u 8, 3, 2;
+    %jmp/0xz  T_5.28, 4;
+    %load/v 8, v00C5E308_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 8;
+    %jmp T_5.29;
+T_5.28 ;
+    %load/v 8, v00C5E308_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v00C5E308_0, 0, 8;
+T_5.29 ;
+T_5.12 ;
+T_5.6 ;
+T_5.1 ;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_00C1BD18;
+T_6 ;
+    %vpi_call 2 10 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 11 "$dumpvars", 1'sb0, S_00C1BD18 {0 0};
+    %vpi_call 2 13 "$display", "starting testbench!!!!" {0 0};
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E410_0, 0, 0;
     %movi 8, 3000, 13;
-T_2.0 %cmp/s 0, 8, 13;
-    %jmp/0xz T_2.1, 5;
+T_6.0 %cmp/s 0, 8, 13;
+    %jmp/0xz T_6.1, 5;
     %add 8, 1, 13;
     %delay 10, 0;
     %ix/load 0, 1, 0;
-    %assign/v0 v0078CFF0_0, 0, 1;
+    %assign/v0 v00C5E410_0, 0, 1;
     %delay 10, 0;
     %ix/load 0, 1, 0;
-    %assign/v0 v0078CFF0_0, 0, 0;
-    %jmp T_2.0;
-T_2.1 ;
-    %vpi_call 2 30 "$display", "finished OK!" {0 0};
+    %assign/v0 v00C5E410_0, 0, 0;
+    %jmp T_6.0;
+T_6.1 ;
+    %vpi_call 2 23 "$display", "finished OK!" {0 0};
     %end;
-    .thread T_2;
-    .scope S_008ACB08;
-T_3 ;
-    %movi 8, 300, 10;
-T_3.0 %cmp/s 0, 8, 10;
-    %jmp/0xz T_3.1, 5;
-    %add 8, 1, 10;
-    %delay 100, 0;
-    %ix/load 0, 8, 0;
-    %assign/v0 v0078D0A0_0, 0, 0;
-    %delay 100, 0;
-    %ix/load 0, 8, 0;
-    %assign/v0 v0078D0A0_0, 0, 1;
-    %jmp T_3.0;
-T_3.1 ;
-    %end;
-    .thread T_3;
-    .scope S_008ACB08;
-T_4 ;
-    %movi 8, 1024, 12;
-T_4.0 %cmp/s 0, 8, 12;
-    %jmp/0xz T_4.1, 5;
-    %add 8, 1, 12;
-    %delay 80, 0;
+    .thread T_6;
+    .scope S_00C1BD18;
+T_7 ;
     %ix/load 0, 1, 0;
-    %load/vp0 20, v0078D048_0, 8;
-    %ix/load 0, 8, 0;
-    %assign/v0 v0078D048_0, 0, 20;
-    %jmp T_4.0;
-T_4.1 ;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
+    %delay 100, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 1;
+    %delay 25, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00C5E468_0, 0, 0;
     %end;
-    .thread T_4;
+    .thread T_7;
 # The file index is used to find the file name in the following table.
 :file_names 4;
     "N/A";
     "<interactive>";
     "testbench.v";
-    ".//svca.v";
+    ".//fgl.v";

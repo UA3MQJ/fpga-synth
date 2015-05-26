@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ModuleTester
-Sun Mar 01 01:58:54 2015
+Tue May 26 00:03:21 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -13,10 +13,11 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |ModuleTester
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +43,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 01 01:58:54 2015     ;
+; Analysis & Synthesis Status        ; Successful - Tue May 26 00:03:21 2015     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; ModuleTester                              ;
 ; Top-level Entity Name              ; ModuleTester                              ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 3                                         ;
-;     Total combinational functions  ; 3                                         ;
-;     Dedicated logic registers      ; 0                                         ;
-; Total registers                    ; 0                                         ;
-; Total pins                         ; 11                                        ;
+; Total logic elements               ; 325                                       ;
+;     Total combinational functions  ; 325                                       ;
+;     Dedicated logic registers      ; 135                                       ;
+; Total registers                    ; 135                                       ;
+; Total pins                         ; 23                                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                         ;
@@ -161,42 +162,42 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
-; ModuleTester.v                   ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth/ModuleTester/ModuleTester.v ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
+; ModuleTester.v                   ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/ModuleTester/ModuleTester.v ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 3     ;
-;                                             ;       ;
-; Total combinational functions               ; 3     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 2     ;
-;     -- 3 input functions                    ; 1     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 3     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 11    ;
-; Maximum fan-out node                        ; Gtrig ;
-; Maximum fan-out                             ; 2     ;
-; Total fan-out                               ; 23    ;
-; Average fan-out                             ; 0.92  ;
-+---------------------------------------------+-------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 325          ;
+;                                             ;              ;
+; Total combinational functions               ; 325          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 156          ;
+;     -- 3 input functions                    ; 29           ;
+;     -- <=2 input functions                  ; 140          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 199          ;
+;     -- arithmetic mode                      ; 126          ;
+;                                             ;              ;
+; Total registers                             ; 135          ;
+;     -- Dedicated logic registers            ; 135          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 23           ;
+; Maximum fan-out node                        ; clk50M~input ;
+; Maximum fan-out                             ; 135          ;
+; Total fan-out                               ; 1289         ;
+; Average fan-out                             ; 2.55         ;
++---------------------------------------------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,20 +205,19 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ModuleTester              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |ModuleTester       ;              ;
+; |ModuleTester              ; 325 (325)         ; 135 (135)    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |ModuleTester       ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; Gtrig                                              ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 1  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; out_data[7]~reg0                      ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -225,7 +225,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 135   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -235,12 +235,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ModuleTester ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; SIZE           ; 128   ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -250,7 +260,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Sun Mar 01 01:58:53 2015
+    Info: Processing started: Tue May 26 00:03:19 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ModuleTester -c ModuleTester
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bit_cnt.v
@@ -258,28 +268,36 @@ Info (12021): Found 1 design units, including 1 entities, in source file bit_cnt
 Info (12021): Found 1 design units, including 1 entities, in source file moduletester.v
     Info (12023): Found entity 1: ModuleTester
 Info (12127): Elaborating entity "ModuleTester" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at ModuleTester.v(20): inferring latch(es) for variable "Gtrig", which holds its previous value in one or more paths through the always construct
-Warning (10034): Output port "out_data" at ModuleTester.v(12) has no driver
+Warning (10230): Verilog HDL assignment warning at ModuleTester.v(30): truncated value with size 32 to match size of target (8)
+Warning (10034): Output port "led0" at ModuleTester.v(9) has no driver
 Warning (10034): Output port "led1" at ModuleTester.v(10) has no driver
-Info (10041): Inferred latch for "Gtrig" at ModuleTester.v(20)
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led0" is stuck at GND
     Warning (13410): Pin "led1" is stuck at GND
-    Warning (13410): Pin "out_data[0]" is stuck at GND
-    Warning (13410): Pin "out_data[1]" is stuck at GND
-    Warning (13410): Pin "out_data[2]" is stuck at GND
-    Warning (13410): Pin "out_data[3]" is stuck at GND
+    Warning (13410): Pin "out_data[7]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk50M"
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 3 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key0"
+    Warning (15610): No output dependent on input pin "key1"
+    Warning (15610): No output dependent on input pin "key2"
+    Warning (15610): No output dependent on input pin "key3"
+    Warning (15610): No output dependent on input pin "in_data[0]"
+    Warning (15610): No output dependent on input pin "in_data[1]"
+    Warning (15610): No output dependent on input pin "in_data[2]"
+    Warning (15610): No output dependent on input pin "in_data[3]"
+    Warning (15610): No output dependent on input pin "in_data[4]"
+    Warning (15610): No output dependent on input pin "in_data[5]"
+    Warning (15610): No output dependent on input pin "in_data[6]"
+    Warning (15610): No output dependent on input pin "in_data[7]"
+Info (21057): Implemented 348 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 325 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 20 warnings
     Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Sun Mar 01 01:58:54 2015
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Tue May 26 00:03:21 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

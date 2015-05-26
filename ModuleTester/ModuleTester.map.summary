@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Mar 01 01:58:54 2015
+Analysis & Synthesis Status : Successful - Tue May 26 00:03:21 2015
 Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
 Revision Name : ModuleTester
 Top-level Entity Name : ModuleTester
 Family : Cyclone IV E
-Total logic elements : 3
-    Total combinational functions : 3
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 11
+Total logic elements : 325
+    Total combinational functions : 325
+    Dedicated logic registers : 135
+Total registers : 135
+Total pins : 23
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

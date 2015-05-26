@@ -1,17 +1,9 @@
 module testbench();
 
 reg clk;
-reg [7:0] in_sig;
-reg [7:0] in_cv;
+reg get;
 
-initial
-begin
-	in_sig <= 8'd0;
-	in_cv <= 8'd0;
-end
-
-wire [7:0] signal_out;
-svca vca(clk, in_sig, in_cv, signal_out);
+fgl fgl1(.clk(clk), .get(get));
 
 initial
 begin
@@ -20,6 +12,7 @@ begin
 
     $display("starting testbench!!!!");
 	
+	clk <= 0; 
 	repeat (3000) begin
 		#10;
 		clk <= 1;
@@ -33,20 +26,43 @@ end
 
 initial
 begin
-	repeat (300) begin
-		#100;
-		in_sig <= 8'd0;
-		#100;
-		in_sig <= 8'b11111111; 
-	end
-end
+	get <= 0;
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
 
-initial
-begin
-	repeat (1024) begin
-		#80;
-		in_cv <= in_cv + 1'b1;
-	end
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+
+	#100;
+	get <= 1;
+	#25;
+	get <= 0;
+	
+	
 end
 
 	
