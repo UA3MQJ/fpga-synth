@@ -1,99 +1,64 @@
-module note_pitch2dds(clk, note, pitch, adder);
+module note_pitch2dds(clk, note, pitch, lfo_sig, lfo_depth, lfo_depth_fine, adder);
 
 input wire clk;
 input wire [6:0] note;
 input wire [13:0] pitch;
+input wire [7:0] lfo_sig;
+input wire [6:0] lfo_depth;
+input wire [6:0] lfo_depth_fine;
 output reg [31:0] adder;
 
-reg [32:0] adder_sum;
-reg [7:0]  adder_mul;
 
-reg [3:0] state;
-reg [6:0] note_local;
-reg [13:0] pitch_local;
+//нота 7 нот. добавим еще 8 байт под дробную часть. 7+8 = 15 бит
+//обязательно сделать проверку на выход за передлы значений!!!!
+
+wire signed [7:0] s_note_local = note; //16й бит с запасом
+wire signed [16:0] s_wide_note = s_note_local <<< 8; // нота 0..127 с 8 бит дробной частью и со знаком
+
+wire signed [14:0] s_pitch_local = pitch;
+wire signed [16:0] s_pitch = s_pitch_local - 14'D08192; //-8192..8191
+//теперь надо 8192 нужно посчитать за единицу. это, кстати 14 байт
+//теперь это единицу надо умножить на 12.
+// * 8  то есть <<< 3 результат 17 бит
+// * 4  то есть <<< 2 результат 16 бит
+// и сложить. присложении получаем старший в 18-м бите
+wire signed [17:0] scaled_pitch = (s_pitch <<< 3) + (s_pitch <<< 2);
+
+wire signed [17:0] res_pitch = (scaled_pitch >>> 5);
+
+wire signed [9:0] s_lfo = lfo_sig - 8'D128;
+
+wire signed [9:0] s_lfo_depth = lfo_depth;
+wire signed [9:0] s_lfo_depth_fine = lfo_depth_fine;
+
+wire signed [16:0] s_res_lfo = s_lfo_depth * s_lfo ;
+wire signed [16:0] s_res_lfo_fine = s_lfo_depth_fine * s_lfo ;
+
+wire signed [19:0] s_result_note = s_wide_note + res_pitch + (s_res_lfo )+ (s_res_lfo_fine >>> 7); //получившаяся в итоге нота
+
+wire [19:0] result_note = (s_result_note > 20'd0) ? s_result_note : 20'd0;
+
+wire [8:0] note_int = result_note >> 8; //нота не 7 бит, а 9
+wire [7:0] note_frac = result_note[7:0];
+
 
 initial begin
-	note_local <= 7'd0;
-	pitch_local <= 14'd08192; // 0 - pitch wheel
 	adder <= 32'd0;
-	state <= 4'd0;
-	Snote <= 9'D0;
 end
-
-//считаем pitch Wheel
-// in_val сначала << 7
-// а потом
-//; ALGORITHM:
-//; Clear accumulator
-//; Add input / 1024 to accumulator >> 10
-//; Add input / 2048 to accumulator >> 11
-//; Move accumulator to result
-//; Approximated constant: 0.00146484, Error: 0 %
-
-//вычитаем 8192 
-wire signed [14:0] in_val_centered = (pitch - 14'd08192);
-
-//15+11 = 26 бит
-wire signed [26:0] in_val_fix = in_val_centered <<< 11;
-
-//mul 0.00146484
-wire signed [26:0] in_val_mul = (in_val_fix >>> 10) + (in_val_fix >>> 11);
-
-//старшая часть, которую прибавим к номеру ноты
-wire signed [26:0] t_in_val_hi = in_val_mul >>> 11;
-wire signed [7:0] in_val_hi = t_in_val_hi[7:0];
-
-//младшая 8 битная часть, которую будем применять в линейной интерполяции
-wire [7:0] in_val_lo = in_val_mul[10:3];
-
-reg signed [8:0] Snote ; //= note;
-
-wire [7:0] note_n = ((Snote + in_val_hi)<   0) ?    7'd0 : 
-				        ((Snote + in_val_hi)> 127) ? 7'd0127 : Snote + in_val_hi;
 
 wire [31:0] adder_by_table;
-note2dds note2dds_table(clk, note_n[6:0], adder_by_table);
-						
+note2dds note2dds_table1(.clk(clk), .note(note_int), .adder(adder_by_table));
+wire [31:0] adder_by_table1;
+note2dds note2dds_table2(.clk(clk), .note(note_int + 1'b1), .adder(adder_by_table1));
+
+//32+8 = 40 
+wire [40:0] adder_sum = adder_by_table*(8'd255 - note_frac) + adder_by_table1*(note_frac);
+
 always @ (posedge clk) begin
-	
-	if (state==4'd00) begin
-		Snote <= note;
-		if ((note!=note_local)||(pitch!=pitch_local)) begin
-			note_local<=note;
-			pitch_local<=pitch;
-			adder_sum<=33'd0;
-			adder_mul<=8'd0;
-		end
-	end else if ((state==4'd01)||(state==4'd02)||(state==4'd03)) begin
-		Snote <= Snote + 1'b1; //if не обязателен
+
+	adder <= adder_sum >> 8;
 		
-		if (state==4'd01) adder_mul <= 8'd0255 - in_val_lo;
-		if (state==4'd02) adder_mul <=           in_val_lo;
-		
-		adder_sum <= adder_sum + (adder_mul * adder_by_table);
-				
-	end else if (state==4'd04) begin
-		adder <= adder_sum >> 8;
-	end
 end
-	
-always @ (posedge clk) begin
-	//смена стейтов
-	if (state==4'd00) begin
-		if ((note!=note_local)||(pitch!=pitch_local)) begin
-			state<=4'd01;
-		end else begin
-			state<=4'd00;
-		end
-	end else if (state==4'd01) begin
-		state<=4'd02;
-	end else if (state==4'd02) begin
-		state<=4'd03;
-	end else if (state==4'd03) begin
-		state<=4'd04;
-	end else if (state==4'd04) begin
-		state<=4'd00;
-	end
-end
-						 
+
+												 
 endmodule

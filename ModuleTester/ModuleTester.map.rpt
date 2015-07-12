@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ModuleTester
-Tue May 26 00:03:21 2015
+Fri Jun 19 19:53:41 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -13,11 +13,12 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. Analysis & Synthesis DSP Block Usage Summary
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |ModuleTester
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 11. lpm_mult Parameter Settings by Entity Instance
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,19 +44,19 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 26 00:03:21 2015     ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 19 19:53:41 2015     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; ModuleTester                              ;
 ; Top-level Entity Name              ; ModuleTester                              ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 325                                       ;
-;     Total combinational functions  ; 325                                       ;
-;     Dedicated logic registers      ; 135                                       ;
-; Total registers                    ; 135                                       ;
-; Total pins                         ; 23                                        ;
+; Total logic elements               ; 16                                        ;
+;     Total combinational functions  ; 16                                        ;
+;     Dedicated logic registers      ; 0                                         ;
+; Total registers                    ; 0                                         ;
+; Total pins                         ; 40                                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
-; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 1                                         ;
 ; Total PLLs                         ; 0                                         ;
 +------------------------------------+-------------------------------------------+
 
@@ -162,62 +163,80 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
-; ModuleTester.v                   ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/ModuleTester/ModuleTester.v ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
+; ModuleTester.v                   ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/ModuleTester/ModuleTester.v   ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_mult.tdf    ;
+; aglobal111.inc                   ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc  ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/multcore.inc    ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/bypassff.inc    ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/altshift.inc    ;
+; db/mult_aat.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/ModuleTester/db/mult_aat.tdf  ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 325          ;
-;                                             ;              ;
-; Total combinational functions               ; 325          ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 156          ;
-;     -- 3 input functions                    ; 29           ;
-;     -- <=2 input functions                  ; 140          ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 199          ;
-;     -- arithmetic mode                      ; 126          ;
-;                                             ;              ;
-; Total registers                             ; 135          ;
-;     -- Dedicated logic registers            ; 135          ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 23           ;
-; Maximum fan-out node                        ; clk50M~input ;
-; Maximum fan-out                             ; 135          ;
-; Total fan-out                               ; 1289         ;
-; Average fan-out                             ; 2.55         ;
-+---------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                   ;
++---------------------------------------------+-------------------------------------------------+
+; Resource                                    ; Usage                                           ;
++---------------------------------------------+-------------------------------------------------+
+; Estimated Total logic elements              ; 16                                              ;
+;                                             ;                                                 ;
+; Total combinational functions               ; 16                                              ;
+; Logic element usage by number of LUT inputs ;                                                 ;
+;     -- 4 input functions                    ; 0                                               ;
+;     -- 3 input functions                    ; 8                                               ;
+;     -- <=2 input functions                  ; 8                                               ;
+;                                             ;                                                 ;
+; Logic elements by mode                      ;                                                 ;
+;     -- normal mode                          ; 1                                               ;
+;     -- arithmetic mode                      ; 15                                              ;
+;                                             ;                                                 ;
+; Total registers                             ; 0                                               ;
+;     -- Dedicated logic registers            ; 0                                               ;
+;     -- I/O registers                        ; 0                                               ;
+;                                             ;                                                 ;
+; I/O pins                                    ; 40                                              ;
+; Embedded Multiplier 9-bit elements          ; 1                                               ;
+; Maximum fan-out node                        ; lpm_mult:Mult0|mult_aat:auto_generated|mac_out2 ;
+; Maximum fan-out                             ; 16                                              ;
+; Total fan-out                               ; 112                                             ;
+; Average fan-out                             ; 1.14                                            ;
++---------------------------------------------+-------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ModuleTester              ; 325 (325)         ; 135 (135)    ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |ModuleTester       ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
+; |ModuleTester                   ; 16 (16)           ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 40   ; 0            ; |ModuleTester                                        ;              ;
+;    |lpm_mult:Mult0|             ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |ModuleTester|lpm_mult:Mult0                         ;              ;
+;       |mult_aat:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |ModuleTester|lpm_mult:Mult0|mult_aat:auto_generated ;              ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; out_data[7]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 0           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 1           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +------------------------------------------------------+
@@ -225,7 +244,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 135   ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -235,14 +254,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ModuleTester ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; SIZE           ; 128   ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 8            ; Untyped             ;
+; LPM_WIDTHB                                     ; 8            ; Untyped             ;
+; LPM_WIDTHP                                     ; 16           ; Untyped             ;
+; LPM_WIDTHR                                     ; 16           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_aat     ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 8              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 16             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
 
 
 +-------------------------------+
@@ -260,7 +324,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Tue May 26 00:03:19 2015
+    Info: Processing started: Fri Jun 19 19:53:39 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ModuleTester -c ModuleTester
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bit_cnt.v
@@ -268,36 +332,31 @@ Info (12021): Found 1 design units, including 1 entities, in source file bit_cnt
 Info (12021): Found 1 design units, including 1 entities, in source file moduletester.v
     Info (12023): Found entity 1: ModuleTester
 Info (12127): Elaborating entity "ModuleTester" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at ModuleTester.v(30): truncated value with size 32 to match size of target (8)
-Warning (10034): Output port "led0" at ModuleTester.v(9) has no driver
-Warning (10034): Output port "led1" at ModuleTester.v(10) has no driver
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led0" is stuck at GND
-    Warning (13410): Pin "led1" is stuck at GND
-    Warning (13410): Pin "out_data[7]" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_aat.tdf
+    Info (12023): Found entity 1: mult_aat
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key0"
-    Warning (15610): No output dependent on input pin "key1"
-    Warning (15610): No output dependent on input pin "key2"
-    Warning (15610): No output dependent on input pin "key3"
-    Warning (15610): No output dependent on input pin "in_data[0]"
-    Warning (15610): No output dependent on input pin "in_data[1]"
-    Warning (15610): No output dependent on input pin "in_data[2]"
-    Warning (15610): No output dependent on input pin "in_data[3]"
-    Warning (15610): No output dependent on input pin "in_data[4]"
-    Warning (15610): No output dependent on input pin "in_data[5]"
-    Warning (15610): No output dependent on input pin "in_data[6]"
-    Warning (15610): No output dependent on input pin "in_data[7]"
-Info (21057): Implemented 348 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 325 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 299 megabytes
-    Info: Processing ended: Tue May 26 00:03:21 2015
+Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 16 logic cells
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 297 megabytes
+    Info: Processing ended: Fri Jun 19 19:53:41 2015
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
 
 
