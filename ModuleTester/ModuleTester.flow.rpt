@@ -1,5 +1,5 @@
 Flow report for ModuleTester
-Fri Jun 19 19:53:50 2015
+Fri Jul 17 02:22:38 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -35,26 +35,26 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------+
-; Flow Summary                                                                   ;
-+------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 19 19:53:50 2015     ;
-; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
-; Revision Name                      ; ModuleTester                              ;
-; Top-level Entity Name              ; ModuleTester                              ;
-; Family                             ; Cyclone IV E                              ;
-; Device                             ; EP4CE10E22C8                              ;
-; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 16 / 10,320 ( < 1 % )                     ;
-;     Total combinational functions  ; 16 / 10,320 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 0 / 10,320 ( 0 % )                        ;
-; Total registers                    ; 0                                         ;
-; Total pins                         ; 40 / 92 ( 43 % )                          ;
-; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 0 / 423,936 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 1 / 46 ( 2 % )                            ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                             ;
-+------------------------------------+-------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Flow Summary                                                                              ;
++------------------------------------+------------------------------------------------------+
+; Flow Status                        ; EDA Netlist Writer Failed - Fri Jul 17 02:22:38 2015 ;
+; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version            ;
+; Revision Name                      ; ModuleTester                                         ;
+; Top-level Entity Name              ; ModuleTester                                         ;
+; Family                             ; Cyclone IV E                                         ;
+; Device                             ; EP4CE10E22C8                                         ;
+; Timing Models                      ; Final                                                ;
+; Total logic elements               ; 915 / 10,320 ( 9 % )                                 ;
+;     Total combinational functions  ; 583 / 10,320 ( 6 % )                                 ;
+;     Dedicated logic registers      ; 766 / 10,320 ( 7 % )                                 ;
+; Total registers                    ; 766                                                  ;
+; Total pins                         ; 28 / 92 ( 30 % )                                     ;
+; Total virtual pins                 ; 0                                                    ;
+; Total memory bits                  ; 8 / 423,936 ( < 1 % )                                ;
+; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                                       ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                        ;
++------------------------------------+------------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,32 +62,66 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/19/2015 19:53:40 ;
+; Start date & time ; 07/17/2015 02:22:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ModuleTester        ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 105996038739929.143473282003164       ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                     ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                     ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                            ; --            ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                            ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                      ;
++-------------------------------------+------------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                                            ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+------------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 105996038739929.143708893409524                                  ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                      ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                        ; <None>        ; --          ; --             ;
+; IP_TOOL_NAME                        ; CIC                                                              ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 11.1                                                             ; --            ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                               ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_block_sink_cic_111.vhd    ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_block_source_cic_111.vhd  ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_controller_cic_111.vhd    ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_controller_pe_cic_111.vhd ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_sink_cic_111.vhd          ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_avalon_streaming_source_cic_111.vhd        ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_cic_lib_pkg_cic_111.vhd                    ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_delay_cic_111.vhd                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_differentiator_cic_111.vhd                 ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_downsample_cic_111.vhd                     ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_fastaddsub_cic_111.vhd                     ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_fastadd_cic_111.vhd                        ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_integrator_cic_111.vhd                     ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_lib_pkg_cic_111.vhd                        ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_math_pkg_cic_111.vhd                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_pipelined_adder_cic_111.vhd                ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_roundsat_cic_111.vhd                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_text_pkg_cic_111.vhd                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_upsample_cic_111.vhd                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic-library/auk_dspip_variable_downsample_cic_111.vhd            ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_cic.vhd                                                     ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_quartus.tcl                                                 ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_fir_comp_coeff.m                                            ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_input.txt                                                   ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_nativelink.tcl                                              ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1_tb.v                                                        ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1.v                                                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1.bsf                                                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1.qip                                                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; cic1.html                                                        ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                       ; --            ; --          ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                       ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                         ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                            ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                           ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                              ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                            ; --            ; --          ; --             ;
+; SEARCH_PATH                         ; .                                                                ; --            ; --          ; --             ;
+; SEARCH_PATH                         ; cic-library                                                      ; --            ; --          ; --             ;
++-------------------------------------+------------------------------------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -95,12 +129,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 297 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 3.4                     ; 435 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 282 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 317 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 258 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:09     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 347 MB              ; 00:00:09                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 445 MB              ; 00:00:06                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 284 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 325 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 256 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:21                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
