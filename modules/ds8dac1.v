@@ -1,7 +1,7 @@
-module ds8dac1(clk, PWM_in, PWM_out);
+module ds8dac1(clk, in_data, sout);
 input clk;
-input [7:0] PWM_in;
-output reg PWM_out;
+input [7:0] in_data;
+output reg sout;
 reg [8:0] PWM_accumulator;
 
 reg [7:0] PWM_add;
@@ -14,11 +14,11 @@ end
 
 always @(posedge clk) begin
 	PWM_accumulator <= PWM_accumulator[7:0] + PWM_add;
-	PWM_add <= PWM_in;
+	PWM_add <= in_data;
 end
 
 always @(negedge clk) begin
-	PWM_out <= PWM_accumulator[8];
+	sout <= PWM_accumulator[8];
 end
 
 endmodule
