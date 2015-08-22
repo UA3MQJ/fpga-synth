@@ -2,64 +2,40 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
-Slack : 43.613
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : 13.555
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.455
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.485
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 43.820
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : 9.785
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
-Slack : -2.278
-TNS   : -2.278
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 29.350
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : 13.860
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 43.513
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.449
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.229
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.773
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 44.153
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : 16.890
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : -2.236
-TNS   : -2.236
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 29.775
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.192
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
-Slack : 47.258
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.184
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 46.723
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
-Slack : -0.882
-TNS   : -0.882
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 29.420
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : 9.433
 TNS   : 0.000
 
 ------------------------------------------------------------
