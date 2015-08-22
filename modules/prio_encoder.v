@@ -1,7 +1,7 @@
 module prio_encoder(in, out);
 
-parameter WIDTH=7;
-parameter LINES=2**WIDTH; //$clog2(WIDTH); back transform
+parameter LINES=128; //$clog2(WIDTH);2**WIDTH back transform
+parameter WIDTH=$clog2(LINES);
 
 input wire [(LINES-1):0] in;
 output wor [(WIDTH-1):0] out;
