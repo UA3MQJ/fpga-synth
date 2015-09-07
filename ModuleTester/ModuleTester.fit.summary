@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sun Aug 23 02:16:31 2015
+Fitter Status : Successful - Sun Aug 23 02:53:30 2015
 Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
 Revision Name : ModuleTester
 Top-level Entity Name : ModuleTester
 Family : Cyclone IV E
 Device : EP4CE10E22C8
 Timing Models : Final
-Total logic elements : 154 / 10,320 ( 1 % )
-    Total combinational functions : 91 / 10,320 ( < 1 % )
-    Dedicated logic registers : 135 / 10,320 ( 1 % )
-Total registers : 135
+Total logic elements : 291 / 10,320 ( 3 % )
+    Total combinational functions : 291 / 10,320 ( 3 % )
+    Dedicated logic registers : 128 / 10,320 ( 1 % )
+Total registers : 128
 Total pins : 8 / 92 ( 9 % )
 Total virtual pins : 0
 Total memory bits : 0 / 423,936 ( 0 % )

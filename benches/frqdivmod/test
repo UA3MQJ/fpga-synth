@@ -1,0 +1,115 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_007BFB38 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v007B34A8_0 .net "out_val", 0 0, L_00829088;  1 drivers
+v007B3500_0 .var "tb_clk", 0 0;
+S_007BFC08 .scope module, "div1" "frqdivmod" 2 6, 3 1 0, S_007BFB38;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk"
+    .port_info 1 /OUTPUT 1 "s_out"
+P_00829118 .param/l "DIV" 0 3 2, +C4<0100110001001011010000000>;
+P_00829138 .param/l "WITH" 0 3 4, +C4<011000>;
+L_00829088 .functor BUFZ 1, v007B43B0_0, C4<0>, C4<0>, C4<0>;
+v007B4150_0 .net "clk", 0 0, v007B3500_0;  1 drivers
+v007B43B0_0 .var "clk_n", 0 0;
+v007BA3C0_0 .var "neg_cnt", 23 0;
+v007B33F8_0 .var "pos_cnt", 23 0;
+v007B3450_0 .net "s_out", 0 0, L_00829088;  alias, 1 drivers
+E_007BCA00 .event edge, v007B4150_0;
+E_007BCA28 .event negedge, v007B4150_0;
+E_007BCA50 .event posedge, v007B4150_0;
+    .scope S_007BFC08;
+T_0 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007B43B0_0, 0, 0;
+    %ix/load 0, 24, 0;
+    %assign/v0 v007B33F8_0, 0, 0;
+    %ix/load 0, 24, 0;
+    %assign/v0 v007BA3C0_0, 0, 0;
+    %end;
+    .thread T_0;
+    .scope S_007BFC08;
+T_1 ;
+    %wait E_007BCA50;
+    %load/v 8, v007B33F8_0, 24;
+    %pad 32, 0, 1;
+    %addi 8, 1, 25;
+    %movi 33, 10000000, 25;
+    %mod 8, 33, 25;
+    %ix/load 0, 24, 0;
+    %assign/v0 v007B33F8_0, 0, 8;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_007BFC08;
+T_2 ;
+    %wait E_007BCA28;
+    %load/v 8, v007BA3C0_0, 24;
+    %pad 32, 0, 1;
+    %addi 8, 1, 25;
+    %movi 33, 10000000, 25;
+    %mod 8, 33, 25;
+    %ix/load 0, 24, 0;
+    %assign/v0 v007BA3C0_0, 0, 8;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_007BFC08;
+T_3 ;
+    %wait E_007BCA00;
+    %movi 8, 5000000, 26;
+    %load/v 34, v007B33F8_0, 24;
+    %pad 58, 0, 2;
+    %cmp/u 8, 34, 26;
+    %or 5, 4, 1;
+    %mov 8, 5, 1;
+    %jmp/0  T_3.0, 8;
+    %mov 9, 1, 1;
+    %jmp/1  T_3.2, 8;
+T_3.0 ; End of true expr.
+    %jmp/0  T_3.1, 8;
+ ; End of false expr.
+    %blend  9, 0, 1; Condition unknown.
+    %jmp  T_3.2;
+T_3.1 ;
+    %mov 9, 0, 1; Return false value
+T_3.2 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007B43B0_0, 0, 9;
+    %jmp T_3;
+    .thread T_3, $push;
+    .scope S_007BFB38;
+T_4 ;
+    %vpi_call 2 10 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 11 "$dumpvars", 1'sb0, S_007BFB38 {0 0};
+    %vpi_call 2 13 "$display", "starting testbench!!!!" {0 0};
+    %vpi_call 2 14 "$display", "bits for 0..9", 32'sb00000000000000000000000000000000 {0 0};
+    %ix/load 0, 1, 0;
+    %assign/v0 v007B3500_0, 0, 0;
+    %movi 8, 20000, 16;
+T_4.0 %cmp/s 0, 8, 16;
+    %jmp/0xz T_4.1, 5;
+    %add 8, 1, 16;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007B3500_0, 0, 1;
+    %delay 1, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007B3500_0, 0, 0;
+    %jmp T_4.0;
+T_4.1 ;
+    %vpi_call 2 24 "$display", "finished OK!" {0 0};
+    %vpi_call 2 25 "$finish" {0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "../../modules/frqdivmod.v";

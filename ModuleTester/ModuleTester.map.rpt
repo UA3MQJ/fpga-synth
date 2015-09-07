@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ModuleTester
-Sun Aug 23 02:16:27 2015
+Sun Aug 23 02:53:26 2015
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -16,8 +16,10 @@ Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
   8. General Register Statistics
   9. Inverted Register Statistics
  10. Parameter Settings for User Entity Instance: Top-level Entity: |ModuleTester
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: bitscan:bs0
+ 12. Parameter Settings for User Entity Instance: prio_encoder:pe0
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -43,15 +45,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 23 02:16:27 2015     ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug 23 02:53:26 2015     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; ModuleTester                              ;
 ; Top-level Entity Name              ; ModuleTester                              ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 217                                       ;
-;     Total combinational functions  ; 90                                        ;
-;     Dedicated logic registers      ; 135                                       ;
-; Total registers                    ; 135                                       ;
+; Total logic elements               ; 417                                       ;
+;     Total combinational functions  ; 290                                       ;
+;     Dedicated logic registers      ; 128                                       ;
+; Total registers                    ; 128                                       ;
 ; Total pins                         ; 8                                         ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
@@ -167,6 +169,8 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
+; ../modules/bitscan.v             ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/modules/bitscan.v           ;
+; ../modules/prio_encoder.v        ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/modules/prio_encoder.v      ;
 ; ModuleTester.v                   ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/ModuleTester/ModuleTester.v ;
 +----------------------------------+-----------------+------------------------+--------------------------------------------------------------+
 
@@ -176,37 +180,39 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 217       ;
+; Estimated Total logic elements              ; 417       ;
 ;                                             ;           ;
-; Total combinational functions               ; 90        ;
+; Total combinational functions               ; 290       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 80        ;
-;     -- 3 input functions                    ; 6         ;
-;     -- <=2 input functions                  ; 4         ;
+;     -- 4 input functions                    ; 145       ;
+;     -- 3 input functions                    ; 10        ;
+;     -- <=2 input functions                  ; 135       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 90        ;
-;     -- arithmetic mode                      ; 0         ;
+;     -- normal mode                          ; 164       ;
+;     -- arithmetic mode                      ; 126       ;
 ;                                             ;           ;
-; Total registers                             ; 135       ;
-;     -- Dedicated logic registers            ; 135       ;
+; Total registers                             ; 128       ;
+;     -- Dedicated logic registers            ; 128       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 8         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 135       ;
-; Total fan-out                               ; 629       ;
-; Average fan-out                             ; 2.61      ;
+; Maximum fan-out                             ; 128       ;
+; Total fan-out                               ; 1148      ;
+; Average fan-out                             ; 2.65      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ModuleTester              ; 90 (90)           ; 135 (135)    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |ModuleTester       ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; |ModuleTester              ; 290 (1)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |ModuleTester                  ;              ;
+;    |bitscan:bs0|           ; 133 (133)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ModuleTester|bitscan:bs0      ;              ;
+;    |prio_encoder:pe0|      ; 156 (156)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ModuleTester|prio_encoder:pe0 ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -215,7 +221,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 135   ;
+; Total registers                              ; 128   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -230,7 +236,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; req[0]                                 ; 1       ;
+; indat[0]                               ; 1       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -241,8 +247,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Parameter Name ; Value ; Type                                                ;
 +----------------+-------+-----------------------------------------------------+
 ; WIDTH          ; 7     ; Signed Integer                                      ;
-; LINES          ; 128   ; Signed Integer                                      ;
 +----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bitscan:bs0 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 128   ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prio_encoder:pe0 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; LINES          ; 128   ; Signed Integer                       ;
+; WIDTH          ; 7     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -251,7 +277,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -261,22 +287,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
-    Info: Processing started: Sun Aug 23 02:16:26 2015
+    Info: Processing started: Sun Aug 23 02:53:24 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ModuleTester -c ModuleTester
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/bitscan.v
+    Info (12023): Found entity 1: bitscan
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/prio_encoder.v
+    Info (12023): Found entity 1: prio_encoder
 Info (12021): Found 1 design units, including 1 entities, in source file moduletester.v
     Info (12023): Found entity 1: ModuleTester
 Info (12127): Elaborating entity "ModuleTester" for the top level hierarchy
+Info (12128): Elaborating entity "bitscan" for hierarchy "bitscan:bs0"
+Info (12128): Elaborating entity "prio_encoder" for hierarchy "prio_encoder:pe0"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 425 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 217 logic cells
+    Info (21061): Implemented 417 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 303 megabytes
-    Info: Processing ended: Sun Aug 23 02:16:27 2015
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Sun Aug 23 02:53:26 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
