@@ -1,0 +1,1179 @@
+Analysis & Synthesis report for EP2C5
+Thu Sep 17 00:09:47 2015
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |EP2C5|midi_in:midi_in_0|rcv_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: powerup_reset:res_gen
+ 14. Parameter Settings for User Entity Instance: frqdivmod:divider1
+ 15. Parameter Settings for User Entity Instance: frqdivmod:divider2
+ 16. Parameter Settings for User Entity Instance: frqdivmod:divider3
+ 17. Parameter Settings for User Entity Instance: frqdivmod:divider4
+ 18. Parameter Settings for User Entity Instance: frqdivmod:divider5
+ 19. Parameter Settings for User Entity Instance: frqdivmod:divider6
+ 20. Parameter Settings for User Entity Instance: frqdivmod:divider7
+ 21. Parameter Settings for User Entity Instance: frqdivmod:divider8
+ 22. Parameter Settings for User Entity Instance: frqdivmod:divider9
+ 23. Parameter Settings for User Entity Instance: frqdivmod:divider10
+ 24. Parameter Settings for User Entity Instance: frqdivmod:divider11
+ 25. Parameter Settings for User Entity Instance: frqdivmod:divider12
+ 26. Parameter Settings for Inferred Entity Instance: frqdivmod:divider2|lpm_divide:Mod0
+ 27. Parameter Settings for Inferred Entity Instance: frqdivmod:divider1|lpm_divide:Mod1
+ 28. Parameter Settings for Inferred Entity Instance: frqdivmod:divider1|lpm_divide:Mod0
+ 29. Parameter Settings for Inferred Entity Instance: frqdivmod:divider3|lpm_divide:Mod0
+ 30. Parameter Settings for Inferred Entity Instance: frqdivmod:divider5|lpm_divide:Mod0
+ 31. Parameter Settings for Inferred Entity Instance: frqdivmod:divider4|lpm_divide:Mod1
+ 32. Parameter Settings for Inferred Entity Instance: frqdivmod:divider4|lpm_divide:Mod0
+ 33. Parameter Settings for Inferred Entity Instance: frqdivmod:divider7|lpm_divide:Mod0
+ 34. Parameter Settings for Inferred Entity Instance: frqdivmod:divider6|lpm_divide:Mod0
+ 35. Parameter Settings for Inferred Entity Instance: frqdivmod:divider9|lpm_divide:Mod0
+ 36. Parameter Settings for Inferred Entity Instance: frqdivmod:divider8|lpm_divide:Mod0
+ 37. Parameter Settings for Inferred Entity Instance: frqdivmod:divider11|lpm_divide:Mod0
+ 38. Parameter Settings for Inferred Entity Instance: frqdivmod:divider10|lpm_divide:Mod1
+ 39. Parameter Settings for Inferred Entity Instance: frqdivmod:divider10|lpm_divide:Mod0
+ 40. Parameter Settings for Inferred Entity Instance: frqdivmod:divider12|lpm_divide:Mod1
+ 41. Parameter Settings for Inferred Entity Instance: frqdivmod:divider12|lpm_divide:Mod0
+ 42. Port Connectivity Checks: "midi_in:midi_in_0|baud_gen:BG"
+ 43. Port Connectivity Checks: "midi_in:midi_in_0"
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Sep 17 00:09:47 2015     ;
+; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name                      ; EP2C5                                     ;
+; Top-level Entity Name              ; EP2C5                                     ;
+; Family                             ; Cyclone II                                ;
+; Total logic elements               ; 1,567                                     ;
+;     Total combinational functions  ; 1,529                                     ;
+;     Dedicated logic registers      ; 582                                       ;
+; Total registers                    ; 582                                       ;
+; Total pins                         ; 14                                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 0                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                         ;
+; Total PLLs                         ; 0                                         ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C7        ;                    ;
+; Top-level entity name                                                      ; EP2C5              ; EP2C5              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+
+; File Name with User-Entered Path        ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+
+; ../../modules/reg7.v                    ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/reg7.v                            ;
+; ../../modules/frqdivmod.v               ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/frqdivmod.v                       ;
+; ../../modules/midi_in.v                 ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/midi_in.v                         ;
+; ../../modules/powerup_reset.v           ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/powerup_reset.v                   ;
+; ../../modules/opencores/uart/uart_rx.v  ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v          ;
+; ../../modules/opencores/uart/baud_gen.v ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v         ;
+; EP2C5.v                                 ; yes             ; User Verilog HDL File        ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/EP2C5.v                    ;
+; lpm_divide.tdf                          ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;
+; abs_divider.inc                         ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/abs_divider.inc             ;
+; sign_div_unsign.inc                     ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;
+; aglobal111.inc                          ; yes             ; Megafunction                 ; d:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc              ;
+; db/lpm_divide_08m.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/lpm_divide_08m.tdf      ;
+; db/sign_div_unsign_7nh.tdf              ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/sign_div_unsign_7nh.tdf ;
+; db/alt_u_div_g5f.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/alt_u_div_g5f.tdf       ;
+; db/add_sub_lkc.tdf                      ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/add_sub_lkc.tdf         ;
+; db/add_sub_mkc.tdf                      ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/add_sub_mkc.tdf         ;
+; db/lpm_divide_28m.tdf                   ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/lpm_divide_28m.tdf      ;
+; db/sign_div_unsign_9nh.tdf              ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/sign_div_unsign_9nh.tdf ;
+; db/alt_u_div_k5f.tdf                    ; yes             ; Auto-Generated Megafunction  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5/db/alt_u_div_k5f.tdf       ;
++-----------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 1,567  ;
+;                                             ;        ;
+; Total combinational functions               ; 1529   ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 400    ;
+;     -- 3 input functions                    ; 430    ;
+;     -- <=2 input functions                  ; 699    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 888    ;
+;     -- arithmetic mode                      ; 641    ;
+;                                             ;        ;
+; Total registers                             ; 582    ;
+;     -- Dedicated logic registers            ; 582    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 14     ;
+; Maximum fan-out node                        ; clk50M ;
+; Maximum fan-out                             ; 582    ;
+; Total fan-out                               ; 5736   ;
+; Average fan-out                             ; 2.70   ;
++---------------------------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                               ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |EP2C5                                    ; 1529 (733)        ; 582 (261)    ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |EP2C5                                                                                                                     ;              ;
+;    |frqdivmod:divider10|                  ; 95 (37)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10                                                                                                 ;              ;
+;       |lpm_divide:Mod0|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
+;       |lpm_divide:Mod1|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod1|lpm_divide_28m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider10|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
+;    |frqdivmod:divider11|                  ; 47 (18)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider11                                                                                                 ;              ;
+;       |lpm_divide:Mod0|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider11|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider11|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider11|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider11|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
+;    |frqdivmod:divider12|                  ; 94 (36)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12                                                                                                 ;              ;
+;       |lpm_divide:Mod0|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod0                                                                                 ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
+;       |lpm_divide:Mod1|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod1                                                                                 ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod1|lpm_divide_28m:auto_generated                                                   ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider12|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ;              ;
+;    |frqdivmod:divider1|                   ; 85 (31)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod0|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;       |lpm_divide:Mod1|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod1                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod1|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod1|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider1|lpm_divide:Mod1|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;    |frqdivmod:divider2|                   ; 36 (15)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider2                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider2|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider2|lpm_divide:Mod0|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 21 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider2|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 21 (21)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider2|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;    |frqdivmod:divider3|                   ; 43 (16)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider3                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider3|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider3|lpm_divide:Mod0|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider3|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider3|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;    |frqdivmod:divider4|                   ; 87 (33)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod0|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;       |lpm_divide:Mod1|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod1                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod1|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod1|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider4|lpm_divide:Mod1|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;    |frqdivmod:divider5|                   ; 41 (16)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider5                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider5|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_08m:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider5|lpm_divide:Mod0|lpm_divide_08m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_7nh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider5|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider                        ;              ;
+;                |alt_u_div_g5f:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider5|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider  ;              ;
+;    |frqdivmod:divider6|                   ; 47 (18)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider6                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider6|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider6|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_9nh:divider| ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                        ;              ;
+;                |alt_u_div_k5f:divider|    ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider  ;              ;
+;    |frqdivmod:divider7|                   ; 44 (17)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider7                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider7|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider7|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_9nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider7|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                        ;              ;
+;                |alt_u_div_k5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider7|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider  ;              ;
+;    |frqdivmod:divider8|                   ; 42 (17)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider8                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider8|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider8|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_9nh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider8|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                        ;              ;
+;                |alt_u_div_k5f:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider8|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider  ;              ;
+;    |frqdivmod:divider9|                   ; 44 (17)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider9                                                                                                  ;              ;
+;       |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider9|lpm_divide:Mod0                                                                                  ;              ;
+;          |lpm_divide_28m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider9|lpm_divide:Mod0|lpm_divide_28m:auto_generated                                                    ;              ;
+;             |sign_div_unsign_9nh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider9|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                        ;              ;
+;                |alt_u_div_k5f:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|frqdivmod:divider9|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider  ;              ;
+;    |midi_in:midi_in_0|                    ; 84 (29)           ; 71 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0                                                                                                   ;              ;
+;       |baud_gen:BG|                       ; 37 (37)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0|baud_gen:BG                                                                                       ;              ;
+;       |uart_rx:URX|                       ; 18 (18)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0|uart_rx:URX                                                                                       ;              ;
+;    |powerup_reset:res_gen|                ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|powerup_reset:res_gen                                                                                               ;              ;
+;    |reg7:C1_reg|                          ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:C1_reg                                                                                                         ;              ;
+;    |reg7:C2_reg|                          ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:C2_reg                                                                                                         ;              ;
+;    |reg7:C3_reg|                          ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:C3_reg                                                                                                         ;              ;
+;    |reg7:C4_reg|                          ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:C4_reg                                                                                                         ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |EP2C5|midi_in:midi_in_0|rcv_state                                ;
++--------------------+--------------------+--------------------+--------------------+
+; Name               ; rcv_state.00000000 ; rcv_state.00000010 ; rcv_state.00000001 ;
++--------------------+--------------------+--------------------+--------------------+
+; rcv_state.00000000 ; 0                  ; 0                  ; 0                  ;
+; rcv_state.00000001 ; 1                  ; 0                  ; 1                  ;
+; rcv_state.00000010 ; 1                  ; 1                  ; 0                  ;
++--------------------+--------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------+
+; Registers Removed During Synthesis                               ;
++----------------------------------------+-------------------------+
+; Register name                          ; Reason for Removal      ;
++----------------------------------------+-------------------------+
+; pwm2_run[0]                            ; Merged with pwm_run[0]  ;
+; pwm_run[1]                             ; Merged with pwm2_run[1] ;
+; pwm_run[2]                             ; Merged with pwm2_run[2] ;
+; pwm_run[3]                             ; Merged with pwm2_run[3] ;
+; pwm_run[4]                             ; Merged with pwm2_run[4] ;
+; pwm_run[5]                             ; Merged with pwm2_run[5] ;
+; pwm_run[6]                             ; Merged with pwm2_run[6] ;
+; midi_in:midi_in_0|rcv_state~7          ; Lost fanout             ;
+; midi_in:midi_in_0|rcv_state~8          ; Lost fanout             ;
+; midi_in:midi_in_0|rcv_state~9          ; Lost fanout             ;
+; midi_in:midi_in_0|rcv_state~10         ; Lost fanout             ;
+; midi_in:midi_in_0|rcv_state~11         ; Lost fanout             ;
+; midi_in:midi_in_0|rcv_state~12         ; Lost fanout             ;
+; rg08[10]                               ; Lost fanout             ;
+; rg09[10]                               ; Lost fanout             ;
+; rg10[10]                               ; Lost fanout             ;
+; rg11[10]                               ; Lost fanout             ;
+; rg04[10]                               ; Lost fanout             ;
+; rg05[10]                               ; Lost fanout             ;
+; rg06[10]                               ; Lost fanout             ;
+; rg07[10]                               ; Lost fanout             ;
+; rg12[10]                               ; Lost fanout             ;
+; rg01[10]                               ; Lost fanout             ;
+; rg02[10]                               ; Lost fanout             ;
+; rg03[10]                               ; Lost fanout             ;
+; Total Number of Removed Registers = 25 ;                         ;
++----------------------------------------+-------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 582   ;
+; Number of registers using Synchronous Clear  ; 125   ;
+; Number of registers using Synchronous Load   ; 17    ;
+; Number of registers using Asynchronous Clear ; 45    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 180   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------+
+; Inverted Register Statistics                       ;
++------------------------------------------+---------+
+; Inverted Register                        ; Fan out ;
++------------------------------------------+---------+
+; powerup_reset:res_gen|rst                ; 185     ;
+; powerup_reset:res_gen|tick_timer[3]      ; 2       ;
+; powerup_reset:res_gen|tick_timer[2]      ; 3       ;
+; powerup_reset:res_gen|tick_timer[0]      ; 4       ;
+; powerup_reset:res_gen|tick_timer[1]      ; 3       ;
+; midi_in:midi_in_0|uart_rx:URX|in_sync[1] ; 5       ;
+; midi_in:midi_in_0|uart_rx:URX|in_sync[0] ; 1       ;
+; Total number of inverted registers = 7   ;         ;
++------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                 ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |EP2C5|midi_in:midi_in_0|byte2[6]          ;                            ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; |EP2C5|midi_in:midi_in_0|byte3[1]          ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |EP2C5|powerup_reset:res_gen|tick_timer[0] ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: powerup_reset:res_gen ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; TICK           ; 1111  ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 6327  ; Signed Integer                         ;
+; WITH           ; 13    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 6704  ; Signed Integer                         ;
+; WITH           ; 13    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 7102  ; Signed Integer                         ;
+; WITH           ; 13    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider4 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 7525  ; Signed Integer                         ;
+; WITH           ; 13    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider5 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 7972  ; Signed Integer                         ;
+; WITH           ; 13    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider6 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 8446  ; Signed Integer                         ;
+; WITH           ; 14    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider7 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 8948  ; Signed Integer                         ;
+; WITH           ; 14    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider8 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 9480  ; Signed Integer                         ;
+; WITH           ; 14    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider9 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; DIV            ; 10044 ; Signed Integer                         ;
+; WITH           ; 14    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider10 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; DIV            ; 10641 ; Signed Integer                          ;
+; WITH           ; 14    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider11 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; DIV            ; 11274 ; Signed Integer                          ;
+; WITH           ; 14    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: frqdivmod:divider12 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; DIV            ; 11945 ; Signed Integer                          ;
+; WITH           ; 14    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider2|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider1|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider1|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider3|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider5|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider4|lpm_divide:Mod1 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider4|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 13             ; Untyped                                   ;
+; LPM_WIDTHD             ; 13             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_08m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider7|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider6|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider9|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider8|lpm_divide:Mod0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                   ;
+; LPM_WIDTHD             ; 14             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider11|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider10|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider10|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider12|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frqdivmod:divider12|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                    ;
+; LPM_WIDTHD             ; 14             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "midi_in:midi_in_0|baud_gen:BG"                                                                                                                                                                  ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; baud_freq         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; baud_freq[11..1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; baud_freq[0]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; baud_limit[6..5]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit[1..0]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit[15..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; baud_limit[4..2]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "midi_in:midi_in_0"                                                                                           ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; velocity ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
+    Info: Processing started: Thu Sep 17 00:09:41 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EP2C5 -c EP2C5
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/prio_encoder.v
+    Info (12023): Found entity 1: prio_encoder
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/reg7.v
+    Info (12023): Found entity 1: reg7
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/frqdivmod.v
+    Info (12023): Found entity 1: frqdivmod
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/midi_in.v
+    Info (12023): Found entity 1: midi_in
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/powerup_reset.v
+    Info (12023): Found entity 1: powerup_reset
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v
+    Info (12023): Found entity 1: uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v
+    Info (12023): Found entity 1: baud_gen
+Info (12021): Found 1 design units, including 1 entities, in source file ep2c5.v
+    Info (12023): Found entity 1: EP2C5
+Info (12127): Elaborating entity "EP2C5" for the top level hierarchy
+Warning (10030): Net "line16[7..0]" at EP2C5.v(193) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "a2" at EP2C5.v(7) has no driver
+Warning (10034): Output port "a3" at EP2C5.v(7) has no driver
+Warning (10034): Output port "a4" at EP2C5.v(7) has no driver
+Info (12128): Elaborating entity "powerup_reset" for hierarchy "powerup_reset:res_gen"
+Info (12128): Elaborating entity "midi_in" for hierarchy "midi_in:midi_in_0"
+Warning (10034): Output port "velocity" at midi_in.v(13) has no driver
+Info (12128): Elaborating entity "baud_gen" for hierarchy "midi_in:midi_in_0|baud_gen:BG"
+Info (12128): Elaborating entity "uart_rx" for hierarchy "midi_in:midi_in_0|uart_rx:URX"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider1"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider2"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider3"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider4"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider5"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider6"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider7"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider8"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider9"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider10"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider11"
+Info (12128): Elaborating entity "frqdivmod" for hierarchy "frqdivmod:divider12"
+Info (12128): Elaborating entity "reg7" for hierarchy "reg7:C1_reg"
+Info (13005): Duplicate registers merged to single register
+Info (278001): Inferred 16 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider2|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider1|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider1|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider3|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider5|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider4|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider4|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider7|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider6|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider9|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider8|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider11|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider10|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider10|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider12|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frqdivmod:divider12|Mod0"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider2|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider2|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "13"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_08m.tdf
+    Info (12023): Found entity 1: lpm_divide_08m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g5f.tdf
+    Info (12023): Found entity 1: alt_u_div_g5f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider1|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "frqdivmod:divider1|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "13"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider3|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider3|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "13"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider5|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider5|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "13"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider4|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "frqdivmod:divider4|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "13"
+    Info (12134): Parameter "LPM_WIDTHD" = "13"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider7|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider7|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_28m.tdf
+    Info (12023): Found entity 1: lpm_divide_28m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k5f.tdf
+    Info (12023): Found entity 1: alt_u_div_k5f
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider6|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider6|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider9|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider9|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider8|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider8|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider11|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "frqdivmod:divider11|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider10|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "frqdivmod:divider10|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "frqdivmod:divider12|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "frqdivmod:divider12|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "14"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led2" is stuck at VCC
+    Warning (13410): Pin "a2" is stuck at GND
+    Warning (13410): Pin "a3" is stuck at GND
+    Warning (13410): Pin "a4" is stuck at GND
+Info (17049): 18 registers lost all their fanouts during netlist optimizations. The first 18 are displayed below.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~9" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~10" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~11" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~12" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg08[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg09[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg10[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg11[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg04[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg05[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg06[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg07[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg12[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg01[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg02[10]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "rg03[10]" lost all its fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "frqdivmod:divider6|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_13_result_int[0]~28"
+    Info (17048): Logic cell "frqdivmod:divider3|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider|add_sub_12_result_int[0]~26"
+    Info (17048): Logic cell "frqdivmod:divider11|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_13_result_int[0]~28"
+    Info (17048): Logic cell "frqdivmod:divider9|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_13_result_int[0]~26"
+    Info (17048): Logic cell "frqdivmod:divider8|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_13_result_int[0]~24"
+    Info (17048): Logic cell "frqdivmod:divider7|lpm_divide:Mod0|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider|add_sub_13_result_int[0]~26"
+    Info (17048): Logic cell "frqdivmod:divider5|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider|add_sub_12_result_int[0]~24"
+    Info (17048): Logic cell "frqdivmod:divider2|lpm_divide:Mod0|lpm_divide_08m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_g5f:divider|add_sub_12_result_int[0]~20"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+Info (21057): Implemented 1606 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 1592 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 309 megabytes
+    Info: Processing ended: Thu Sep 17 00:09:47 2015
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+

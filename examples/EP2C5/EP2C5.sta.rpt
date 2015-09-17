@@ -1,0 +1,1435 @@
+TimeQuest Timing Analyzer report for EP2C5
+Thu Sep 17 00:09:55 2015
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk50M'
+ 13. Slow Model Hold: 'clk50M'
+ 14. Slow Model Recovery: 'clk50M'
+ 15. Slow Model Removal: 'clk50M'
+ 16. Slow Model Minimum Pulse Width: 'clk50M'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Propagation Delay
+ 22. Minimum Propagation Delay
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'clk50M'
+ 29. Fast Model Hold: 'clk50M'
+ 30. Fast Model Recovery: 'clk50M'
+ 31. Fast Model Removal: 'clk50M'
+ 32. Fast Model Minimum Pulse Width: 'clk50M'
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Propagation Delay
+ 38. Minimum Propagation Delay
+ 39. Multicorner Timing Analysis Summary
+ 40. Setup Times
+ 41. Hold Times
+ 42. Clock to Output Times
+ 43. Minimum Clock to Output Times
+ 44. Progagation Delay
+ 45. Minimum Progagation Delay
+ 46. Setup Transfers
+ 47. Hold Transfers
+ 48. Recovery Transfers
+ 49. Removal Transfers
+ 50. Report TCCS
+ 51. Report RSKM
+ 52. Unconstrained Paths
+ 53. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                      ;
++--------------------+---------------------------------------------------+
+; Quartus II Version ; Version 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name      ; EP2C5                                             ;
+; Device Family      ; Cyclone II                                        ;
+; Device Name        ; EP2C5T144C7                                       ;
+; Timing Models      ; Final                                             ;
+; Delay Model        ; Combined                                          ;
+; Rise/Fall Delays   ; Unavailable                                       ;
++--------------------+---------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 4.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1-4 processors         ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; EP2C5.sdc     ; OK     ; Thu Sep 17 00:09:54 2015 ;
++---------------+--------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; clk50M     ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk50M } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 75.51 MHz ; 75.51 MHz       ; clk50M     ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 3.378 ; 0.000         ;
++--------+-------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 0.445 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Slow Model Recovery Summary     ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; clk50M ; 17.942 ; 0.000         ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Removal Summary     ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 1.677 ; 0.000         ;
++--------+-------+---------------+
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+-------+-----------------------+
+; Clock  ; Slack ; End Point TNS         ;
++--------+-------+-----------------------+
+; clk50M ; 8.889 ; 0.000                 ;
++--------+-------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk50M'                                                                                             ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.378 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.654      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.409 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.624      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.610 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 6.423      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 3.754 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 6.278      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.130 ; frqdivmod:divider10|neg_cnt[1] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.912      ;
+; 4.143 ; frqdivmod:divider10|neg_cnt[1] ; rg03[0] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.899      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[6] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[5] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[4] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[3] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[2] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[1] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[7] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[8] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.160 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[9] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.876      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.168 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.864      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[6] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[5] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[4] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[3] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[2] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[1] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[7] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[8] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.186 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[9] ; clk50M       ; clk50M      ; 10.000       ; -0.002     ; 5.850      ;
+; 4.308 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[0] ; clk50M       ; clk50M      ; 10.000       ; -0.006     ; 5.724      ;
+; 4.339 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[0] ; clk50M       ; clk50M      ; 10.000       ; -0.005     ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.348 ; frqdivmod:divider10|neg_cnt[0] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.694      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.349 ; frqdivmod:divider10|neg_cnt[3] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.690      ;
+; 4.361 ; frqdivmod:divider10|neg_cnt[0] ; rg03[0] ; clk50M       ; clk50M      ; 10.000       ; 0.004      ; 5.681      ;
+; 4.362 ; frqdivmod:divider10|neg_cnt[3] ; rg03[0] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 5.677      ;
+; 4.408 ; frqdivmod:divider12|neg_cnt[3] ; rg01[6] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 5.630      ;
+; 4.408 ; frqdivmod:divider12|neg_cnt[3] ; rg01[5] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 5.630      ;
+; 4.408 ; frqdivmod:divider12|neg_cnt[3] ; rg01[4] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 5.630      ;
+; 4.408 ; frqdivmod:divider12|neg_cnt[3] ; rg01[3] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 5.630      ;
+; 4.408 ; frqdivmod:divider12|neg_cnt[3] ; rg01[2] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 5.630      ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk50M'                                                                                                                                         ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; frqdivmod:divider4|neg_cnt[0]            ; frqdivmod:divider4|neg_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider1|neg_cnt[0]            ; frqdivmod:divider1|neg_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider12|neg_cnt[0]           ; frqdivmod:divider12|neg_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider10|neg_cnt[0]           ; frqdivmod:divider10|neg_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; note_on_reg                              ; note_on_reg                              ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; powerup_reset:res_gen|rst                ; powerup_reset:res_gen|rst                ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; powerup_reset:res_gen|tick_timer[2]      ; powerup_reset:res_gen|tick_timer[2]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; powerup_reset:res_gen|tick_timer[3]      ; powerup_reset:res_gen|tick_timer[3]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; powerup_reset:res_gen|tick_timer[1]      ; powerup_reset:res_gen|tick_timer[1]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; powerup_reset:res_gen|tick_timer[0]      ; powerup_reset:res_gen|tick_timer[0]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|rcv_state.00000000     ; midi_in:midi_in_0|rcv_state.00000000     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|rcv_state.00000001     ; midi_in:midi_in_0|rcv_state.00000001     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|rcv_state.00000010     ; midi_in:midi_in_0|rcv_state.00000010     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|uart_rx:URX|rx_busy    ; midi_in:midi_in_0|uart_rx:URX|rx_busy    ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|uart_rx:URX|count16[2] ; midi_in:midi_in_0|uart_rx:URX|count16[2] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|uart_rx:URX|count16[1] ; midi_in:midi_in_0|uart_rx:URX|count16[1] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; midi_in:midi_in_0|uart_rx:URX|count16[0] ; midi_in:midi_in_0|uart_rx:URX|count16[0] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[47]                                 ; keys[47]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg04[0]                                  ; rg04[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider9|pos_cnt[0]            ; frqdivmod:divider9|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[48]                                 ; keys[48]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg05[0]                                  ; rg05[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider8|pos_cnt[0]            ; frqdivmod:divider8|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[49]                                 ; keys[49]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg06[0]                                  ; rg06[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider7|pos_cnt[0]            ; frqdivmod:divider7|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[50]                                 ; keys[50]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider6|pos_cnt[0]            ; frqdivmod:divider6|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg07[0]                                  ; rg07[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[51]                                 ; keys[51]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg08[0]                                  ; rg08[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider5|pos_cnt[0]            ; frqdivmod:divider5|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[52]                                 ; keys[52]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider4|pos_cnt[0]            ; frqdivmod:divider4|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg09[0]                                  ; rg09[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[53]                                 ; keys[53]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider3|pos_cnt[0]            ; frqdivmod:divider3|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg10[0]                                  ; rg10[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[54]                                 ; keys[54]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg11[0]                                  ; rg11[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider2|pos_cnt[0]            ; frqdivmod:divider2|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[39]                                 ; keys[39]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[40]                                 ; keys[40]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[41]                                 ; keys[41]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[42]                                 ; keys[42]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[43]                                 ; keys[43]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg12[0]                                  ; rg12[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider1|pos_cnt[0]            ; frqdivmod:divider1|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[44]                                 ; keys[44]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider12|pos_cnt[0]           ; frqdivmod:divider12|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg01[0]                                  ; rg01[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[45]                                 ; keys[45]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider11|pos_cnt[0]           ; frqdivmod:divider11|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg02[0]                                  ; rg02[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[46]                                 ; keys[46]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; frqdivmod:divider10|pos_cnt[0]           ; frqdivmod:divider10|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; rg03[0]                                  ; rg03[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[63]                                 ; keys[63]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[64]                                 ; keys[64]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[65]                                 ; keys[65]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[66]                                 ; keys[66]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[67]                                 ; keys[67]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[68]                                 ; keys[68]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[55]                                 ; keys[55]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[56]                                 ; keys[56]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[57]                                 ; keys[57]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[58]                                 ; keys[58]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[59]                                 ; keys[59]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[60]                                 ; keys[60]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[61]                                 ; keys[61]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[62]                                 ; keys[62]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[31]                                 ; keys[31]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[32]                                 ; keys[32]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[33]                                 ; keys[33]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[34]                                 ; keys[34]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[35]                                 ; keys[35]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[36]                                 ; keys[36]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[23]                                 ; keys[23]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[24]                                 ; keys[24]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[25]                                 ; keys[25]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[26]                                 ; keys[26]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[27]                                 ; keys[27]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[28]                                 ; keys[28]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[29]                                 ; keys[29]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[30]                                 ; keys[30]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[12]                                 ; keys[12]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[13]                                 ; keys[13]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[11]                                 ; keys[11]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[8]                                  ; keys[8]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[9]                                  ; keys[9]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[10]                                 ; keys[10]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[14]                                 ; keys[14]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[21]                                 ; keys[21]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[22]                                 ; keys[22]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[15]                                 ; keys[15]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[16]                                 ; keys[16]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[17]                                 ; keys[17]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[18]                                 ; keys[18]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[19]                                 ; keys[19]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; keys[20]                                 ; keys[20]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.731      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clk50M'                                                                                                                         ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 17.942 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|ce_16        ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 2.117      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[15]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[8]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[9]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[10]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[7]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[5]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[4]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[6]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[11]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[14]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[12]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[13]  ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[0]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[2]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[3]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.951 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[1]   ; clk50M       ; clk50M      ; 20.000       ; 0.020      ; 2.107      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[3]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[7]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[4]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[3]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[7]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[0]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[1]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[2]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[5]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[6]   ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[5]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[6]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[4]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[0]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[1]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 17.962 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[2]  ; clk50M       ; clk50M      ; 20.000       ; 0.018      ; 2.094      ;
+; 18.071 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[1]   ; clk50M       ; clk50M      ; 20.000       ; -0.003     ; 1.964      ;
+; 18.071 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[0]   ; clk50M       ; clk50M      ; 20.000       ; -0.003     ; 1.964      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|new_rx_data  ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[3] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[3]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_busy      ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[0] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[1] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[2] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[2]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[1]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
+; 18.075 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[0]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 1.962      ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clk50M'                                                                                                                         ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|new_rx_data  ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[3] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[3]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_busy      ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[0] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[1] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[2] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[2]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[1]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.677 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[0]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 1.962      ;
+; 1.681 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[1]   ; clk50M       ; clk50M      ; 0.000        ; -0.003     ; 1.964      ;
+; 1.681 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[0]   ; clk50M       ; clk50M      ; 0.000        ; -0.003     ; 1.964      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[3]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[7]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[4]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[3]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[7]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[0]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[1]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[2]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[5]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[6]   ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[5]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[6]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[4]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[0]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[1]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.790 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[2]  ; clk50M       ; clk50M      ; 0.000        ; 0.018      ; 2.094      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[15]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[8]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[9]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[10]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[7]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[5]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[4]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[6]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[11]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[14]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[12]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[13]  ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[0]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[2]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[3]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.801 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[1]   ; clk50M       ; clk50M      ; 0.000        ; 0.020      ; 2.107      ;
+; 1.810 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|ce_16        ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 2.117      ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk50M'                                                                         ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                          ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[4]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[5]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[6]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[7]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[8]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[9]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[0]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[10] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[11] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[12] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[13] ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[1]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[2]  ;
+; 8.889 ; 10.000       ; 1.111          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[3]  ;
+; 8.889 ; 10.000       ; 1.111          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[3]  ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; 4.758 ; 4.758 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; 5.166 ; 5.166 ; Rise       ; clk50M          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; -4.510 ; -4.510 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; -4.910 ; -4.910 ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; a1        ; clk50M     ; 31.697 ; 31.697 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 12.122 ; 12.122 ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 11.511 ; 11.511 ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 10.797 ; 10.797 ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 11.441 ; 11.441 ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 7.591  ; 7.591  ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; a1        ; clk50M     ; 10.239 ; 10.239 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 10.424 ; 10.424 ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 9.970  ; 9.970  ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 8.762  ; 8.762  ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 9.400  ; 9.400  ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 7.591  ; 7.591  ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; MIDI_IN    ; led0        ; 10.547 ;    ;    ; 10.547 ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; MIDI_IN    ; led0        ; 10.547 ;    ;    ; 10.547 ;
++------------+-------------+--------+----+----+--------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 7.517 ; 0.000         ;
++--------+-------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 0.215 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------+
+; Fast Model Recovery Summary     ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; clk50M ; 19.047 ; 0.000         ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Removal Summary     ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk50M ; 0.766 ; 0.000         ;
++--------+-------+---------------+
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+-------+-----------------------+
+; Clock  ; Slack ; End Point TNS         ;
++--------+-------+-----------------------+
+; clk50M ; 9.000 ; 0.000                 ;
++--------+-------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk50M'                                                                                             ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.517 ; frqdivmod:divider1|neg_cnt[4]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.511      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.522 ; frqdivmod:divider1|neg_cnt[5]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.506      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.597 ; frqdivmod:divider1|neg_cnt[2]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.431      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.643 ; frqdivmod:divider1|neg_cnt[3]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.385      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.763 ; frqdivmod:divider1|neg_cnt[7]  ; rg12[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.265      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.776 ; frqdivmod:divider10|neg_cnt[1] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.261      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.800 ; frqdivmod:divider4|neg_cnt[3]  ; rg09[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.228      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[6] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[5] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[4] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[3] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[2] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[1] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[8] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.803 ; frqdivmod:divider4|neg_cnt[0]  ; rg09[9] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.225      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.842 ; frqdivmod:divider10|neg_cnt[0] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.005      ; 2.195      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[6] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[5] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[4] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[3] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[2] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[1] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[7] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[9] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.847 ; frqdivmod:divider12|neg_cnt[3] ; rg01[8] ; clk50M       ; clk50M      ; 10.000       ; 0.000      ; 2.185      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[6] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[5] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[4] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[3] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[2] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[1] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[7] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[9] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.857 ; frqdivmod:divider10|neg_cnt[3] ; rg03[8] ; clk50M       ; clk50M      ; 10.000       ; 0.001      ; 2.176      ;
+; 7.881 ; frqdivmod:divider1|neg_cnt[6]  ; rg12[7] ; clk50M       ; clk50M      ; 10.000       ; -0.004     ; 2.147      ;
++-------+--------------------------------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk50M'                                                                                                                                         ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; frqdivmod:divider4|neg_cnt[0]            ; frqdivmod:divider4|neg_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider1|neg_cnt[0]            ; frqdivmod:divider1|neg_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider12|neg_cnt[0]           ; frqdivmod:divider12|neg_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider10|neg_cnt[0]           ; frqdivmod:divider10|neg_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; note_on_reg                              ; note_on_reg                              ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; powerup_reset:res_gen|rst                ; powerup_reset:res_gen|rst                ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; powerup_reset:res_gen|tick_timer[2]      ; powerup_reset:res_gen|tick_timer[2]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; powerup_reset:res_gen|tick_timer[3]      ; powerup_reset:res_gen|tick_timer[3]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; powerup_reset:res_gen|tick_timer[1]      ; powerup_reset:res_gen|tick_timer[1]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; powerup_reset:res_gen|tick_timer[0]      ; powerup_reset:res_gen|tick_timer[0]      ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|rcv_state.00000000     ; midi_in:midi_in_0|rcv_state.00000000     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|rcv_state.00000001     ; midi_in:midi_in_0|rcv_state.00000001     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|rcv_state.00000010     ; midi_in:midi_in_0|rcv_state.00000010     ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|uart_rx:URX|rx_busy    ; midi_in:midi_in_0|uart_rx:URX|rx_busy    ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|uart_rx:URX|count16[2] ; midi_in:midi_in_0|uart_rx:URX|count16[2] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|uart_rx:URX|count16[1] ; midi_in:midi_in_0|uart_rx:URX|count16[1] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; midi_in:midi_in_0|uart_rx:URX|count16[0] ; midi_in:midi_in_0|uart_rx:URX|count16[0] ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[47]                                 ; keys[47]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg04[0]                                  ; rg04[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider9|pos_cnt[0]            ; frqdivmod:divider9|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[48]                                 ; keys[48]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg05[0]                                  ; rg05[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider8|pos_cnt[0]            ; frqdivmod:divider8|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[49]                                 ; keys[49]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg06[0]                                  ; rg06[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider7|pos_cnt[0]            ; frqdivmod:divider7|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[50]                                 ; keys[50]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider6|pos_cnt[0]            ; frqdivmod:divider6|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg07[0]                                  ; rg07[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[51]                                 ; keys[51]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg08[0]                                  ; rg08[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider5|pos_cnt[0]            ; frqdivmod:divider5|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[52]                                 ; keys[52]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider4|pos_cnt[0]            ; frqdivmod:divider4|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg09[0]                                  ; rg09[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[53]                                 ; keys[53]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider3|pos_cnt[0]            ; frqdivmod:divider3|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg10[0]                                  ; rg10[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[54]                                 ; keys[54]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg11[0]                                  ; rg11[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider2|pos_cnt[0]            ; frqdivmod:divider2|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[39]                                 ; keys[39]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[40]                                 ; keys[40]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[41]                                 ; keys[41]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[42]                                 ; keys[42]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[43]                                 ; keys[43]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg12[0]                                  ; rg12[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider1|pos_cnt[0]            ; frqdivmod:divider1|pos_cnt[0]            ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[44]                                 ; keys[44]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider12|pos_cnt[0]           ; frqdivmod:divider12|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg01[0]                                  ; rg01[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[45]                                 ; keys[45]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider11|pos_cnt[0]           ; frqdivmod:divider11|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg02[0]                                  ; rg02[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[46]                                 ; keys[46]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; frqdivmod:divider10|pos_cnt[0]           ; frqdivmod:divider10|pos_cnt[0]           ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; rg03[0]                                  ; rg03[0]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[63]                                 ; keys[63]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[64]                                 ; keys[64]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[65]                                 ; keys[65]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[66]                                 ; keys[66]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[67]                                 ; keys[67]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[68]                                 ; keys[68]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[55]                                 ; keys[55]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[56]                                 ; keys[56]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[57]                                 ; keys[57]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[58]                                 ; keys[58]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[59]                                 ; keys[59]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[60]                                 ; keys[60]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[61]                                 ; keys[61]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[62]                                 ; keys[62]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[31]                                 ; keys[31]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[32]                                 ; keys[32]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[33]                                 ; keys[33]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[34]                                 ; keys[34]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[35]                                 ; keys[35]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[36]                                 ; keys[36]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[23]                                 ; keys[23]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[24]                                 ; keys[24]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[25]                                 ; keys[25]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[26]                                 ; keys[26]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[27]                                 ; keys[27]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[28]                                 ; keys[28]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[29]                                 ; keys[29]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[30]                                 ; keys[30]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[12]                                 ; keys[12]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[13]                                 ; keys[13]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[11]                                 ; keys[11]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[8]                                  ; keys[8]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[9]                                  ; keys[9]                                  ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[10]                                 ; keys[10]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[14]                                 ; keys[14]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[21]                                 ; keys[21]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[22]                                 ; keys[22]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[15]                                 ; keys[15]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[16]                                 ; keys[16]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[17]                                 ; keys[17]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[18]                                 ; keys[18]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[19]                                 ; keys[19]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; keys[20]                                 ; keys[20]                                 ; clk50M       ; clk50M      ; 0.000        ; 0.000      ; 0.367      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clk50M'                                                                                                                         ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 19.047 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|ce_16        ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.006      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[15]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[8]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[9]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[10]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[7]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[5]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[4]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[6]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[11]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[14]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[12]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[13]  ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[0]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[2]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[3]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.052 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[1]   ; clk50M       ; clk50M      ; 20.000       ; 0.021      ; 1.001      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[3]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[7]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[4]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[3]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[7]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[0]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[1]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[2]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[5]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[6]   ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[5]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[6]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[4]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[0]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[1]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.059 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[2]  ; clk50M       ; clk50M      ; 20.000       ; 0.017      ; 0.990      ;
+; 19.111 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[1]   ; clk50M       ; clk50M      ; 20.000       ; -0.002     ; 0.919      ;
+; 19.111 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[0]   ; clk50M       ; clk50M      ; 20.000       ; -0.002     ; 0.919      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|new_rx_data  ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[3] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[3]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_busy      ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[0] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[1] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[2] ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[2]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[1]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
+; 19.114 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[0]   ; clk50M       ; clk50M      ; 20.000       ; -0.001     ; 0.917      ;
++--------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clk50M'                                                                                                                         ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|new_rx_data  ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[3] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[3]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_busy      ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[0] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[1] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|bit_count[2] ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[2]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[1]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.766 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|count16[0]   ; clk50M       ; clk50M      ; 0.000        ; -0.001     ; 0.917      ;
+; 0.769 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[1]   ; clk50M       ; clk50M      ; 0.000        ; -0.002     ; 0.919      ;
+; 0.769 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|in_sync[0]   ; clk50M       ; clk50M      ; 0.000        ; -0.002     ; 0.919      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[3]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[7]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[4]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[3]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[7]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[0]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[1]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[2]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[5]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|rx_data[6]   ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[5]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[6]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[4]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[0]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[1]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.821 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|uart_rx:URX|data_buf[2]  ; clk50M       ; clk50M      ; 0.000        ; 0.017      ; 0.990      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[15]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[8]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[9]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[10]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[7]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[5]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[4]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[6]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[11]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[14]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[12]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[13]  ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[0]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[2]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[3]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.828 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|counter[1]   ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.001      ;
+; 0.833 ; powerup_reset:res_gen|rst ; midi_in:midi_in_0|baud_gen:BG|ce_16        ; clk50M       ; clk50M      ; 0.000        ; 0.021      ; 1.006      ;
++-------+---------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk50M'                                                                         ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                          ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider10|neg_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider10|pos_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Rise       ; frqdivmod:divider11|pos_cnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk50M ; Fall       ; frqdivmod:divider12|neg_cnt[3]  ;
++-------+--------------+----------------+------------------+--------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; 2.471 ; 2.471 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; 2.537 ; 2.537 ; Rise       ; clk50M          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; -2.351 ; -2.351 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; -2.409 ; -2.409 ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; a1        ; clk50M     ; 12.832 ; 12.832 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 5.736  ; 5.736  ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 5.491  ; 5.491  ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 5.228  ; 5.228  ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 5.437  ; 5.437  ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 4.019  ; 4.019  ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; a1        ; clk50M     ; 5.064 ; 5.064 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 5.081 ; 5.081 ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 4.921 ; 4.921 ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 4.478 ; 4.478 ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 4.683 ; 4.683 ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 4.019 ; 4.019 ; Rise       ; clk50M          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; MIDI_IN    ; led0        ; 5.778 ;    ;    ; 5.778 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; MIDI_IN    ; led0        ; 5.778 ;    ;    ; 5.778 ;
++------------+-------------+-------+----+----+-------+
+
+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 3.378 ; 0.215 ; 17.942   ; 0.766   ; 8.889               ;
+;  clk50M          ; 3.378 ; 0.215 ; 17.942   ; 0.766   ; 8.889               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk50M          ; 0.000 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; 4.758 ; 4.758 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; 5.166 ; 5.166 ; Rise       ; clk50M          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; MIDI_IN   ; clk50M     ; -2.351 ; -2.351 ; Rise       ; clk50M          ;
+; key0      ; clk50M     ; -2.409 ; -2.409 ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; a1        ; clk50M     ; 31.697 ; 31.697 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 12.122 ; 12.122 ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 11.511 ; 11.511 ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 10.797 ; 10.797 ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 11.441 ; 11.441 ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 7.591  ; 7.591  ; Rise       ; clk50M          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; a1        ; clk50M     ; 5.064 ; 5.064 ; Rise       ; clk50M          ;
+; ac1       ; clk50M     ; 5.081 ; 5.081 ; Rise       ; clk50M          ;
+; ac2       ; clk50M     ; 4.921 ; 4.921 ; Rise       ; clk50M          ;
+; ac3       ; clk50M     ; 4.478 ; 4.478 ; Rise       ; clk50M          ;
+; ac4       ; clk50M     ; 4.683 ; 4.683 ; Rise       ; clk50M          ;
+; led1      ; clk50M     ; 4.019 ; 4.019 ; Rise       ; clk50M          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Progagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; MIDI_IN    ; led0        ; 10.547 ;    ;    ; 10.547 ;
++------------+-------------+--------+----+----+--------+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; MIDI_IN    ; led0        ; 5.778 ;    ;    ; 5.778 ;
++------------+-------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk50M     ; clk50M   ; 31514    ; 572      ; 0        ; 7724     ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk50M     ; clk50M   ; 31514    ; 572      ; 0        ; 7724     ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk50M     ; clk50M   ; 45       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk50M     ; clk50M   ; 45       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 7     ; 7    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 302   ; 302  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
+    Info: Processing started: Thu Sep 17 00:09:53 2015
+Info: Command: quartus_sta EP2C5 -c EP2C5
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'EP2C5.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 3.378
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     3.378         0.000 clk50M 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk50M 
+Info (332146): Worst-case recovery slack is 17.942
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    17.942         0.000 clk50M 
+Info (332146): Worst-case removal slack is 1.677
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.677         0.000 clk50M 
+Info (332146): Worst-case minimum pulse width slack is 8.889
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.889         0.000 clk50M 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Info (332146): Worst-case setup slack is 7.517
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     7.517         0.000 clk50M 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk50M 
+Info (332146): Worst-case recovery slack is 19.047
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    19.047         0.000 clk50M 
+Info (332146): Worst-case removal slack is 0.766
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.766         0.000 clk50M 
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 clk50M 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 294 megabytes
+    Info: Processing ended: Thu Sep 17 00:09:55 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
