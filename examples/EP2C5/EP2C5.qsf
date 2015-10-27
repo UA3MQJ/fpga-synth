@@ -107,6 +107,7 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to a3
 set_instance_assignment -name IO_STANDARD "2.5 V" -to a4
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a3
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a4
+set_global_assignment -name VERILOG_FILE ../../modules/svca.v
 set_global_assignment -name VERILOG_FILE ../../modules/prio_encoder.v
 set_global_assignment -name VERILOG_FILE ../../modules/reg7.v
 set_global_assignment -name VERILOG_FILE ../../modules/frqdivmod.v
@@ -116,4 +117,7 @@ set_global_assignment -name VERILOG_FILE ../../modules/opencores/uart/uart_rx.v
 set_global_assignment -name VERILOG_FILE ../../modules/opencores/uart/baud_gen.v
 set_global_assignment -name SDC_FILE EP2C5.sdc
 set_global_assignment -name VERILOG_FILE EP2C5.v
+set_location_assignment PIN_73 -to clkout
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clkout
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clkout
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

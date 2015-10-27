@@ -1,4 +1,4 @@
-module EP2C5(clk50M, key0, led0, led1, led2, MIDI_IN, a1, a2, a3, a4, ac1, ac2, ac3, ac4);
+module EP2C5(clk50M, key0, led0, led1, led2, MIDI_IN, a1, a2, a3, a4, ac1, ac2, ac3, ac4, clkout);
 //ports
 input wire clk50M, key0, MIDI_IN;
 output wire led0, led1, led2;
@@ -7,6 +7,8 @@ output wire led0, led1, led2;
 output wire a1, a2, a3, a4;
 //control out's
 output wire ac1,ac2,ac3,ac4;
+
+output wire clkout;
 
 //synth
 
@@ -20,6 +22,8 @@ wire [3:0] CHAN;
 wire [6:0] NOTE;
 wire [6:0] LSB;
 wire [6:0] MSB;
+
+
 
 
 midi_in midi_in_0(.clk(clk50M), 
@@ -41,7 +45,7 @@ assign led0 = MIDI_IN;
 assign led1 = ~note_on_reg;
 assign led2 = 1'b1;
 
-
+/*
 //523,31 герц А1
 //50.000.000 / 523,31 = 95545,661271521660201410253960368
 //frqdivmod #(.DIV(95546)) divider2(.clk(clk50M), .s_out(a1));
@@ -60,6 +64,8 @@ frqdivmod #(.DIV(10044)) divider9(.clk(clk50M), .s_out(clk4));
 frqdivmod #(.DIV(10641)) divider10(.clk(clk50M), .s_out(clk3));
 frqdivmod #(.DIV(11274)) divider11(.clk(clk50M), .s_out(clk2));
 frqdivmod #(.DIV(11945)) divider12(.clk(clk50M), .s_out(clk1));
+
+assign clkout = clk50M;
 
 
 //теперь буду тактовать счетчики по 11 бит каждый. каждый бит - след. октава вниз
@@ -88,20 +94,6 @@ initial rg09 <= 11'd0;
 initial rg10 <= 11'd0;
 initial rg11 <= 11'd0;
 initial rg12 <= 11'd0;
-
-/*
-always @ (posedge  clk1) rg01 <= rg01 + 1'b1;
-always @ (posedge  clk2) rg02 <= rg02 + 1'b1;
-always @ (posedge  clk3) rg03 <= rg03 + 1'b1;
-always @ (posedge  clk4) rg04 <= rg04 + 1'b1;
-always @ (posedge  clk5) rg05 <= rg05 + 1'b1;
-always @ (posedge  clk6) rg06 <= rg06 + 1'b1;
-always @ (posedge  clk7) rg07 <= rg07 + 1'b1;
-always @ (posedge  clk8) rg08 <= rg08 + 1'b1;
-always @ (posedge  clk9) rg09 <= rg09 + 1'b1;
-always @ (posedge clk10) rg10 <= rg10 + 1'b1;
-always @ (posedge clk11) rg11 <= rg11 + 1'b1;
-always @ (posedge clk12) rg12 <= rg12 + 1'b1; */
 
 reg trg01;
 reg trg02;
@@ -210,26 +202,111 @@ generate
 	end
 endgenerate 
 
+//теперь надо сделать wire на 127 линий
+wire [127:0] line8; //регистр 8! в понятиях органов!
+generate 
+	for(i = 0; i < 9; i = i + 1 ) begin : i8_gen
+		assign line8[127 - (12*(i+1)) ] = rg12[i];
+		assign line8[126 - (12*(i+1)) ] = rg11[i];
+		assign line8[125 - (12*(i+1)) ] = rg10[i];
+		assign line8[124 - (12*(i+1)) ] = rg09[i];
+		assign line8[123 - (12*(i+1)) ] = rg08[i];
+		assign line8[122 - (12*(i+1)) ] = rg07[i];
+		assign line8[121 - (12*(i+1)) ] = rg06[i];
+		assign line8[120 - (12*(i+1)) ] = rg05[i];
+		assign line8[119 - (12*(i+1)) ] = rg04[i];
+		assign line8[118 - (12*(i+1)) ] = rg03[i];
+		assign line8[117 - (12*(i+1)) ] = rg02[i];
+		assign line8[116 - (12*(i+1)) ] = rg01[i];
+	end
+endgenerate 
+
+//теперь надо сделать wire на 127 линий
+wire [127:0] line4; //регистр 4! в понятиях органов!
+generate 
+	for(i = 0; i < 8; i = i + 1 ) begin : i4_gen
+		assign line4[127 - (12*(i+2)) ] = rg12[i];
+		assign line4[126 - (12*(i+2)) ] = rg11[i];
+		assign line4[125 - (12*(i+2)) ] = rg10[i];
+		assign line4[124 - (12*(i+2)) ] = rg09[i];
+		assign line4[123 - (12*(i+2)) ] = rg08[i];
+		assign line4[122 - (12*(i+2)) ] = rg07[i];
+		assign line4[121 - (12*(i+2)) ] = rg06[i];
+		assign line4[120 - (12*(i+2)) ] = rg05[i];
+		assign line4[119 - (12*(i+2)) ] = rg04[i];
+		assign line4[118 - (12*(i+2)) ] = rg03[i];
+		assign line4[117 - (12*(i+2)) ] = rg02[i];
+		assign line4[116 - (12*(i+2)) ] = rg01[i];
+	end
+endgenerate 
+
+//теперь надо сделать wire на 127 линий
+wire [127:0] line2; //регистр 2! в понятиях органов!
+generate 
+	for(i = 0; i < 7; i = i + 1 ) begin : i2_gen
+		assign line2[127 - (12*(i+3)) ] = rg12[i];
+		assign line2[126 - (12*(i+3)) ] = rg11[i];
+		assign line2[125 - (12*(i+3)) ] = rg10[i];
+		assign line2[124 - (12*(i+3)) ] = rg09[i];
+		assign line2[123 - (12*(i+3)) ] = rg08[i];
+		assign line2[122 - (12*(i+3)) ] = rg07[i];
+		assign line2[121 - (12*(i+3)) ] = rg06[i];
+		assign line2[120 - (12*(i+3)) ] = rg05[i];
+		assign line2[119 - (12*(i+3)) ] = rg04[i];
+		assign line2[118 - (12*(i+3)) ] = rg03[i];
+		assign line2[117 - (12*(i+3)) ] = rg02[i];
+		assign line2[116 - (12*(i+3)) ] = rg01[i];
+	end
+endgenerate 
+
+
 reg [127:0] keys; //регистр нажатых клавиш.
 //будет использоваться, как маска
 
 
 //теперь 127 линий пропускаем через маску
 wire [127:0] line16_out; //регистр 16! в понятиях органов!
+wire [127:0] line8_out; //регистр 8! в понятиях органов!
+wire [127:0] line4_out; //регистр 4! в понятиях органов!
+wire [127:0] line2_out; //регистр 4! в понятиях органов!
 
 generate 
 	for(i = 0; i < 128; i = i + 1 ) begin : ii_gen
 		assign line16_out[i] = line16[i] && keys[i];
+		assign line8_out[i]  = line8[i]  && keys[i];
+		assign line4_out[i]  = line4[i]  && keys[i];
+		assign line2_out[i]  = line2[i]  && keys[i];
 	end
 endgenerate
 
 //суммируем все линии в один выход (чума)
 reg [7:0] line16_out_sum;
+reg [7:0] line8_out_sum;
+reg [7:0] line4_out_sum;
+reg [7:0] line2_out_sum;
 integer j;
 always @(line16_out) begin
 	line16_out_sum = 8'd0;
 	for(j = 0; j < 128; j = j + 1 ) begin : j_gen
 		line16_out_sum = line16_out_sum + line16_out[j];
+	end
+end
+always @(line8_out) begin
+	line8_out_sum = 8'd0;
+	for(j = 0; j < 128; j = j + 1 ) begin : j1_gen
+		line8_out_sum = line8_out_sum + line8_out[j];
+	end
+end
+always @(line4_out) begin
+	line4_out_sum = 8'd0;
+	for(j = 0; j < 128; j = j + 1 ) begin : j2_gen
+		line4_out_sum = line4_out_sum + line4_out[j];
+	end
+end
+always @(line2_out) begin
+	line2_out_sum = 8'd0;
+	for(j = 0; j < 128; j = j + 1 ) begin : j3_gen
+		line2_out_sum = line2_out_sum + line2_out[j];
 	end
 end
 
@@ -245,13 +322,28 @@ reg [7:0] pwm2_run;
 initial pwm2_run <= 8'd0;
 always @(posedge clk50M) pwm2_run <= pwm2_run + 1'b1;
 
-assign a1 = pwm2_run < (line16_out_sum << 4);
+wire [7:0] result16;
+wire [7:0] result8;
+wire [7:0] result4;
+wire [7:0] result2;
+
+svca dca1(.in(line16_out_sum << 4), .cv({C1, 1'b0}), .signal_out(result16));
+svca dca2(.in(line8_out_sum << 4), .cv({C2, 1'b0}), .signal_out(result8));
+svca dca3(.in(line4_out_sum << 4), .cv({C3, 1'b0}), .signal_out(result4));
+svca dca4(.in(line2_out_sum << 4), .cv({C4, 1'b0}), .signal_out(result2));
+
+
+
+assign a1 = pwm2_run < result16;
+assign a2 = pwm2_run < result8;
+assign a3 = pwm2_run < result4;
+assign a4 = pwm2_run < result2;
 
 //данные возьму с контроллов, которые были назначены на ADSR, ибо мне лень.
 //вот это надо как-то изящно упростить!
 wire [6:0] C1;
 wire C1_lsb = ((CH_MESSAGE==4'b1011)&&(LSB==7'd055))||rst; // control change & 55 control - LSB
-wire [6:0] C1_value =  (rst) ? 7'd127 : MSB;
+wire [6:0] C1_value =  (rst) ? 7'd00 : MSB;
 reg7 C1_reg(clk50M, C1_lsb, C1_value, C1);
 
 wire [6:0] C2;
@@ -286,7 +378,7 @@ always @(posedge clk50M) begin
 		note_on_reg <= 1'b0;
 		keys[NOTE] <= 1'b0;
 	end
-end
+end */
 
 endmodule
 

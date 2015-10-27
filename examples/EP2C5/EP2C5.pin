@@ -136,7 +136,7 @@ RESERVED_INPUT               : 69        :        :                   :         
 RESERVED_INPUT               : 70        :        :                   :         : 4         :                
 RESERVED_INPUT               : 71        :        :                   :         : 4         :                
 RESERVED_INPUT               : 72        :        :                   :         : 4         :                
-RESERVED_INPUT               : 73        :        :                   :         : 3         :                
+clkout                       : 73        : output : 2.5 V             :         : 3         : Y              
 MIDI_IN                      : 74        : input  : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT               : 75        :        :                   :         : 3         :                
 RESERVED_INPUT               : 76        :        :                   :         : 3         :                
