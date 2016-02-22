@@ -1,15 +1,15 @@
 module frqdivmod(clk, s_out);
 parameter DIV=2;
 // calculated parameters
-parameter WITH = ($clog2(DIV)>0) ? $clog2(DIV) : 1;
+parameter WITH = ($clog2(DIV+1)>0) ? $clog2(DIV+1) : 1;
 
 input wire clk;
 output wire s_out;
 
-reg clk_n;
+reg clk_n; 
 
-reg [(WITH-1):0] pos_cnt;
-reg [(WITH-1):0] neg_cnt;
+reg [(WITH-1):0] pos_cnt; 
+reg [(WITH-1):0] neg_cnt; 
 
 wire [(WITH-1):0] div_value = DIV[(WITH-1):0];
 
