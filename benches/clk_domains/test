@@ -1,0 +1,195 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_008CDA68 .scope module, "testbench" "testbench" 2 1;
+ .timescale 0 0;
+v0080F058_0 .var "clkA", 0 0;
+v0080F0B0_0 .var "clkB", 0 0;
+v0080F108_0 .var "dataIN", 7 0;
+v0080F160_0 .net "dataOUT", 7 0, L_008CF3A0;  1 drivers
+v0080F1B8_0 .var "flagIN", 0 0;
+v0080F210_0 .net "flagOut", 0 0, L_008CF3E8;  1 drivers
+S_008C3C38 .scope module, "fck" "Data_CrossDomain" 2 57, 3 1 0, S_008CDA68;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clkA"
+    .port_info 1 /INPUT 1 "FlagIn_clkA"
+    .port_info 2 /INPUT 1 "clkB"
+    .port_info 3 /OUTPUT 1 "FlagOut_clkB"
+    .port_info 4 /INPUT 8 "dataA"
+    .port_info 5 /OUTPUT 8 "dataB"
+L_008CF3A0 .functor BUFZ 8, v007E8B00_0, C4<00000000>, C4<00000000>, C4<00000000>;
+L_008CF3E8 .functor XOR 1, L_0080F268, L_0080F2C0, C4<0>, C4<0>;
+v008CD0B8_0 .net "FlagIn_clkA", 0 0, v0080F1B8_0;  1 drivers
+v008CD168_0 .net "FlagOut_clkB", 0 0, L_008CF3E8;  alias, 1 drivers
+v007E8020_0 .var "FlagToggle_clkA", 0 0;
+v007E8078_0 .var "SyncA_clkB", 2 0;
+v008C3D08_0 .net *"_s3", 0 0, L_0080F268;  1 drivers
+v008C3D60_0 .net *"_s5", 0 0, L_0080F2C0;  1 drivers
+v007E89F8_0 .net "clkA", 0 0, v0080F058_0;  1 drivers
+v007E8A50_0 .var "clkA_data", 7 0;
+v007E8AA8_0 .net "clkB", 0 0, v0080F0B0_0;  1 drivers
+v007E8B00_0 .var "clkB_data", 7 0;
+v007E8B58_0 .net "dataA", 7 0, v0080F108_0;  1 drivers
+v0080F000_0 .net "dataB", 7 0, L_008CF3A0;  alias, 1 drivers
+E_007D9218 .event posedge, v007E8AA8_0;
+E_007D9240 .event posedge, v007E89F8_0;
+L_0080F268 .part v007E8078_0, 2, 1;
+L_0080F2C0 .part v007E8078_0, 1, 1;
+    .scope S_008C3C38;
+T_0 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007E8020_0, 0, 0;
+    %end;
+    .thread T_0;
+    .scope S_008C3C38;
+T_1 ;
+    %wait E_007D9240;
+    %load/v 8, v007E8020_0, 1;
+    %load/v 9, v008CD0B8_0, 1;
+    %xor 8, 9, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v007E8020_0, 0, 8;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_008C3C38;
+T_2 ;
+    %ix/load 0, 8, 0;
+    %assign/v0 v007E8A50_0, 0, 0;
+    %end;
+    .thread T_2;
+    .scope S_008C3C38;
+T_3 ;
+    %wait E_007D9240;
+    %load/v 8, v008CD0B8_0, 1;
+    %jmp/0xz  T_3.0, 8;
+    %load/v 8, v007E8B58_0, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v007E8A50_0, 0, 8;
+T_3.0 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_008C3C38;
+T_4 ;
+    %ix/load 0, 8, 0;
+    %assign/v0 v007E8B00_0, 0, 0;
+    %end;
+    .thread T_4;
+    .scope S_008C3C38;
+T_5 ;
+    %ix/load 0, 3, 0;
+    %assign/v0 v007E8078_0, 0, 0;
+    %end;
+    .thread T_5;
+    .scope S_008C3C38;
+T_6 ;
+    %wait E_007D9218;
+    %load/v 8, v007E8020_0, 1;
+    %load/v 9, v007E8078_0, 2; Select 2 out of 3 bits
+    %ix/load 0, 3, 0;
+    %assign/v0 v007E8078_0, 0, 8;
+    %jmp T_6;
+    .thread T_6;
+    .scope S_008C3C38;
+T_7 ;
+    %wait E_007D9218;
+    %ix/load 1, 1, 0;
+    %mov 4, 0, 1;
+    %jmp/1 T_7.0, 4;
+    %load/x1p 8, v007E8078_0, 1;
+    %jmp T_7.1;
+T_7.0 ;
+    %mov 8, 2, 1;
+T_7.1 ;
+; Save base=8 wid=1 in lookaside.
+    %load/v 9, v007E8078_0, 1; Only need 1 of 3 bits
+; Save base=9 wid=1 in lookaside.
+    %xor 8, 9, 1;
+    %jmp/0xz  T_7.2, 8;
+    %load/v 8, v007E8A50_0, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v007E8B00_0, 0, 8;
+T_7.2 ;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_008CDA68;
+T_8 ;
+    %vpi_call 2 9 "$dumpfile", "bench.vcd" {0 0};
+    %vpi_call 2 10 "$dumpvars", 1'sb0, S_008CDA68 {0 0};
+    %vpi_call 2 12 "$display", "starting testbench!!!!" {0 0};
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F0B0_0, 0, 0;
+    %movi 8, 20, 6;
+T_8.0 %cmp/s 0, 8, 6;
+    %jmp/0xz T_8.1, 5;
+    %add 8, 1, 6;
+    %delay 571, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F0B0_0, 0, 1;
+    %delay 571, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F0B0_0, 0, 0;
+    %jmp T_8.0;
+T_8.1 ;
+    %vpi_call 2 23 "$display", "finished OK!" {0 0};
+    %vpi_call 2 24 "$finish" {0 0};
+    %end;
+    .thread T_8;
+    .scope S_008CDA68;
+T_9 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F058_0, 0, 0;
+    %movi 8, 580, 11;
+T_9.0 %cmp/s 0, 8, 11;
+    %jmp/0xz T_9.1, 5;
+    %add 8, 1, 11;
+    %delay 20, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F058_0, 0, 1;
+    %delay 20, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F058_0, 0, 0;
+    %jmp T_9.0;
+T_9.1 ;
+    %end;
+    .thread T_9;
+    .scope S_008CDA68;
+T_10 ;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0080F108_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F1B8_0, 0, 0;
+    %delay 180, 0;
+    %movi 8, 66, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0080F108_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F1B8_0, 0, 1;
+    %delay 40, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0080F108_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F1B8_0, 0, 0;
+    %delay 7000, 0;
+    %movi 8, 120, 8;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0080F108_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F1B8_0, 0, 1;
+    %delay 40, 0;
+    %ix/load 0, 8, 0;
+    %assign/v0 v0080F108_0, 0, 0;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0080F1B8_0, 0, 0;
+    %end;
+    .thread T_10;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    ".//Data_CrossDomain.v";
