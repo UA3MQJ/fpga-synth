@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Oct 22 22:24:15 2015
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : ym2149f
+Top-level Entity Name : ym2149f
+Family : Cyclone IV E
+Total logic elements : 87
+    Total combinational functions : 84
+    Dedicated logic registers : 47
+Total registers : 47
+Total pins : 16
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

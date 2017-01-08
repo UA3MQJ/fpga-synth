@@ -1,0 +1,139 @@
+http://hsto.org/getpro/habr/post_images/ecf/28b/ac2/ecf28bac228a58575bac930de4b2015b.png
+
+http://rcl-radio.ru/?p=4461
+
+
+
+ 1 - GND
+40 - VCC +5v
+23 - /RES - пусть висит (подтянут), на землю - сброс
+22 - CLOCK
+37..30 - DA0..DA7 - 2.2k - ПЛИС
+29 - BC1 -  2.2k - ПЛИС   0/1 (0 запись; 1 адресный)
+28 - BC2  - 10k  - +5v    1
+27 - BDIR - 10k  - +5v    1
+
+порядок следования
+1..8 - DA0 ... DA7
+CLOCK
+/RES
+BC1
+BC2
+BDIR
+
+http://zx-pk.ru/tags.php?tag=ay-3-8910
+       BDIR | BC1 | BC2 | функция         
+      ------+-----+-----+-----------------    
+         0  |  0  |  1  | неактивен         
+         0  |  1  |  1  | чтение из ISG     
+         1  |  0  |  1  | запись в ISG      
+         1  |  1  |  1  | фиксация адреса   
+	   
+	   
+несоответствие блин
+R0-R5 - Tone periods -> R0-R5	
+R6    - Noise period -> R6
+R7 	  - Mixer control-> R7
+R10     -     Ampl A -> R8
+R11     -     Ampl B -> R9
+R12     -     Ampl C -> R10
+R13 - Env period     -> R11
+R14 - Env period     -> R12
+R15 - Env form       -> R13
+	   
+GUNSHOT SOUND EFFECT CHART
+
+R6		017 oct (8'b00001111)	//Set Noise period to mid-value
+R7		007 oct (8'b00000111)   //Enable Noise only on Channels A, B, C
+R8		020	oct (8'b00010000)   //переменная громкость каналов A
+R9		020	oct (8'b00010000)   // B
+R10		020	oct (8'b00010000)   // C
+
+R11		020	oct (8'b00000000)   // period
+R12		020	oct (8'b00010000)   // period
+R15		000	oct (8'b00000000)   // спад
+
+
+
+
+
+
+
+
+
+
+
+форматы трекеров
+http://vb4.zx-pk.ru/showthread.php?t=2868
+
+
+gen
+http://sblive.narod.ru/ZX-Spectrum/index.htm
+http://sblive.narod.ru/ZX-Spectrum/Pentagon128k/Pentagon128VMGPage1.jpg
+http://chip-cont.com/pdf/74ls04.pdf
+http://lib.qrz.ru/book/export/html/5105
+http://www.chipdip.ru/product/k555ie5/
+http://www.ti.com/lit/ds/symlink/sn74ls90.pdf
+http://www.johnhavard.com/cms/home/notes/MHz-ns.html
+http://library.espec.ws/books/ttl/CHAPTER1/1-1.htm
+
+Программа с набором зв. эффектов для AY
+http://zx-pk.ru/showthread.php?t=19848
+
+Вывод оцифрованного звука - как выводить звук на АY и PR0FI С0V0Х.
+http://www.zxpress.ru/article.php?id=13767
+
+Мир звуков Спектрума - глава 4.6: Обработка внешних сигналов - оцифровка.
+http://www.zxpress.ru/article.php?id=5448
+
+НОВОЕ В МИРЕ ЗВУКОВ AY
+http://www.zxpress.ru/article.php?id=701
+
+МУЗЫКАЛЬНЫЙ СОПРОЦЕССОР
+http://zxpress.ru/book_articles.php?id=1031
+
+ Программа с набором зв. эффектов для AY
+ http://zx-pk.ru/showthread.php?t=19848
+ 
+ Antique toY #05 - Звукоимитация на ZX Spectrum
+ http://zxtunes.com/podcast.php?id=5
+ 
+шумовой каналов
+http://www.youtube.com/watch?feature=player_detailpage&v=ErvQtdttV40
+
+правильное подключение к спеку
+http://zx-pk.ru/showthread.php?t=8073
+http://zx-pk.ru/showthread.php?t=3429
+
+AY/YM: Назначение бита CONTINUE в генераторе огибающей
+http://zx-pk.ru/showthread.php?t=14199
+
+чипы
+http://www.synthlab.de/blog/soundchips.html
+YM2612
+YM2203
+YM2149
+YMF721
+SAA1099
+MA8201
+VS1003
+
+Некоторые особенности музыкального сопроцессора
+http://ivr.webzone.ru/articles/mus_sopr/index.htm
+http://zx-pk.ru/showthread.php?t=10843&page=3
+
+ямаха на максе
+http://zx-pk.ru/showthread.php?t=8649
+
+M5255-OKI является аналогом: AY-3-8910, MSM5255RS-OKI
+http://zx-pk.ru/showthread.php?t=2238
+KC89C72,
+JFC95101,
+WB5300
+Winbond WF19054 
+
+https://ru.wikipedia.org/wiki/Atari_POKEY
+https://ru.wikipedia.org/wiki/MOS_Technology_SID
+
+Для AY/YM есть ли ограничение по частоте выводимого сигнала?
+http://zx-pk.ru/showthread.php?t=1015

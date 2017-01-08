@@ -1,0 +1,30 @@
+# Project: trdtool
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = trdtool.o $(RES)
+LINKOBJ  = trdtool.o $(RES)
+LIBS =  -L"l:/Dev-Cpp/lib"  
+INCS =  -I"l:/Dev-Cpp/include" 
+CXXINCS =  -I"l:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"l:/Dev-Cpp/include/c++/3.4.2/backward"  -I"l:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"l:/Dev-Cpp/include/c++/3.4.2"  -I"l:/Dev-Cpp/include" 
+BIN  = trdtool.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before trdtool.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "trdtool.exe" $(LIBS)
+
+trdtool.o: trdtool.cpp
+	$(CPP) -c trdtool.cpp -o trdtool.o $(CXXFLAGS)

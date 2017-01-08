@@ -1,0 +1,1138 @@
+
+<!-- saved from url=(0042)http://zxpress.ru/book_articles.php?id=923 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910/12 в ZX-Spectrum. Программирование </title>
+
+
+<meta name="keywords" content="ZX Spectrum Spektrum Спектрум Spеccy Спекки Z80 Программирование ">
+<meta name="description" content="Библиотека электронных газет и журналов для ZX Spectrum - ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910/12 в ZX-Spectrum.">
+<meta name="google-site-verification" content="3jU_t7yiV6nlzUiQHZMyU5nlowdU8bUn3YH7NVJJ5Kw">
+
+
+<link href="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/style.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/tagsinput.css">
+<script type="text/javascript" async="" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/watch.js"></script><script src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/jquery.min.js"></script>
+<script type="text/javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/jquery-ui.min.js"></script>
+<script language="javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/jquery.tagsinput.js" type="text/javascript"></script>
+<script language="javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/zxpress.js" type="text/javascript"></script>
+<script src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/share.php"></script><script type="text/javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/share_count"></script><script type="text/javascript" charset="utf-8" async="" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/button.9594287b32ac4ed2228acac1d8fcd7c2.js"></script></head>
+<body>
+<div class="page">
+<div class="menu">
+<div style="float: left;"><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/logo_sepia18.png" alt="Библиотека электронных газет и журналов для ZX Spectrum" border="0"></div>
+<div class="menu text">
+<a href="http://zxpress.ru/">Библиотека</a><br>
+<a href="http://zxpress.ru/books.php">книги</a> • <a href="http://zxpress.ru/ezines.php">пресса</a> • <a href="http://zxpress.ru/zxnet">zxnet</a><br><br>
+<a href="http://zxpress.ru/gallery.php">Галерея</a><br>
+<a href="http://zxpress.ru/updates.php">Обновления</a><br>
+<a href="http://zxpress.ru/chronology.php">Хронология</a><br>
+<a href="http://zxpress.ru/stats.php">Статистика</a><br>
+<a href="http://zxpress.ru/guestbook.php">Гостевая</a><br>
+</div>
+</div>
+
+
+
+
+<div style="clear: all"></div>
+
+
+<!-- <div class='content clearfix'>
+<div class='left-column'> -->
+
+<table width="1000"><tbody><tr><td valign="top"><div class="left-column">
+<script type="text/javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/share.js" charset="UTF-8"></script>
+<script language="javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/jquery.js" type="text/javascript"></script>
+<script language="javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/rgb.js" type="text/javascript"></script>
+<link href="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/odkl_share.css" rel="stylesheet">
+<script src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/odkl_share.js" type="text/javascript"></script>
+
+<table cellspacing="0" cellpadding="0" align="center" width="100%">
+<tbody>
+<tr>
+<td style="font: 13px Arial;">
+
+<table cellpadding="0" cellspacing="0" style="padding: 8px" border="0">
+
+<tbody><tr><td style="font: 13px Arial">
+
+<table><tbody><tr><td>
+<img height="80" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/37.jpg" title="ZX-Forum №3 Сборник статей">
+</td><td>&nbsp;
+
+<table cellpadding="0" width="100%" style="padding-left: 16px"><tbody><tr><td style="font: 15pt Georgia;">
+<a href="http://zxpress.ru/book.php?id=35" title="скачать книгу ZX-Forum №3">ZX-Forum №3</a>
+</td><td style="font: 10pt Georgia; color: #796C5F; text-align: right; padding-right: 8px;"><noindex> 1995 г.
+</noindex></td></tr></tbody></table>
+<hr class="line">
+
+<div style="font: 10pt Verdana; width: 600; padding-left: 16px"><b>Читатель-читателю</b> - Камертон и музыкальный сопроцессор AY-3-8910/12 в ZX-Spectrum.</div><br><br>
+
+</td></tr></tbody></table>
+
+
+
+<div style="font: 10pt Verdana; padding-left: 16px">
+Темы статьи: <strong>
+<a class="f" href="http://zxpress.ru/articles_list.php?tag=13" id="tag"> Программирование</a> &nbsp;
+</strong>
+</div>
+<br>
+
+
+
+
+<div style="background-color: white; color: black; font: normal Arial 14px; text-align: left; padding: 32px; width: 600px; opacity: .7;" id="palette">
+
+
+
+<p><span class="font21" style="font-weight:bold;font-style:italic;"><a name="bookmark17"></a>Камертон и музыкальный сопроцессор</span></p>
+<p><span class="font19">© Рюмик С М., г. Чернигов, 1995.</span></p>
+<p><span class="font19">Применение музыкальных сопроцессоров AY-3-8910/12 (в дальнейшем по тексту AY) по праву способствовало уникальному долголетию компьютеров ZX-Spectrum.</span></p>
+<p><span class="font19">Музыкальные сопроцессоры появились в конце 1985 года в модели с расширенной памятью ZX-Spectrum-128 и затем присутствовали во всех последующих фирменных и отечественных разработках с памятью 128 и более Кб.</span></p>
+<p><span class="font19">При всем разнообразии схем включения музыкальных сопроцессоров, один вопрос до сих пор решается неоднозначно, какой же должна быть частота, подаваемая на тактовый вход AY-микросхемы? В переводе фирменного описания указана цифра 1,7734 МГц с точностью 0,01% [1]. В реальных схемах частоту выбирают в диапазоне 1-2 МГц, рассчитывая услышать "именно те звуки, которые были задуманы при написании программы" [2].</span></p>
+<p><span class="font19">Объяснить этот феномен, а также ответить на вопросы: какая же должна быть "истинная" частота и так ли был прав сэр Клайв Синклер, устанавливая определенные константы в ПЗУ-128, поможет предлагаемая публикация.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark18"></a>1. Общие сведения из теории музыкальной акустики.</span></p>
+<p><span class="font19">Частоты акустических колебаний в пределах 20 - 20000 Гц называются звуковыми.</span></p>
+<p><span class="font19">Высота звука - это качественная оценка частоты колебаний звука. С ростом частоты высота звука увеличивается.</span></p>
+<p><span class="font19">Человеческое ухо чувствительно к изменению высоты тона более, чем к какому-либо другому параметру звука. Человек способен различить в диапазоне до 4000 Гц изменение частоты в 1 Гц. А по биениям частот двух тонов он может обнаружить разность частот до десятых долей Гц! [3].</span></p>
+<p><span class="font19">Каждый звук в мелодии имеет свою частоту. Соответствие ноты и частоты звука подчиняется строгим математическим законам. В 1700 году немецкий ученый и музыкант Андреас Веркмейстер предложил математическую модель музыкальной шкалы, основанную на теории иррациональных чисел. Речь идет о логарифмически равномерной или, по-другому, равномерно темперированной музыкальной шкале, которой мы пользуемся и поныне.</span></p>
+<p><span class="font19">Звукоряд насчитывает семь полных и две неполных октавы. Это (снизу - вверх): субконтроктава (три верхних звука), контроктава, большая октава, малая октава, первая, вторая, третья, четвертая октавы и пятая октава (три нижних звука). В октаве 12 нот, итого в звукоряде 90 нот, что соответствует клавиатуре пианино.</span></p>
+<p><span class="font19">Нотный состав музыкальной шкалы приведен в таблице 1.</span></p>
+<p><span class="font19">Таблица 1.</span></p>
+<table border="1">
+<tbody><tr><td>
+<p><span class="font19">Нота</span></p></td><td>
+<p><span class="font19">до</span></p></td><td>
+<p><span class="font19">до-</span></p>
+<p><span class="font19">диез</span></p></td><td>
+<p><span class="font19">р<sup>е</sup></span></p></td><td>
+<p><span class="font19">р<sup>е-</sup></span></p>
+<p><span class="font19">диез</span></p></td><td>
+<p><span class="font19">ми</span></p></td><td>
+<p><span class="font19">фа</span></p></td><td>
+<p><span class="font19">фа-</span></p>
+<p><span class="font19">диез</span></p></td><td>
+<p><span class="font19">соль</span></p></td><td>
+<p><span class="font19">соль-диез</span></p></td><td>
+<p><span class="font19">ля</span></p></td><td>
+<p><span class="font19">ля-</span></p>
+<p><span class="font19">диез</span></p></td><td>
+<p><span class="font19">си</span></p></td></tr>
+<tr><td>
+<p><span class="font19">Обозначение</span></p></td><td>
+<p><span class="font19">C</span></p></td><td>
+<p><span class="font19">C#</span></p></td><td>
+<p><span class="font19">D</span></p></td><td>
+<p><span class="font19">D#</span></p></td><td>
+<p><span class="font19">E</span></p></td><td>
+<p><span class="font19">F</span></p></td><td>
+<p><span class="font19">F#</span></p></td><td>
+<p><span class="font19">G</span></p></td><td>
+<p><span class="font19">G#</span></p></td><td>
+<p><span class="font19">A</span></p></td><td>
+<p><span class="font19">A#</span></p></td><td>
+<p><span class="font19">B</span></p></td></tr>
+</tbody></table>
+<p><span class="font19"># - знак повышения высоты тона на полтона.</span></p>
+<p><span class="font19">Интервал между любыми двумя рядом расположенными нотами табл.1 называется полутоном.</span></p>
+<p><span class="font19">Частоту любой ноты F(i) можно вычислить, зная частоту рядом стоящей ноты F(i-1), по формуле:</span></p>
+<p><span class="font8">1</span></p>
+<p><span class="font19" style="font-style:italic;">F</span><span class="font19"> (i) = 2<sup>12</sup>*</span><span class="font19" style="font-style:italic;"> F (i -</span><span class="font19">1)&nbsp;(1)</span></p>
+<p><span class="font19">В качестве стандарта звукового и частотного соответствия принята нота "ля" первой октавы, имеющая частоту ровно 440 Гц. Недаром камертон (устройство, являющееся эталоном высоты звука) воспроизводит именно 440 Гц.</span></p>
+<p><span class="font19">Все остальные 11 нот октавы являются производными от "ля" и не имеют абсолютно точного значения частоты, так как число "корень двенадцатой степени из двух" в формуле (1) является иррациональным, то есть приближенным (=1,05946...).</span></p>
+<p><span class="font19">Цент - это единица частотного интервала, равная 1/100 полутона. Октава равна 12 полутонам или 1200 центам.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark19"></a>2. Структурная схема музыкального сопроцессора.</span></p>
+<p><span class="font19">Музыкальный сопроцессор в справочнике [4] назван программируемым генератором звуков. По принципу работы он наиболее близок к классу музыкальных синтезаторов.</span></p>
+<p><span class="font19">Основой любого электромузыкального инструмента (ЭМИ) является генераторный блок, который, как известно [5], выполняют либо с 12 отдельными тональными генераторами, либо с одним, работающим совместно с делителями частоты. Именно второй способ применен в архитектуре AY.</span></p>
+<p><span class="font19">На рисунке 1 приведена структурная схема музыкального сопроцессора [4]. Для упрощения анализа в структуре оставлены только элементы, влияющие на высоту звука, форма сигнала и спецэффекты не рассматриваются.</span></p><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-1.png" style="width:399pt;height:66pt;">
+<p><span class="font19">Рис.1.</span></p>
+<p><span class="font19">Управление генераторами тона A, B, C, осуществляется через 6 внутренних управляющих регистров R0-R5. Каждый канал снабжен собственным программируемым счетчиком. Выходная частота получается делением синхронизирующей тактовой частоты CLK сначала на К<sub>СЧ</sub>=16 с последующим делением полученного результата на 12-разрядную величину, соответствующую частоте тона.</span></p>
+<p><span class="font19">Значение 12-разрядной величины получается путем комбинации содержимого 4 младших разрядов грубого тона (R1, R3, R5 - число 0-15) и 8 разрядов регистра точного тона (R0, R2, R4 -число 0-255).</span></p>
+<p><span class="font19">Все три канала A, B, C, работают независимо друг от друга.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark20"></a>3. Программирование музыкального сопроцессора.</span></p>
+<p><span class="font19">С точки зрения программиста музыкальный сопроцессор в Спектруме представляет собой устройство, имеющее два порта: выходной порт с адресом #BFFD (49149) и входной/выходной порт с адресом #FFFD (65533).</span></p>
+<p><span class="font19">Из 16 внутренних регистров AY в установке высоты тона участвуют шесть: R0-R5.</span></p>
+<p><span class="font19">Для работы с регистрами первоначально в порт #FFFD заносится его порядковый номер, для R0 это #00, R1 - #01, R2 - #02 и т.д. Затем в порт #BFFD заносится конкретное число, определяющее в случае регистров R0-R5 коэффициент деления входной частоты.</span></p>
+<p><span class="font19">Программирование высоты тона музыкального сопроцессора осуществляется следующими способами:</span></p>
+<p><span class="font19">-&nbsp;через оператор вывода OUT на БЕЙСИКЕ-48 или БЕЙСИКЕ-128;</span></p>
+<p><span class="font19">-&nbsp;через команду АССЕМБЛЕРА OUT в машинных кодах;</span></p>
+<p><span class="font19">- через оператор PLAY на БЕЙСИКЕ-128.</span></p>
+<p><span class="font19">Команда PLAY гораздо более гибкая, чем обыкновенный BEEP, так как позволяет программировать мелодию непосредственно в нотах выбранной октавы. Формат команды PLAY при воспроизведении, например, камертонной ноты "ля" первой октавы:</span></p>
+<p><span class="font5" style="font-weight:bold;">PLAY "О4А"</span></p>
+<p><span class="font19">где цифра "4" после заглавной буквы "О" обозначает порядковый номер октавы, а заглавная буква "А" является символом ноты "ля".</span></p>
+<p><span class="font19">Оператор PLAY охватывает 9 октав, число после буквы "О" может изменяться только в пределах от 0 (субконтроктава) до 8 (пятая октава). Действительно, задайте: PLAY "O9A", и получите ошибку: "Out of range".</span></p>
+<p><span class="font19">Буква, обозначающая ноту, может быть как заглавная ("А"), так и строчная ("а"), причем строчная буква обозначает понижение одноименной ноты ровно на октаву.</span></p>
+<p><span class="font19">Коэффициенты деления оператора PLAY зашиты в ПЗУ-0 (ПЗУ Спектрум-128) и занимают область 216 байтов по адресам #1096-#116D.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark21"></a>4. Определение коэффициентов деления и частоты CLK.</span></p>
+<p><span class="font19">Из трёх способов программирования звука только последний, через оператор PLAY, даёт абсолютный результат, то есть, имеется привязка к конкретным нотам. Это означает, что, запрограммировав звучание ноты "ля" первой октавы через команду PLAY и сравнив полученную частоту камертона, следует ожидать одинаковые результаты.</span></p>
+<p><span class="font19">Так как высота ноты для Спектрума однозначно зависит от тактовой частоты, подаваемой на вход CLK сопроцессора, то идеальное звучание одной ноты возможно только для одной, вполне определенной частоты CLK.</span></p>
+<p><span class="font19">Поиск частоты можно провести двумя путями.</span></p>
+<p><span class="font19">Первый способ, практический. Подключить к входу CLK внешний задающий генератор в диапазоне 1-2 МГц и, изменяя его частоту, добиться совпадения звучания с эталоном. Способ сложен в реализации, так как измерение надо произвести для всех 90 нот звукоряда.</span></p>
+<p><span class="font19">Второй способ, теоретический. Рассчитать требуемое значение частоты CLK, используя зашитые в ПЗУ компьютера Спектрум-128 коэффициенты деления. Этот способ предпочтительнее, так как позволяет при высокой точности результата провести математическую обработку.</span></p>
+<p><span class="font19">Для нахождения коэффициентов деления можно использовать тот факт, что после выполнения команды PLAY в регистрах грубой и точной установки высоты тона остаются коэффициенты, которые можно прочитать, обратившись к порту #FFFD. Значение общего десятичного коэффициента деления K</span><span class="font11">i</span><span class="font19"> определится по формуле:</span></p>
+<p><span class="font19">K<sub>i</sub></span><span class="font6" style="font-style:italic;"> =</span><span class="font19"> T</span><span class="font6" style="font-style:italic;"> +</span><span class="font19"> 256 * G<sub>t</sub>&nbsp;(2)</span></p>
+<p><span class="font19">где T<sub>i</sub> и G<sub>i</sub> - соответственно десятичные коэффициенты деления точного и грубого регистров для i-й ноты.</span></p>
+<p><span class="font19">Частоту i-й ноты F(i) можно определить по формуле (1), зная эталонную частоту. Представим формулу (1) в удобном для вычисления виде:</span></p>
+<p><span class="font19" style="font-style:italic;">F -</span></p>
+<p><span class="font19" style="font-style:italic;">F</span><span class="font19"> (i) = * 2<sup>12</sup>&nbsp;(3)</span></p>
+<p><span class="font19">16</span></p>
+<p><span class="font19">где: Fля/16 - частота самой низкой ноты звукоряда F1, которая ровно в 16 раз меньше частоты эталона Fля=440 Гц;</span></p>
+<p><span class="font19">i - от 1 до 90 - порядковый номер ноты.</span></p>
+<p><span class="font19">Частотный диапазон исследуемого звукоряда F1-F90 равен 27,5-4698,6 Гц. Частота CLK i-й ноты определится по формуле:</span></p>
+<p><span class="font19">CLK,</span><span class="font6" style="font-style:italic;"> =</span><span class="font19"> F(i)* K * Kcч&nbsp;(4)</span></p>
+<p><span class="font19">где К<sub>СЧ</sub>=16 - коэффициент счёта общего для трех каналов делителя, находящегося внутри AY (рис.1).</span></p>
+<p><span class="font19">Очевидно, что для каждой из 90 нот существует своя "истинная" CLK, то есть частота, при которой конкретная нота будет звучать абсолютно точно. Итого 90 частот CLK, которые можно вычислить, используя программу листинга 1.</span></p>
+<p><span class="font19">Листинг 1. </span><span class="font5" style="font-weight:bold;">10 REM AY-3-8910/12</span></p>
+<p><span class="font5" style="font-weight:bold;">20 LET I=0: LET R=65533: FOR N=1 TO 8 30 FOR M=1 TO 23 STEP 2 40 IF M=7 THEN LET N=N+1</span></p>
+<p><span class="font5" style="font-weight:bold;">50 LET A$="O"+"012345678"(N)+"N10"+" A#A B C#C D#D E F#F G#G"(M TO M+1) 60 PLAY A$</span></p>
+<p><span class="font5" style="font-weight:bold;">70 OUT R,0: LET T=IN R: OUT R,1: LET G=IN R</span></p>
+<p><span class="font5" style="font-weight:bold;">80 IF T=255 OR G=255 THEN GO TO 70</span></p>
+<p><span class="font5" style="font-weight:bold;">90 LET I=I+1: LET K=T+256*G</span></p>
+<p><span class="font5" style="font-weight:bold;">100 LET F=440/16*2<sup>A</sup>((I-1)/12)</span></p>
+<p><span class="font5" style="font-weight:bold;">110 LET CLK=F*K*16</span></p>
+<p><span class="font5" style="font-weight:bold;">120 IF I&gt;90 THEN STOP</span></p>
+<p><span class="font5" style="font-weight:bold;">130 PRINT A$( TO 2);A$(6 TO );"F";I;" K=";K;" CLK=";CLK;" Hz" 140 NEXT M: LET N=N-1: NEXT N</span></p>
+<p><span class="font19">Результат работы удобно представить в виде гистограммы (рис.2). Гистограмма - это график, по горизонтальной оси которого отложена исследуемая величина (в данном случае это CLK), а по вертикальной оси - частота ее повторения при выборке из ограниченного количества испытаний (в данном случае из 90 "истинных" CLK).</span></p>
+<p><span class="font19">На гистограмме можно выделить рабочую зону, где находится 80 нот или 89% всех значений, две свободные зоны и две области "фальшивых" нот, имеющих предельно большой разброс CLK. Наибольшее число "попаданий" приходится на диапазон 1773000 - 1774000 Гц (31 значение или 34%), следовательно здесь и должна быть расчетная CLK.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark22"></a>5. Определение логически обоснованной частоты CLK.</span></p>
+<p><span class="font19">Листинг 1 помог вычислить 90 значений CLK. Но в реальности частота CLK одна для всех нот, поэтому каждая нота будет звучать чуть-чуть "не так", с погрешностью.</span></p>
+<p><span class="font19">Коэффициенты деления Ki, зашитые в ПЗУ 128К, были по какой-то методике заранее рассчитаны программистами сэра Клайва Синклера. Не зная этой методики, можно пойти от обратного - при известных коэффициентах деления вычислить пределы логически обоснованной частоты CLK.</span></p>
+<p><span class="font19">Например, коэффициент деления для ноты F1 "ля" субконтроктавы равен 4031, именно 4031, а не 4030 или 4032. Поэтому можно вычислить три частоты CLK: CLK<sub>0</sub> = 27.5 Гц * 4031 * 16 = 1773640 Гц CLK</span><span class="font11">min</span><span class="font19"> = 27.5 Гц * 4030 * 16 = 1773200 Гц CLK<sub>max</sub> = 27.5 Гц * 4032 * 16 = 1774080 Гц Расположим полученные частоты на оси, как показано на рис.3. Логически обоснованным интервалом будем называть интервал между частотами MIN и MAX, определяемых из условия равенства логарифмов отношений частот:</span></p>
+<p><span class="font19">MIN<sub>i</sub> = F<sub>i</sub> * K<sub>CT</sub>*SQR(K<sub>i</sub>*(K<sub>i</sub>-1)) = 1773420 Гц (для F1) MAX</span><span class="font11">i</span><span class="font19"> = F</span><span class="font11">i</span><span class="font19"> * ^</span><span class="font15" style="font-variant:small-caps;">ч</span><span class="font19"> *S QR(K</span><span class="font11">i</span><span class="font19"> *(K</span><span class="font11">i+</span><span class="font19">1)) = 1773860 Гц (для F1) где SQR - математическая функция "квадратный корень".</span></p><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-2.png" style="width:403pt;height:352pt;">
+<p><span class="font19">Рис. 2.</span></p><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-3.png" style="width:348pt;height:26pt;">
+<p><span class="font19">Рис. 3.</span></p>
+<p><span class="font19">Приведенный пример рассчитан на самую низкую ноту, для которой логический интервал CLK самый минимальный. Поэтому можно утверждать, что, если коэффициент K1 выбран продуманно, а не произвольно, то "истинная" CLK находится в пределах MIN-MAX, иначе был бы выбран другой коэффициент. Аналогично для всех 90 нот можно вычислить интервалы MIN</span><span class="font11">i</span><span class="font19">-MAX</span><span class="font11">i,</span><span class="font19"> совместить их друг с другом на оси частот и посмотреть, какой же интервал, в конце концов, останется общим для всех.</span></p>
+<p><span class="font19">Вычисления можно поручить компьютеру, дополнив при помощи команды MERGE листинг 1 строками из листинга 2.</span></p>
+<p><span class="font19">Листинг 2.</span></p>
+<p><span class="font5" style="font-weight:bold;">10 LET e=1E-7: LET min=e: LET max=1/e 120 IF I&lt;91 THEN GO TO 150</span></p>
+<p><span class="font5" style="font-weight:bold;">130 PRINT "MIN=";min;" Hz MAX=";max;" Hz": STOP 150 LET mi=F*16*SQR (K*(K-1)) 160 LET ma=F*16*SQR (K*(K+1))</span></p>
+<p><span class="font5" style="font-weight:bold;">170 IF mi-max&gt;e OR min-ma&gt;e THEN PRINT "ERROR F";I,"K=";K: GO TO 140</span></p>
+<p><span class="font5" style="font-weight:bold;">180 IF mi-min&gt;e THEN LET min=mi 190 IF max-ma&gt;e THEN LET max=ma 200 GO TO 140</span></p>
+<p><span class="font19">Результат работы заставляет задуматься, общий интервал для 90 нот: MIN=1773441,5 Гц&nbsp;MAX=1773520 Гц</span></p>
+<p><span class="font19">ошибочная нота "ре-диез" малой октавы (F31, октава 03). Если изменить ошибочный коэффициент K31=712 на 713, то интервал MIN-MAX останется прежним, а ошибка исчезнет.</span></p>
+<p><span class="font19">Известны исследования однотипной ситуации для ЭМИ [5], показывающие, что в ряду коэффициентов деления существуют "магические" числа, которые позволяют свести к минимуму погрешности нот для вполне определенных входных частот.</span></p>
+<p><span class="font19">Оказывается, что и для имеющегося ряда коэффициентов деления существуют другие комбинации чисел, при которых интервал MIN-MAX находится в главном пике гистограммы и отсутствуют ошибочные коэффициенты (таблица 2).</span></p>
+<p><span class="font19">_</span><span class="font19" style="text-decoration:underline;">Таблица 2.</span></p>
+<table border="1">
+<tbody><tr><td>
+<p><span class="font19">КОЭФФИЦИЕНТЫ</span></p></td><td>
+<p><span class="font19">K1</span></p></td><td>
+<p><span class="font19">K6</span></p></td><td>
+<p><span class="font19">K17</span></p></td><td>
+<p><span class="font19">K31</span></p></td><td>
+<p><span class="font19">MIN MAX, Гц</span></p></td><td>
+<p><span class="font19">dF, Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">без коррекции</span></p></td><td>
+<p><span class="font19">4031</span></p></td><td>
+<p><span class="font19">3020</span></p></td><td>
+<p><span class="font19">1600</span></p></td><td>
+<p><span class="font19">712</span></p></td><td>
+<p><span class="font19">1773441-1773520</span></p></td><td>
+<p><span class="font19">ERR.F31</span></p></td></tr>
+<tr><td>
+<p><span class="font19">K31</span></p></td><td>
+<p><span class="font19">4031</span></p></td><td>
+<p><span class="font19">3020</span></p></td><td>
+<p><span class="font19">1600</span></p></td><td>
+<p><span class="font19">713</span></p></td><td>
+<p><span class="font19">1773441-1773520</span></p></td><td>
+<p><span class="font19">79</span></p></td></tr>
+<tr><td>
+<p><span class="font19">K6</span></p></td><td>
+<p><span class="font19">4031</span></p></td><td>
+<p><span class="font19">3019</span></p></td><td>
+<p><span class="font19">1600</span></p></td><td>
+<p><span class="font19">712</span></p></td><td>
+<p><span class="font19">1773420-1773423</span></p></td><td>
+<p><span class="font19">3</span></p></td></tr>
+<tr><td>
+<p><span class="font19">K6, K31</span></p></td><td>
+<p><span class="font19">4031</span></p></td><td>
+<p><span class="font19">3019</span></p></td><td>
+<p><span class="font19">1600</span></p></td><td>
+<p><span class="font19">713</span></p></td><td>
+<p><span class="font19">1773423-1773441</span></p></td><td>
+<p><span class="font18">18</span></p></td></tr>
+<tr><td>
+<p><span class="font19">K1, K6</span></p></td><td>
+<p><span class="font19">4030</span></p></td><td>
+<p><span class="font19">3019</span></p></td><td>
+<p><span class="font19">1600</span></p></td><td>
+<p><span class="font19">712</span></p></td><td>
+<p><span class="font19">1773414-1773420</span></p></td><td>
+<p><span class="font19">6</span></p></td></tr>
+<tr><td>
+<p><span class="font19">K1, K6, K17</span></p></td><td>
+<p><span class="font19">4030</span></p></td><td>
+<p><span class="font19">3019</span></p></td><td>
+<p><span class="font19">1599</span></p></td><td>
+<p><span class="font19">712</span></p></td><td>
+<p><span class="font19">1773395-1773414</span></p></td><td>
+<p><span class="font19">19</span></p></td></tr>
+</tbody></table>
+<p><span class="font19">Из таблицы 2 видно, что наиболее широкий интервал dF=MAX-MIN имеет вариант с коррекцией K31 для частоты F31. Думается, что при расчете коэффициентов ПЗУ-128 программистами сэра Клайва Синклера проводилась подобная оптимизация, однако коэффициент K31 был упущен из виду.</span></p>
+<p><span class="font19">Необходимость в как можно более широком интервале dF очевидна.</span></p>
+<p><span class="font19">На вход CLK поступает кварцованная частота. Точность настройки современных кварцевых резонаторов 1-20 МГц колеблется от (±5 - ±15)*1Е-6 для вакуумных резонаторов и до (±10 - ±50)*1Е-6 для обычных герметизированных. Здесь и далее "1Е-6" - число "десять в минус шестой степени".</span></p>
+<p><span class="font19">В пересчете на частоту 1,77 МГц допустимые отклонения составят от ±8 до ±88 Гц.</span></p>
+<p><span class="font19">Следовательно, расчетной следует признать частоту CLK = (1773480±40) Гц при точности настройки кварцевого резонатора не хуже ±20*1Е-6. Коэффициент K31 должен быть увеличен до 713.</span></p>
+<p><span class="font18" style="font-weight:bold;"><a name="bookmark23"></a>6.</span><span class="font19" style="font-weight:bold;"> Распределение абсолютных погрешностей нот.</span></p>
+<p><span class="font19">Введем понятие абсолютной погрешности звучания ноты. Это та величина, на которую отличается звучание "идеальной" ноты (1) от реальной.</span></p>
+<p><span class="font19">Малые музыкальные интервалы удобно измерять в центах, абсолютная погрешность i-той ноты определяется по формуле:</span></p><div><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-4.png" style="width:140pt;height:34pt;"></div>
+<p><span class="font19"><a name="bookmark24"></a>(5)</span></p>
+<p><span class="font19">Si - абсолютная погрешность, в центах; F<sub>i</sub> - реальная частота ноты; F<sub>i</sub>(0) - "идеальная" частота ноты.</span></p>
+<p><span class="font19">Задача состоит в том, чтобы для дискретных частот CLK из рабочей зоны гистограммы рис. 2 вычислить массив из 90 значений погрешностей |S<sub>i</sub>| и проанализировать результат методом "срезов". "Срез" - это в данном случае определенный уровень погрешности в центах.</span></p>
+<p><span class="font19">где</span></p>
+<p><span class="font19">Стандартного ряда для "срезов" не существует, поэтому можно воспользоваться косвенными сведениями: "1 цент" - это погрешность прибора для настройки музыкальных инструментов; "3 цента" - минимальная погрешность, которую способен различить человек на слух [3]; "5 центов" -максимальная погрешность установки частоты тона ЭМИ [6]; "10, 20 центов" - произвольно взятые целочисленные значения грубых погрешностей.</span></p>
+<p><span class="font19">Программа на БЕЙСИКЕ, производящая вычисления массивов погрешностей по "срезам", получается, если добавить через MERGE строки из листинга 3 в листинг 1.</span></p>
+<p><span class="font19">Листинг 3.</span></p>
+<p><span class="font5" style="font-weight:bold;">10 DIM C(90): LET e=1E-7</span></p>
+<p><span class="font5" style="font-weight:bold;">120 IF I&gt;90 THEN GO TO 140</span></p>
+<p><span class="font5" style="font-weight:bold;">130 LET C(I)=CLK</span></p>
+<p><span class="font5" style="font-weight:bold;">150 FOR Z=1 TO 12 STEP 2</span></p>
+<p><span class="font5" style="font-weight:bold;">160 IF Z=7 THEN LET Z=10</span></p>
+<p><span class="font5" style="font-weight:bold;">170 IF Z=12 THEN LET Z=20</span></p>
+<p><span class="font5" style="font-weight:bold;">180 FOR C=1770000 TO 1778000 STEP 500</span></p>
+<p><span class="font5" style="font-weight:bold;">190 LET CENT=0: FOR I=1 TO 90</span></p>
+<p><span class="font5" style="font-weight:bold;">200 LET S=ABS (1200/LN 2*LN (C/C(I)))</span></p>
+<p><span class="font5" style="font-weight:bold;">210 IF Z-S&gt;e THEN LET CENT=CENT+1</span></p>
+<p><span class="font5" style="font-weight:bold;">220 NEXT I</span></p>
+<p><span class="font5" style="font-weight:bold;">230 PRINT "CENT&lt;";Z;" L=";INT (CENT*100/90+0.5);"% CLK=";C;" Hz" 240 NEXT C: NEXT Z</span></p>
+<p><span class="font19">Результаты работы программы выводятся в форме: CENT&lt;1 L=4% CLK=1770000 Hz. Это означает, что для частоты CLK равной 1770000 Гц из 90 нот 4% имеют абсолютную погрешность звучания менее 1 цента.</span></p>
+<p><span class="font19">Для наглядности полученные результаты приведены в таблице 3.</span></p>
+<p><span class="font19">Таблица 3.</span></p><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-5.png" style="width:540pt;height:125pt;">
+<p><span class="font19">Как видно, расчетная частота CLK=1773480 Гц с точки зрения минимума абсолютных погрешностей не является оптимальной! И, вообще, говорить об оптимальной частоте можно только для конкретных "срезов".</span></p>
+<p><span class="font19">Например, чтобы иметь максимальный процент нот, удовлетворяющих требованиям ЭМИ (5 центов), частота CLK должна быть в пределах 1771000 - 1771500 Гц и т.д.</span></p>
+<p><span class="font19">Усредняя результаты таблицы 2, можно расширить диапазон допусти мой частоты CLK до 1771500 - 1775000 Гц, при этом снимаются жесткие ограничения на точность настройки кварцевого резонатора.</span></p>
+<p><span class="font19">Разумеется, в фирменном ZXSpectrum-128 возможности варьировать частотой CLK не было, поскольку вся схема жестко привязана к одному кварцевому генератору.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark25"></a>7. Расчёт относительных погрешностей музыкальных интервалов.</span></p>
+<p><span class="font19">Кроме абсолютных погрешностей, указывающих, на сколько отличаются ноты от "истинных" по частоте, не менее важны относительные погрешности музыкальных интервалов.</span></p>
+<p><span class="font19">Музыкальная мелодия описывается последовательными интервалами между составляющими ее тонами. Для музыкального интервала характерно определенное отношение частот звуков. Именно отношение частот между звуками мелодии делают её узнаваемой.</span></p>
+<p><span class="font19">Например, перенести мелодию выше - это значит воспроизвести её иными звуками (более высокими по частоте), но с точным сохранением отношений частот тонов в каждом интервале. Характер мелодии при этом на слух не искажается.</span></p>
+<p><span class="font19">Можно выделить 12 основных музыкальных интервалов в пределах октавы [7]: от малой секунды (1 полутон) до октавы (12 полутонов).</span></p>
+<p><span class="font19">Рассчитать, насколько фальшиво будут звучать все 12 интервалов в пределах полного звукоряда из 90 нот поможет формула (6). Формула расчёта не будет иметь зависимости от частоты CLK, так как сравниваются отношения частот, зависящие только от коэффициентов деления.</span></p>
+<p><span class="font26"><a name="bookmark26"></a>Г</span><span class="font19" style="font-style:italic;"> к</span><span class="font26"> Л</span></p>
+<p><span class="font19">|dS(i,x)|</span><span class="font26"> =</span><span class="font19"> 1200*log<sub>2</sub> —--100*</span><span class="font19" style="font-style:italic;"> x</span><span class="font19">&nbsp;(6)</span></p>
+<p><span class="font26"><a name="bookmark27"></a>V</span><span class="font8" style="font-style:italic;"> <sup>—</sup>i+x J</span></p>
+<p><span class="font19">где х от 1 до 12 - количество полутонов в музыкальном интервале; i от 1 до (90-х) - порядковый номер ноты.</span></p>
+<p><span class="font19">Вычисления относительных погрешностей по формуле (6) можно выполнить, присоединив через MERGE листинг 4 к листингу 3. Результаты вычислений приведены в таблице 4.</span></p>
+<p><span class="font19">Листинг 4.</span></p>
+<p><span class="font5" style="font-weight:bold;">130 LET C(I)=K 180 FOR X=1 TO 12</span></p>
+<p><span class="font5" style="font-weight:bold;">200 LET S=ABS (1200/LN 2*LN (C(I)/C(I+X))-100*X) 215 IF I+X=90 THEN GO TO 230</span></p>
+<p><span class="font5" style="font-weight:bold;">230 PRINT "CENT&lt;";Z;" L=";INT (CENT*100/I+0.5);"% MUZ=";X 240 NEXT X: NEXT Z</span></p>
+<p><span class="font19">Таблица 4.</span></p>
+<table border="1">
+<tbody><tr><td rowspan="2">
+<p><span class="font19">"СРЕЗЫ"</span></p></td><td colspan="12">
+<p><span class="font19">МУЗЫКАЛЬНЫЕ ИНТЕРВАЛЫ (количество полутонов)</span></p></td><td rowspan="2">
+<p><span class="font19">-Е</span><span class="font12">сред.</span></p></td></tr>
+<tr><td>
+<p><span class="font19">1</span></p></td><td>
+<p><span class="font19">2</span></p></td><td>
+<p><span class="font19">3</span></p></td><td>
+<p><span class="font19">4</span></p></td><td>
+<p><span class="font19">5</span></p></td><td>
+<p><span class="font19">6</span></p></td><td>
+<p><span class="font19">7</span></p></td><td>
+<p><span class="font19">8</span></p></td><td>
+<p><span class="font19">9</span></p></td><td>
+<p><span class="font19">10</span></p></td><td>
+<p><span class="font19">11</span></p></td><td>
+<p><span class="font19">12</span></p></td></tr>
+<tr><td>
+<p><span class="font19">1 цент</span></p></td><td>
+<p><span class="font19">49</span></p></td><td>
+<p><span class="font19">45</span></p></td><td>
+<p><span class="font19">47</span></p></td><td>
+<p><span class="font19">47</span></p></td><td>
+<p><span class="font19">39</span></p></td><td>
+<p><span class="font19">39</span></p></td><td>
+<p><span class="font19">39</span></p></td><td>
+<p><span class="font19">48</span></p></td><td>
+<p><span class="font19">40</span></p></td><td>
+<p><span class="font19">39</span></p></td><td>
+<p><span class="font19">47</span></p></td><td>
+<p><span class="font19">63%</span></p></td><td>
+<p><span class="font19">45.2%</span></p></td></tr>
+<tr><td>
+<p><span class="font19">3 цента</span></p></td><td>
+<p><span class="font19">66</span></p></td><td>
+<p><span class="font19">58</span></p></td><td>
+<p><span class="font19">70</span></p></td><td>
+<p><span class="font19">69</span></p></td><td>
+<p><span class="font19">67</span></p></td><td>
+<p><span class="font19">65</span></p></td><td>
+<p><span class="font19">71</span></p></td><td>
+<p><span class="font19">72</span></p></td><td>
+<p><span class="font19">73</span></p></td><td>
+<p><span class="font19">59</span></p></td><td>
+<p><span class="font19">65</span></p></td><td>
+<p><span class="font19">76%</span></p></td><td>
+<p><span class="font19">67.6%</span></p></td></tr>
+<tr><td>
+<p><span class="font19">5 центов</span></p></td><td>
+<p><span class="font19">76</span></p></td><td>
+<p><span class="font19">76</span></p></td><td>
+<p><span class="font19">79</span></p></td><td>
+<p><span class="font19">74</span></p></td><td>
+<p><span class="font19">72</span></p></td><td>
+<p><span class="font19">74</span></p></td><td>
+<p><span class="font19">76</span></p></td><td>
+<p><span class="font19">76</span></p></td><td>
+<p><span class="font19">81</span></p></td><td>
+<p><span class="font19">76</span></p></td><td>
+<p><span class="font19">73</span></p></td><td>
+<p><span class="font19">78%</span></p></td><td>
+<p><span class="font19">75.9%</span></p></td></tr>
+<tr><td>
+<p><span class="font19">10 центов</span></p></td><td>
+<p><span class="font19">88</span></p></td><td>
+<p><span class="font19">88</span></p></td><td>
+<p><span class="font19">85</span></p></td><td>
+<p><span class="font19">85</span></p></td><td>
+<p><span class="font19">87</span></p></td><td>
+<p><span class="font19">82</span></p></td><td>
+<p><span class="font19">87</span></p></td><td>
+<p><span class="font19">87</span></p></td><td>
+<p><span class="font19">89</span></p></td><td>
+<p><span class="font19">89</span></p></td><td>
+<p><span class="font19">86</span></p></td><td>
+<p><span class="font19">83%</span></p></td><td>
+<p><span class="font19">86.3%</span></p></td></tr>
+<tr><td>
+<p><span class="font19">20 центов</span></p></td><td>
+<p><span class="font19">93</span></p></td><td>
+<p><span class="font19">93</span></p></td><td>
+<p><span class="font19">93</span></p></td><td>
+<p><span class="font19">94</span></p></td><td>
+<p><span class="font19">94</span></p></td><td>
+<p><span class="font19">96</span></p></td><td>
+<p><span class="font19">94</span></p></td><td>
+<p><span class="font19">93</span></p></td><td>
+<p><span class="font19">96</span></p></td><td>
+<p><span class="font19">94</span></p></td><td>
+<p><span class="font19">96</span></p></td><td>
+<p><span class="font19">90%</span></p></td><td>
+<p><span class="font19">93.8%</span></p></td></tr>
+</tbody></table>
+<p><span class="font19">Распределение по "срезам" музыкальных интервалов достаточно равномерно. В среднем чуть более точно будут звучать октавы (х=12), чуть менее точно - малые септимы (х=10), чистые кварты (х=5).</span></p>
+<p><span class="font19">Примерно третью часть всех интервалов в звукоряде человек с музыкальным слухом отнесёт к фальшивым ("срез" 3 цента). Кроме того, имеется около 7% очень грубых ошибок более 20 центов. Очевидно, что признать музыкальный сопроцессор эталонным источником звука для полного звукоряда нельзя.</span></p>
+<p><span class="font19">Как показано [5], для известного максимального коэффициента деления (K1=4031) существуют оптимальные коэффициенты K<sub>i</sub>(opt), которые минимизируют относительные погрешности:</span></p><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/ZX-Forum 3-6.png" style="width:133pt;height:44pt;">
+<p><span class="font19">Где INT - функция округления до ближайшего целого числа.</span></p>
+<p><span class="font19">Можно добавить через MERGE строки из листинга 5 в листинг 1 и сравнить оптимальные коэффициенты с имеющимися в ZX-Spectrum-128.</span></p>
+<p><span class="font19">Листинг 5.</span></p>
+<p><span class="font5" style="font-weight:bold;">120 IF I=1 THEN LET K1=K 130 IF I&lt;91 THEN GO TO 160 150 STOP</span></p>
+<p><span class="font5" style="font-weight:bold;">160 LET Kopt=INT (0.5+K1/2A((I-1)/12))</span></p>
+<p><span class="font5" style="font-weight:bold;">170 IF Kopt&lt;&gt;K THEN PRINT "ERROR F";I;" K=";K;" K(opt)=";Kopt 180 GO TO 140</span></p>
+<p><span class="font19">Результат указывает на пять неоптимальных нот. Должно быть K2=3805, K4=3390, K13=2016, K15=1796, K31=713.</span></p>
+<p><span class="font19">Если провести расчет погрешностей музыкальных интервалов по формуле (6) для оптимальных коэффициентов, то выяснится, что это отразится только на улучшении параметров по "срезу" 1 цент - было Lср=45.2%, стало Lср=46.5%. Следовательно, коэффициенты деления, зашитые в ПЗУ-128, близки к оптимальным.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark28"></a>8. Выводы.</span></p>
+<p><span class="font19">1.&nbsp;Музыкальные сопроцессоры AY-3-8910/12 не предназначены для эталонного воспроизведения звука в широком диапазоне частот. При допустимой частоте CLK=1-2 МГц [4] эквивалентная частота генераторного блока составит всего 62-125 кГц вследствие деление частоты на 16 внутри музыкального сопроцессора (рис.1).</span></p>
+<p><span class="font19">Отсюда низкие значения коэффициентов деления на высоких частотах (К90=24) и большая максимальная погрешность округления [5]: d=0.5/K90*100%=2,1%.</span></p>
+<p><span class="font19">2.&nbsp;Расчётное значение частоты CLK для ZX-Spectrum-128 равно 1773480 Гц с точностью +20*1Е-6, при этом коэффициент К31 следовало бы увеличить на единицу. К31=713, ячейка #10D2 в ПЗУ-0: имеется #C8, должно быть #C9.</span></p>
+<p><span class="font19">Однако на практике улучшение звучания ноты F31 для расчётной частоты CLK составит всего 0,05 цента, что можно зафиксировать лишь точными измерительными приборами. Поэтому перешивать ПЗУ128 сэра Клайва Синклера торопиться не надо во избежание головной боли от возможных проблем несовместимости ПЗУ.</span></p>
+<p><span class="font19">При проектировании новых систем с музыкальными сопроцессорами следует проводить предварительное математическое моделирование с целью определения оптимальных коэффициентов деления.</span></p>
+<p><span class="font19">3.&nbsp;Наиболее точно для музыкального сопроцессора звучат самые низкие ноты звукоряда, наиболее фальшиво - самые верхние. Абсолютные погрешности звучания нот для CLK=1773480 Гц приведены в таблице 5.</span></p>
+<p><span class="font19">Таблица 5.</span></p>
+<table border="1">
+<tbody><tr><td>
+<p><span class="font19">ОКТАВА</span></p></td><td>
+<p><span class="font19">00</span></p></td><td>
+<p><span class="font19">01</span></p></td><td>
+<p><span class="font19">02</span></p></td><td>
+<p><span class="font19">03</span></p></td><td>
+<p><span class="font19">04</span></p></td><td>
+<p><span class="font19">05</span></p></td><td>
+<p><span class="font19">06</span></p></td><td>
+<p><span class="font19">07</span></p></td><td>
+<p><span class="font19">08</span></p></td></tr>
+<tr><td>
+<p><span class="font19">ЦЕНТЫ</span></p></td><td>
+<p><span class="font0">&lt;0.2</span></p></td><td>
+<p><span class="font19">&lt;0.4</span></p></td><td>
+<p><span class="font19">&lt;0.7</span></p></td><td>
+<p><span class="font16">&lt;1.6</span></p></td><td>
+<p><span class="font19">&lt;3.3</span></p></td><td>
+<p><span class="font19">&lt;5.8</span></p></td><td>
+<p><span class="font19">&lt;12.9</span></p></td><td>
+<p><span class="font19">&lt;27.1</span></p></td><td>
+<p><span class="font19">&lt;31.6</span></p></td></tr>
+</tbody></table>
+<p><span class="font19">Использовать в музыкальных произведениях ноты четвертой (07) и пятой (08) октав нецелесообразно, так как даже неискушенный слушатель заметит фальшь. На гистограмме рис. 2 перечислены 10 "фальшивых" нот, которые явно не рекомендуется применять.</span></p>
+<p><span class="font19">4. При введении отдельного кварцевого генератора для частоты CLK можно получить результирующие абсолютные погрешности нот лучше, чем на фирменном ZX-Spectrum-128. Значение</span></p>
+<p><span class="font19">оптимальной частоты выбирается по данным табл.3 в диапазоне 1771500 - 1775000 Гц. Схема подключения отдельного генератора может быть выполнена по аналогии с приведенной в [1], при этом следует изменить коэффициент деления счётчика K^ согласно таблице 6.</span></p>
+<p><span class="font19">Таблица 6.</span></p>
+<table border="1">
+<tbody><tr><td>
+<p><span class="font19">№</span></p></td><td>
+<p><span class="font19">КВАРЦЕВЫЙ</span><span class="font22" style="font-variant:small-caps;"> резонатор</span></p></td><td>
+<p><span class="font19">ТОЧНОСТЬ НАСТРОЙКИ</span></p></td><td>
+<p><span class="font19">К</span><span class="font12">цел</span></p></td><td>
+<p><span class="font19">РАСЧЁТНАЯ CLK</span></p></td></tr>
+<tr><td>
+<p><span class="font19">1</span></p></td><td>
+<p><span class="font19">РК169МВ-8ВТ-12399,5 кГц</span></p></td><td>
+<p><span class="font19">+30*1Е-6</span></p></td><td>
+<p><span class="font19">7</span></p></td><td>
+<p><span class="font19">1771357 Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">2</span></p></td><td>
+<p><span class="font19">РК172-ТВ-1-8862,9 кГц</span></p></td><td>
+<p><span class="font19">+15*1Е-6</span></p></td><td>
+<p><span class="font19">5</span></p></td><td>
+<p><span class="font19">1772580 Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">3</span></p></td><td>
+<p><span class="font19">РК100-4 АЛ-8866,99 кГц</span></p></td><td>
+<p><span class="font19">+5*1Е-6</span></p></td><td>
+<p><span class="font19">5</span></p></td><td>
+<p><span class="font19">1773398 Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">4</span></p></td><td>
+<p><span class="font19">РК100-4 АЛ-8867,24 кГц</span></p></td><td>
+<p><span class="font19">+5*1Е-6</span></p></td><td>
+<p><span class="font19">5</span></p></td><td>
+<p><span class="font19">1773448 Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">5</span></p></td><td>
+<p><span class="font19">РК 100-4БН-12425 кГц</span></p></td><td>
+<p><span class="font19">+5*1Е-6</span></p></td><td>
+<p><span class="font19">7</span></p></td><td>
+<p><span class="font19">1775000 Гц</span></p></td></tr>
+<tr><td>
+<p><span class="font19">6</span></p></td><td>
+<p><span class="font19">РК100-4АЛ-17734,47 кГц</span></p></td><td>
+<p><span class="font19">+5*1Е-6</span></p></td><td>
+<p><span class="font19">10</span></p></td><td>
+<p><span class="font19">1773447 Гц</span></p></td></tr>
+</tbody></table>
+<p><span class="font19">5.&nbsp;Если значение CLK будет находиться вне рабочей зоны рис. 2, то вместо абсолютных погрешностей, которые и так будут велики, следует обратить внимание на относительные погрешности, которые определяют узнаваемость мелодии.</span></p>
+<p><span class="font19">Для получения минимальных относительных погрешностей музыкальных интервалов следовало бы изменить значения коэффициентов деления K2, K4, K13, K15, K31. Соответственно перешить ячейки ПЗУ-0: #1098 с #DC на #DD; #109C с #3D на #3E; #10AE с #DF на #E0; #10B2 c #03 на #04; #10D2 c #C8 на #C9.</span></p>
+<p><span class="font19">Однако улучшения на слух не будет заметно, так как изменения коснутся только "среза" в 1 цент. Кроме того, ноты F2 - F15 редко используются на практике.</span></p>
+<p><span class="font19">При желании все-таки изменить коэффициенты в ПЗУ-128 и иметь более точное звучание музыкальных интервалов, лучше сделать это через замещающее "теневое" ПЗУ.</span></p>
+<p><span class="font19">6.&nbsp;Если тактовая частота CLK равна 1 МГц, то AY-мелодия будет звучать ниже по высоте почти на октаву (10 полутонов).</span></p>
+<p><span class="font19">Если CLK равна 2 МГц, то наоборот - звуки будут выше примерно на 2 полутона (208 центов). Темп мелодии и относительные музыкальные погрешности не зависят от частоты CLK, чем и объясняется феномен высокой узнаваемости мелодии при широком варьировании тактовой частоты.</span></p>
+<p><span class="font19">7.&nbsp;Из широко распространенных схем компьютеров 128К и приставок-128 более удачными следует признать решения с CLK=1,75 МГц ("АТМ-ТиЯВО-2" фирмы MicroART, самодельный Львовский вариант 128К и т.д.).</span></p>
+<p><span class="font19">При этом высота каждой ноты будет ниже по сравнению с фирменным ZX-Spectrum-128 на 23 цента или на 1,3%.</span></p>
+<p><span class="font19">Абсолютные погрешности звучания для 80 нот рабочей зоны гистограммы составят от 15 до 30 центов или от 0,9% до 1,7%. Относительные погрешности музыкальных интервалов определяются данными таблицы 5 и не будут отличаться от имеющихся в фирменном компьютере.</span></p>
+<p><span class="font19" style="font-weight:bold;"><a name="bookmark29"></a>Литература.</span></p>
+<p><span class="font19">1.&nbsp;Кунгуров А. Несколько устройств для "Спекки". - ZX-РЕВЮ 1994, №6, стр. 17-18.</span></p>
+<p><span class="font19">2.&nbsp;Шепелев Г. Особенности подключения AY-3-8910 к Спектруму. - "Радиолюбитель", 1994, №3, стр.13.</span></p>
+<p><span class="font19">3.&nbsp;Акустика. Справочник / А.П. Ефимов и др. Под ред. М.А. Сапожкова. - М.: Радио и связь, 1989.</span></p>
+<p><span class="font19">4.&nbsp;Системные программы для ZX-Spectrum-128K. Справочник. - М.:'^ PRINT", 1993.</span></p>
+<p><span class="font19">5.&nbsp;Моисеев А. Выбор коэффициентов деления частоты. - "Радио", 1990, №3, стр. 63-64.</span></p>
+<p><span class="font19">6.&nbsp;Володин А. Основные технические требования к ЭМС. - "Радио", 1980, №2, стр. 42.</span></p>
+<p><span class="font19">7.&nbsp;Советский энциклопедический словарь / Гл. ред. А.М. Прохоров. - М.: Сов. энциклопедия, 1987.</span></p>
+
+
+<br>
+
+
+<table cellpadding="4" width="100%"><tbody><tr>
+
+<td width="20%">
+<script type="text/javascript"><!--
+document.write(VK.Share.button(false,{type: "round", text: "Сохранить"}));
+--></script><table cellspacing="0" cellpadding="0" id="vkshare0" onmouseover="VK.Share.change(1, 0);" onmouseout="VK.Share.change(0, 0);" onmousedown="VK.Share.change(2, 0);" onmouseup="VK.Share.change(1, 0);" style="position: relative; width: auto; cursor: pointer; border: 0px;"><tbody><tr style="line-height: normal;"><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fzxpress.ru%2Fbook_articles.php%3Fid%3D923" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;box-sizing: content-box;background: #5F83AA;-webkit-border-radius: 2px 0px 0px 2px;-moz-border-radius: 2px 0px 0px 2px;border-radius: 2px 0px 0px 2px;display:block;text-decoration: none;padding: 3px 3px 3px 6px;color: #FFFFFF;font-family: tahoma, arial;height: 15px;line-height:15px;font-size: 10px;text-shadow: none;">Сохранить<div class="float:right"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fzxpress.ru%2Fbook_articles.php%3Fid%3D923" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;background: #5F83AA;-webkit-border-radius: 0px 2px 2px 0px;-moz-border-radius: 0px 2px 2px 0px;border-radius: 0px 2px 2px 0px;display:block; padding: 3px;"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px 0px no-repeat; background-size: 16px 31px; width: 15px;height: 15px;"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fzxpress.ru%2Fbook_articles.php%3Fid%3D923" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="text-decoration: none;font-weight:bold;font-family: tahoma, arial;display: none"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px -24px no-repeat; background-size: 16px 31px; width: 4px; height: 7px;position: absolute; margin: 7px 0px 0px 4px;z-index:100;"></div><div id="vkshare_cnt0" style="border: 1px solid #bbbfc4;background: #FFFFFF;height: 15px;line-height: 15px;5px; padding: 2px 4px;min-width: 12px;margin-left: 7px;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius:2px;text-align: center; color: #666c73;font-size: 10px;z-index:99;box-sizing: content-box;">0</div></a></td></tr></tbody></table>
+</td>
+
+<td width="20%">
+<a class="mrc__share mrc__share_done" href="http://connect.mail.ru/share?share_url=http%3A//zxpress.ru/book_articles.php%3Fid%3D923" style="white-space: nowrap; text-align: left; position: relative; width: auto; outline: 0px; text-decoration-line: none; height: 18px; font-size: 11px; line-height: 17px; overflow: hidden; font-weight: normal;"><small style="overflow: hidden; vertical-align: bottom;white-space:nowrap;text-align:left;line-height:17px;position:relative;width:auto;padding:0;margin:0;outline:0; text-decoration:none; display:inline-block; height:18px;background:url(http://img1.imgsmail.ru/r/new_share_buttons_sprite.gif) no-repeat 0 0; padding-left: 22px;line-height: 9px;"><i title="Поделиться страницей с друзьями в Моем Мире@Mail.Ru" style="vertical-align:top;float: none; white-space:nowrap;text-align:left;font-size:11px;line-height:9px;position:relative;width:auto;color:white;padding:0;margin:0;font-weight: bold; display:inline-block;background:url(http://img1.imgsmail.ru/r/new_share_buttons_sprite.gif) no-repeat right -19px; height: 14px; padding: 4px 5px 0 0; font-family: &#39;Lucida Grande&#39;,Tahoma,Verdana,Arial,sans-serif; font-szie: 11px; font-style: normal;cursor: pointer; line-height: 9px; *line-height: 13px; *padding-top: 2px; *height: 18px; ">В Мой Мир</i><span title="Уже поделились" style="float: none; width:auto;color:black;padding:0;margin:0;display:none;background:url(http://img1.imgsmail.ru/r/new_share_buttons_sprite.gif) no-repeat left -123px; height: 13px; font-family: Tahoma; color: #000; padding: 5px 5px 0 10px; border-right: 1px solid #ffc70d; margin-left: 1px; cursor: pointer; font-weight: normal; font-style: normal; line-height: 8px; *line-height: 100%; *padding-top: 3px; *height: 18px">&nbsp;</span></small></a>
+<script src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/share(1).js" type="text/javascript" charset="UTF-8"></script>
+</td>
+
+
+<td width="20%">
+<iframe src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowtransparency="true"></iframe>
+</td>
+
+<td width="20%">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/tweet_button.acd25e6d83d3bc35d5d31d08f52ef7ab.en.html" style="position: static; visibility: visible; width: 78px; height: 20px;"></iframe><script type="text/javascript" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/widgets.js"></script>
+</td>
+
+<td width="20%">
+<a class="odkl-klass" href="http://zxpress.ru/article.php?id=" onclick="ODKL.Share(this);return false;">&nbsp;</a>
+</td>
+
+</tr></tbody></table>
+
+</div>
+
+
+
+
+
+<div style="width: 600; padding-left: 32px">
+<br><br><div style="font: bold 13pt Georgia">СОДЕРЖАНИЕ:</div>
+
+
+<ol>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=921"> <b>Секреты TR-DOS</b> - Полная адаптация программ к диску без использования системных переменных TR-DOS.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=922"> <b>Читатель-читателю</b> - Краткое описание Laser Genius ASSEMBLER/MONITOR.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=923"> <b>Читатель-читателю</b> - Камертон и музыкальный сопроцессор AY-3-8910/12 в ZX-Spectrum.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=924"> <b>Читатель-читателю</b> - Поиск "вечных жизней".</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=925"> <b>Читатель-читателю</b> - алгоритм построения настоящей окружности и круга.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=926"> <b>Читатель-читателю</b> - нестандартная загрузка.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=927"> <b>Adventure games</b> - полный словарь игры Sorcerer of claymorgue castle.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=928"> <b>Советы экспертов</b> - один из самых популярных воздушных имитаторов F-19 Stealth fighter.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=929"> <b>Советы экспертов</b> - прохождение игры Marsport от Gargoile games.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=930"> <b>Pokes</b> - полное собрания POKES, составленое по вашим письмам.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=931"> <b>Пароли и советы</b> - к фирменным играм.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=932"> <b>Компьютерная новелла</b> - по игре УЗНИК ШАХТЫ (THUNDERBIRDS).</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=933"> <b>Компьютерная новелла</b> - SOS или Русалочка в беде.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=934"> <b>Приложение</b> - описание программы для создания презентация Presentation Master.</a>
+</div>
+</li>
+<li style="padding-top: 4px">
+<div style="font: 10pt/12pt Verdana; padding-left: 16px">
+<a href="http://zxpress.ru/chapter.php?id=935"> <b>Приложение</b> - список дистрибюторов.</a>
+</div>
+</li>
+</ol>
+</div>
+
+﻿<br><br>
+<div style="padding-left: 32px">
+<a name="comments"></a>
+
+
+
+
+
+<form method="POST" action="http://zxpress.ru/book_articles.php?id=923#comments">
+
+
+<div style="font: bold 10pt Georgia"> &nbsp; Оставте Ваш отзыв:</div><br>
+
+<div style="padding: 4px">
+<input style="border: 1px solid #c5c1ac; background-color: #F6F6F6; width: 150px" type="text" name="user_name" value="" maxlength="32"> &nbsp;<span style="font: bold 12px Georgia"> НИК/ИМЯ</span>
+</div>
+
+<div style="padding: 4px">
+<input style="border: 1px solid #c5c1ac; background-color: #F6F6F6; width: 150px" type="text" name="user_email" value="" maxlength="32">  &nbsp;<span style="font: bold 12px Georgia"> ПОЧТА (шифруется)</span>
+</div>
+
+<div style="padding: 4px">
+<input style="background-color: #F6F6F6; border: 1px solid #c5c1ac; width: 150px; background-image: url(confirm_code.php?cc=fhoxfiqfgzjkxende); background-repeat: no-repeat;" type="text" name="confirm_code">
+ &nbsp;<span style="font: bold 12px Georgia"> КОД</span>
+
+</div>
+
+
+<div style="padding: 4px">
+<textarea type="text" name="message" rows="5" style="font-family: arial; font-size: 13px; border: 1px solid #c5c1ac; width: 500px; background-color: #F9F9F9"></textarea> 
+</div>
+
+
+<div style="padding: 4px">
+<input style="width: 150px" type="submit" name="submit" value="отправить">
+</div> 
+
+
+
+
+
+
+
+
+</form>
+
+
+
+</div>
+
+</td></tr>
+</tbody></table>
+
+
+
+
+<br>
+
+<br>
+</td></tr></tbody></table>
+
+</div>
+</td><td valign="top">
+
+<!-- </div> -->
+<!-- <div class='right-column'>
+<div class="container"> -->
+<div id="floating">
+
+<form method="GET" action="http://zxpress.ru/search.php">
+<input class="right" name="q" type="search" placeholder="Поиск..." value="">
+</form>
+
+<hr>
+
+<div align="center">
+<div style="font: normal 13pt/17pt Times; word-wrap: break-word"><b>Темы:</b> <a href="">Игры</a>, <a href="">Софт</a>, <a href="">Пресса</a>, <a href="">Железо</a>, <a href="">Сеть</a>, <a href="">Демосцена</a>, <a href="">Люди</a>, <a href="">Программирование</a></div>
+</div>
+
+<hr>
+
+<div style="font: bold 13pt/17pt Times;">Похожие статьи:</div><br>
+<div style="font: normal 13pt/17pt Times;  padding-top: 8px">
+<a href="http://zxpress.ru/article.php?id=10906"><b>Тусовка</b> - в городе Риге прошел третий сбор спектрумистов.</a>
+</div>
+<div style="font: normal 13pt/17pt Times;  padding-top: 8px">
+<a href="http://zxpress.ru/article.php?id=7295"><b>Interviews</b> - Интервью с легендарным музыкантом Михаилом Белоусовым (Amadeous Voxon/Flash Inc.)</a>
+</div>
+<div style="font: normal 13pt/17pt Times;  padding-top: 8px">
+<a href="http://zxpress.ru/article.php?id=17627"><b>Автор</b> - Состав редакции.</a>
+</div>
+<!-- <div style="font: normal 13pt/17pt Times;">
+• <a href="">Горячая линия - Сайт "ZX-News"! Плюс кое-что по SOSG.</a></div>
+<div style="font: normal 13pt/17pt Times;  padding-top: 8px">
+• <a href="">От редакции - С Новым годом, веком и тысячелетием!!!</a></div>
+<div style="font: normal 13pt/17pt Times; padding-top: 8px">
+• <a href="">Презентация - Interactive Fiction: новое слово! Новая игра и редактор адвентюр.</a>
+</div> -->
+
+<hr>
+
+
+<div style="font: normal 13pt Times;">
+<center>
+<div><b>В этот день... &nbsp; 10 октября</b></div><b><br>
+
+<div style="font: bold 13pt/17pt Times">
+<a href="http://zxpress.ru/issue.php?id=103#0A" style="white-space: nowrap">IzhNews #0A, </a>
+
+<a href="http://zxpress.ru/issue.php?id=47#16" style="white-space: nowrap">C-Net Week #16, </a>
+
+<a href="http://zxpress.ru/issue.php?id=226#1010" style="white-space: nowrap">Tusovka #1010, </a>
+
+<a href="http://zxpress.ru/issue.php?id=139#57" style="white-space: nowrap">Nicron #57, </a>
+
+<a href="http://zxpress.ru/issue.php?id=76#04" style="white-space: nowrap">Faultless #04</a>
+
+</div>
+
+
+</b>
+</center>
+</div>
+
+<hr>
+
+<form method="GET" action="http://zxpress.ru/issue.php">
+<select class="right" name="id" onchange="javascript:this.parentNode.submit();">
+<option selected="">Выбрать издание...</option>
+<option style=" border: none" value="1">#Z80</option>
+<option style=" border: none" value="2">20</option>
+<option style=" border: none" value="3">200</option>
+<option style=" border: none" value="4">3Bit</option>
+<option style=" border: none" value="5">47th Byte</option>
+<option style=" border: none" value="7">Acid Paper</option>
+<option style=" border: none" value="8">ACNews</option>
+<option style=" border: none" value="9">Adventurer</option>
+<option style=" border: none" value="10">All Paper</option>
+<option style=" border: none" value="11">Always</option>
+<option style=" border: none" value="12">Amazing</option>
+<option style=" border: none" value="13">Amiga Info</option>
+<option style=" border: none" value="14">Amiga News</option>
+<option style=" border: none" value="306">Amiga News</option>
+<option style=" border: none" value="15">Amigoz</option>
+<option style=" border: none" value="325">Anecdotes</option>
+<option style=" border: none" value="16">Anigdot</option>
+<option style=" border: none" value="17">Anti-Top</option>
+<option style=" border: none" value="18">Antivel</option>
+<option style=" border: none" value="19">Aspect</option>
+<option style=" border: none" value="20">Avro News</option>
+<option style=" border: none" value="21">Balagan</option>
+<option style=" border: none" value="22">Baltic Press</option>
+<option style=" border: none" value="23">Batva</option>
+<option style=" border: none" value="24">BBSTOP</option>
+<option style=" border: none" value="25">Best of</option>
+<option style=" border: none" value="26">Black Crow</option>
+<option style=" border: none" value="27">Black Metall</option>
+<option style=" border: none" value="28">Body</option>
+<option style=" border: none" value="29">Bonus</option>
+<option style=" border: none" value="30">Book</option>
+<option style=" border: none" value="31">Born Dead</option>
+<option style=" border: none" value="32">Bred</option>
+<option style=" border: none" value="305">Bred</option>
+<option style=" border: none" value="33">Breeze</option>
+<option style=" border: none" value="34">Bugs</option>
+<option style=" border: none" value="35">Buhenvald</option>
+<option style=" border: none" value="307">Burn the Lighter</option>
+<option style=" border: none" value="36">Buzz</option>
+<option style=" border: none" value="47">C-Net Week</option>
+<option style=" border: none" value="37">Cancer</option>
+<option style=" border: none" value="38">Chaos</option>
+<option style=" border: none" value="39">Cheat</option>
+<option style=" border: none" value="40">Chudo</option>
+<option style=" border: none" value="42">City</option>
+<option style=" border: none" value="41">City</option>
+<option style=" border: none" value="43">Clime</option>
+<option style=" border: none" value="309">Codemania</option>
+<option style=" border: none" value="44">Cossackos</option>
+<option style=" border: none" value="308">Crazy News</option>
+<option style=" border: none" value="45">Crossroads</option>
+<option style=" border: none" value="46">Crysral Dream</option>
+<option style=" border: none" value="48">Cyberman</option>
+<option style=" border: none" value="49">CyberSex</option>
+<option style=" border: none" value="50">Deja Vu</option>
+<option style=" border: none" value="51">Demo or Die</option>
+<option style=" border: none" value="52">Depress</option>
+<option style=" border: none" value="53">Depth</option>
+<option style=" border: none" value="54">Dermo</option>
+<option style=" border: none" value="55">Di Halt</option>
+<option style=" border: none" value="57">Dni-Pro</option>
+<option style=" border: none" value="56">Dnieprobite</option>
+<option style=" border: none" value="58">DonNews</option>
+<option style=" border: none" value="59">Dr. Longman`s News</option>
+<option style=" border: none" value="60">Du Hast</option>
+<option style=" border: none" value="61">Dune</option>
+<option style=" border: none" value="62">Ebelka</option>
+<option style=" border: none" value="63">Echo</option>
+<option style=" border: none" value="64">Eldorado</option>
+<option style=" border: none" value="65">EMSlog</option>
+<option style=" border: none" value="66">Emulate</option>
+<option style=" border: none" value="67">Energy</option>
+<option style=" border: none" value="324">Enigma Tape Magazine</option>
+<option style=" border: none" value="68">Erotic</option>
+<option style=" border: none" value="69">Explorer</option>
+<option style=" border: none" value="81">F-Net</option>
+<option style=" border: none" value="70">Fanat</option>
+<option style=" border: none" value="71">Fanat Newspaper</option>
+<option style=" border: none" value="72">Fantadrom</option>
+<option style=" border: none" value="73">Fantastic</option>
+<option style=" border: none" value="74">Fantik</option>
+<option style=" border: none" value="75">Fantom</option>
+<option style=" border: none" value="76">Faultless</option>
+<option style=" border: none" value="77">Fenzin</option>
+<option style=" border: none" value="78">Fisherman Press</option>
+<option style=" border: none" value="79">Flash Info</option>
+<option style=" border: none" value="80">Flash Time</option>
+<option style=" border: none" value="82">Foolishness</option>
+<option style=" border: none" value="83">Forever Young</option>
+<option style=" border: none" value="84">Fuck</option>
+<option style=" border: none" value="85">Full Pull</option>
+<option style=" border: none" value="86">Funeral</option>
+<option style=" border: none" value="87">Funny Box</option>
+<option style=" border: none" value="88">Funny Night</option>
+<option style=" border: none" value="89">Generation Z</option>
+<option style=" border: none" value="90">Gluk</option>
+<option style=" border: none" value="91">Gomel ZX-Net News</option>
+<option style=" border: none" value="92">Gorodok</option>
+<option style=" border: none" value="93">Gothiq</option>
+<option style=" border: none" value="94">Hacker</option>
+<option style=" border: none" value="95">Heresy</option>
+<option style=" border: none" value="96">Hobby</option>
+<option style=" border: none" value="97">Horror</option>
+<option style=" border: none" value="98">Humor in Exchange</option>
+<option style=" border: none" value="99">Impulse</option>
+<option style=" border: none" value="100">Inferno</option>
+<option style=" border: none" value="302">Info Guide</option>
+<option style=" border: none" value="101">Innovision</option>
+<option style=" border: none" value="102">Insanity</option>
+<option style=" border: none" value="103">IzhNews</option>
+<option style=" border: none" value="104">Joint</option>
+<option style=" border: none" value="105">Key</option>
+<option style=" border: none" value="106">Kosme</option>
+<option style=" border: none" value="107">KrNews</option>
+<option style=" border: none" value="108">Lamergy</option>
+<option style=" border: none" value="109">Last 128</option>
+<option style=" border: none" value="110">Life</option>
+<option style=" border: none" value="111">Lime Tree</option>
+<option style=" border: none" value="112">Listok</option>
+<option style=" border: none" value="113">LntNews</option>
+<option style=" border: none" value="114">Lprint</option>
+<option style=" border: none" value="115">Madness</option>
+<option style=" border: none" value="116">Marazm</option>
+<option style=" border: none" value="323">Mask</option>
+<option style=" border: none" value="117">Mask</option>
+<option style=" border: none" value="322">Max Pictures Sexual News</option>
+<option style=" border: none" value="118">Maximum</option>
+<option style=" border: none" value="119">Melancholy</option>
+<option style=" border: none" value="120">Micro</option>
+<option style=" border: none" value="121">Millenium</option>
+<option style=" border: none" value="122">Miracle</option>
+<option style=" border: none" value="123">Mirage</option>
+<option style=" border: none" value="124">Mirikom</option>
+<option style=" border: none" value="125">Modern</option>
+<option style=" border: none" value="126">Move</option>
+<option style=" border: none" value="127">MSD</option>
+<option style=" border: none" value="128">MSF</option>
+<option style=" border: none" value="129">Muchomor</option>
+<option style=" border: none" value="130">Murzilka</option>
+<option style=" border: none" value="131">Mustang</option>
+<option style=" border: none" value="132">My Speccy</option>
+<option style=" border: none" value="133">Natural</option>
+<option style=" border: none" value="134">Neformal</option>
+<option style=" border: none" value="135">NemoFAQ</option>
+<option style=" border: none" value="136">Netus News</option>
+<option style=" border: none" value="137">Never Mind</option>
+<option style=" border: none" value="138">Next</option>
+<option style=" border: none" value="139">Nicron</option>
+<option style=" border: none" value="140">Nikfe</option>
+<option style=" border: none" value="319">Nonsense</option>
+<option style=" border: none" value="141">Noosfera</option>
+<option style=" border: none" value="142">Numberology</option>
+<option style=" border: none" value="143">Oberon</option>
+<option style=" border: none" value="144">Odyssey Magazine</option>
+<option style=" border: none" value="145">Odyssey paper</option>
+<option style=" border: none" value="146">Offline</option>
+<option style=" border: none" value="147">On-Line</option>
+<option style=" border: none" value="299">Open Letters</option>
+<option style=" border: none" value="301">Opex</option>
+<option style=" border: none" value="148">Opium</option>
+<option style=" border: none" value="149">Optron</option>
+<option style=" border: none" value="150">Orion</option>
+<option style=" border: none" value="151">Orphan</option>
+<option style=" border: none" value="152">Ostrov</option>
+<option style=" border: none" value="153">Out Side</option>
+<option style=" border: none" value="314">Outlet</option>
+<option style=" border: none" value="154">Overlog</option>
+<option style=" border: none" value="155">Paradox</option>
+<option style=" border: none" value="156">Pioneer</option>
+<option style=" border: none" value="157">Platinum</option>
+<option style=" border: none" value="158">Playboy</option>
+<option style=" border: none" value="159">Plutonium</option>
+<option style=" border: none" value="160">Point</option>
+<option style=" border: none" value="161">Polesse</option>
+<option style=" border: none" value="162">Polnoch</option>
+<option style=" border: none" value="163">Power</option>
+<option style=" border: none" value="317">Prikoly</option>
+<option style=" border: none" value="164">Profi Club</option>
+<option style=" border: none" value="165">Promised Land</option>
+<option style=" border: none" value="166">Proton</option>
+<option style=" border: none" value="167">Psychoz</option>
+<option style=" border: none" value="168">Public Spirit</option>
+<option style=" border: none" value="169">Punk</option>
+<option style=" border: none" value="170">Read Me</option>
+<option style=" border: none" value="171">Realtime</option>
+<option style=" border: none" value="321">Red Press</option>
+<option style=" border: none" value="172">Reflex</option>
+<option style=" border: none" value="173">Review</option>
+<option style=" border: none" value="174">Revival</option>
+<option style=" border: none" value="175">RIP</option>
+<option style=" border: none" value="176">RST</option>
+<option style=" border: none" value="177">Rumorz</option>
+<option style=" border: none" value="178">RUSH</option>
+<option style=" border: none" value="316">Sapog</option>
+<option style=" border: none" value="180">Scene News</option>
+<option style=" border: none" value="315">Scene+</option>
+<option style=" border: none" value="181">Scenergy</option>
+<option style=" border: none" value="182">Scream</option>
+<option style=" border: none" value="326">Screamergy</option>
+<option style=" border: none" value="183">Scroller</option>
+<option style=" border: none" value="184">Setevoy Sokol</option>
+<option style=" border: none" value="185">Shock</option>
+<option style=" border: none" value="186">Shocker</option>
+<option style=" border: none" value="187">Shupashkar</option>
+<option style=" border: none" value="188">Sinc Re-Stared</option>
+<option style=" border: none" value="313">Sinclair Classic</option>
+<option style=" border: none" value="189">Sinclair Club</option>
+<option style=" border: none" value="190">Sinclair News</option>
+<option style=" border: none" value="191">Sinclair Town</option>
+<option style=" border: none" value="192">Skimer</option>
+<option style=" border: none" value="193">Sky Net</option>
+<option style=" border: none" value="194">Smeh</option>
+<option style=" border: none" value="195">Sorrow News</option>
+<option style=" border: none" value="196">SOSG</option>
+<option style=" border: none" value="197">SPb ZX Week</option>
+<option style=" border: none" value="198">SPbZXNet-Pointovka</option>
+<option style=" border: none" value="199">Speccy</option>
+<option style=" border: none" value="200">Speccy Life</option>
+<option style=" border: none" value="201">SpecInfo</option>
+<option style=" border: none" value="202">Spectrofon</option>
+<option style=" border: none" value="300">Spectrofun</option>
+<option style=" border: none" value="203">Spectron</option>
+<option style=" border: none" value="204">Spectrophoby</option>
+<option style=" border: none" value="205">Spectrum Expert</option>
+<option style=" border: none" value="206">Spectrum Land</option>
+<option style=" border: none" value="312">Spectrum Magazine</option>
+<option style=" border: none" value="207">Spectrum News</option>
+<option style=" border: none" value="208">Spectrum Progress</option>
+<option style=" border: none" value="209">Spectrumania</option>
+<option style=" border: none" value="210">Spite</option>
+<option style=" border: none" value="211">Star</option>
+<option style=" border: none" value="212">Stump</option>
+<option style=" border: none" value="213">Subliminal Extacy</option>
+<option style=" border: none" value="214">Sweet</option>
+<option style=" border: none" value="215">Tagan News</option>
+<option style=" border: none" value="216">Tales from Crypt</option>
+<option style=" border: none" value="217">TargeT</option>
+<option style=" border: none" value="218">Teleconf. ZX-Net</option>
+<option style=" border: none" value="219">Teleshow</option>
+<option style=" border: none" value="220">Terminal</option>
+<option style=" border: none" value="221">Think</option>
+<option style=" border: none" value="222">Time</option>
+<option style=" border: none" value="223">Times</option>
+<option style=" border: none" value="224">Totoro</option>
+<option style=" border: none" value="225">Tusovka</option>
+<option style=" border: none" value="226">Tusovka</option>
+<option style=" border: none" value="227">Ufo</option>
+<option style=" border: none" value="228">Ultimathum</option>
+<option style=" border: none" value="229">Unsteady News</option>
+<option style=" border: none" value="230">Virtual World</option>
+<option style=" border: none" value="231">Virtual Worlds</option>
+<option style=" border: none" value="232">Voxon`s Land</option>
+<option style=" border: none" value="233">Voyager</option>
+<option style=" border: none" value="234">Wallpaper</option>
+<option style=" border: none" value="235">Warez</option>
+<option style=" border: none" value="236">WeekEnd</option>
+<option style=" border: none" value="237">Welcome Press</option>
+<option style=" border: none" value="238">White Crow</option>
+<option style=" border: none" value="239">Wizard Net Page</option>
+<option style=" border: none" value="240">Wizard News</option>
+<option style=" border: none" value="241">World in the Web</option>
+<option style=" border: none" value="244">X-Files</option>
+<option style=" border: none" value="243">X-Files</option>
+<option style=" border: none" value="311">X-Magazine</option>
+<option style=" border: none" value="245">X-Ray</option>
+<option style=" border: none" value="242">Xa-XaFon</option>
+<option style=" border: none" value="246">Za Rulem</option>
+<option style=" border: none" value="247">Zed</option>
+<option style=" border: none" value="248">Zodiac</option>
+<option style=" border: none" value="249">ZX Chart</option>
+<option style=" border: none" value="250">ZX City</option>
+<option style=" border: none" value="251">ZX Club</option>
+<option style=" border: none" value="252">ZX Digest</option>
+<option style=" border: none" value="253">ZX Doze</option>
+<option style=" border: none" value="254">ZX Element</option>
+<option style=" border: none" value="255">ZX Ferrum</option>
+<option style=" border: none" value="256">ZX Football 2000</option>
+<option style=" border: none" value="257">ZX Format</option>
+<option style=" border: none" value="258">ZX Forum</option>
+<option style=" border: none" value="259">ZX Guide</option>
+<option style=" border: none" value="260">ZX Hard</option>
+<option style=" border: none" value="261">ZX Healthless</option>
+<option style=" border: none" value="262">ZX Humor</option>
+<option style=" border: none" value="263">ZX Jump</option>
+<option style=" border: none" value="264">ZX Konig</option>
+<option style=" border: none" value="303">ZX Land</option>
+<option style=" border: none" value="265">ZX Light</option>
+<option style=" border: none" value="266">ZX Live</option>
+<option style=" border: none" value="268">ZX Magazine</option>
+<option style=" border: none" value="267">ZX Magazine</option>
+<option style=" border: none" value="270">ZX News</option>
+<option style=" border: none" value="271">ZX Panorama</option>
+<option style=" border: none" value="272">ZX Paper</option>
+<option style=" border: none" value="273">ZX Park</option>
+<option style=" border: none" value="274">ZX Pilot</option>
+<option style=" border: none" value="275">ZX Power</option>
+<option style=" border: none" value="276">ZX Press</option>
+<option style=" border: none" value="277">ZX Review</option>
+<option style=" border: none" value="327">ZX Revija</option>
+<option style=" border: none" value="278">ZX Rulez Magazine</option>
+<option style=" border: none" value="279">ZX Software</option>
+<option style=" border: none" value="280">ZX Time</option>
+<option style=" border: none" value="281">ZX User</option>
+<option style=" border: none" value="282">ZX World</option>
+<option style=" border: none" value="283">ZX Zone</option>
+<option style=" border: none" value="310">ZX-Files</option>
+<option style=" border: none" value="269">ZX-News</option>
+</select>
+</form>
+
+
+
+
+<div style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20); opacity: 0.1;" align="center">
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/stat/zxpress.ru/queries.html' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t17.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border=0 width=1 height=1><\/a>")//--></script><a href="http://www.liveinternet.ru/stat/zxpress.ru/queries.html" target="_blank"><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/hit" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" border="0" width="1" height="1"></a><!--/LiveInternet-->
+</div>
+
+<!--  </div>
+ </div>
+ </div> -->
+
+
+
+</div>
+
+
+
+</td></tr></tbody></table>
+
+</div><div style="clear:both;"></div>
+
+<div id="footer">
+<table cellpadding="0" cellspacing="0" width="100%" valign="bottom" border="0"><tbody><tr>
+<td style="font: normal 13pt/12pt Times; padding: 0px 0px 10px 10px" valign="bottom" width="145"><img src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/by-nc-sa.png" height="48"></td>
+<td style="font: normal 13pt/12pt Times; padding: 0px 0px 10px 10px" valign="bottom">
+<b>ZXPRESS</b> — Журналы, газеты и книги для ZX Spectrum<br><br>
+© 2009-2015 <b>ZXPRESS.RU</b>
+
+
+<!-- <div style="font: normal 13pt/10pt Times;">
+Использование материалов zxpress.ru возможно только с разрешения авторов сайта.</div>
+ --></td>
+<td>
+<img alt="Библиотека электронных газет и журналов для ZX Sepectrum" title="Библиотека электронных газет и журналов для ZX Sepectrum" border="0" src="./ZX-Forum №3 - Читатель-читателю - Камертон и музыкальный сопроцессор AY-3-8910_12 в ZX-Spectrum. Программирование_files/dear_dizzy_sepia4.png" align="right">
+</td></tr></tbody></table>
+</div>
+
+
+<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter1747073 = new Ya.Metrika({id:1747073, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/1747073" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript><!-- /Yandex.Metrika counter -->
+<div id="popupContact"><div id="contactArea"></div></div><div id="backgroundPopup"></div>
+
+
+</body></html>

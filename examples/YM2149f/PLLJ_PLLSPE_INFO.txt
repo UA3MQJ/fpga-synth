@@ -1,0 +1,5 @@
+PLL_Name	clk50Mto1M:conv|altpll:altpll_component|clk50Mto1M_altpll:auto_generated|pll1
+PLLJITTER	45
+PLLSPEmax	84
+PLLSPEmin	-53
+
