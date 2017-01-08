@@ -1,0 +1,5 @@
+module I2S_DAC(clk50M);
+
+input wire clk50M;
+
+endmodule

@@ -1,0 +1,124 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2011 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 11.1 Build 173 11/01/2011 SJ Full Version
+# Date created = 20:49:39  January 12, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		I2S_DAC_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY I2S_DAC
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 11.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:49:38  JANUARY 12, 2016"
+set_global_assignment -name LAST_QUARTUS_VERSION 11.1
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 144
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE POST_FIT -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_23 -to clk50M
+set_location_assignment PIN_91 -to sck
+set_location_assignment PIN_11 -to ws
+set_location_assignment PIN_7 -to sd
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to clk50M
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sck
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to sd
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to ws
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ws
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to sd
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to sck
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk50M
+set_location_assignment PIN_10 -to dac_dat[0]
+set_location_assignment PIN_3 -to dac_dat[1]
+set_location_assignment PIN_1 -to dac_dat[2]
+set_location_assignment PIN_143 -to dac_dat[3]
+set_location_assignment PIN_141 -to dac_dat[4]
+set_location_assignment PIN_137 -to dac_dat[5]
+set_location_assignment PIN_135 -to dac_dat[6]
+set_location_assignment PIN_132 -to dac_dat[7]
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to dac_dat[0]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to dac_dat[7]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to dac_dat[6]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to dac_dat[5]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to dac_dat[4]
+set_instance_assignment -name IO_STANDARD "1.2 V" -to dac_dat[3]
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to dac_dat[2]
+set_instance_assignment -name IO_STANDARD "3.0-V LVCMOS" -to dac_dat[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to dac_dat[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to dac_dat[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to dac_dat[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to dac_dat[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 2MA -to dac_dat[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to dac_dat[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to dac_dat[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to dac_dat[0]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[7]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[6]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[5]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[4]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[3]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[2]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[1]
+set_instance_assignment -name SLEW_RATE 2 -to dac_dat[0]
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name VERILOG_FILE ../../modules/rnd8.v
+set_global_assignment -name VERILOG_FILE ../../modules/rnd8dac1.v
+set_global_assignment -name VERILOG_FILE ../../modules/ds8dac1.v
+set_global_assignment -name VERILOG_FILE ../../modules/pwm8dac1.v
+set_global_assignment -name VERILOG_FILE ../../modules/i2s_receive2.v
+set_global_assignment -name VERILOG_FILE I2S_DAC.v
+set_location_assignment PIN_90 -to sw1
+set_global_assignment -name QIP_FILE pll200M.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
