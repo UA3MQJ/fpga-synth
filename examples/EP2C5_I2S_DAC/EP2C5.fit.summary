@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Mar 03 00:03:28 2016
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : EP2C5
+Top-level Entity Name : EP2C5
+Family : Cyclone II
+Device : EP2C5T144C7
+Timing Models : Final
+Total logic elements : 522 / 4,608 ( 11 % )
+    Total combinational functions : 501 / 4,608 ( 11 % )
+    Dedicated logic registers : 266 / 4,608 ( 6 % )
+Total registers : 266
+Total pins : 13 / 89 ( 15 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

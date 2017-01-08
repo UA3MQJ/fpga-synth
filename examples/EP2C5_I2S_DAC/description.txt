@@ -1,0 +1,12 @@
+Плата твоя содержит девайс Cyclone 2 EP2C5T144C7
+Package: TQFP
+Pin count: 144
+Speed grade: 7
+
+Если будешь шить на постоянку, то внешняя флешка там: EPCS4
+
+Пины:
+
+клок 50 мгц подан на PIN_17
+кнопка на PIN_144
+led0, led1, led2 на PIN_9, PIN_7, PIN_3
