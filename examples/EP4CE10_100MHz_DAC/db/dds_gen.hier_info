@@ -1,0 +1,49 @@
+|dds_gen
+clk => clk.IN1
+key1 => gate_buff1[0].DATAIN
+key2 => gate_buff2[0].DATAIN
+
+
+|dds_gen|pll100M:gen_100MHz
+inclk0 => sub_wire3[0].IN1
+
+
+|dds_gen|pll100M:gen_100MHz|altpll:altpll_component
+inclk[0] => pll100M_altpll:auto_generated.inclk[0]
+inclk[1] => pll100M_altpll:auto_generated.inclk[1]
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+
+
+|dds_gen|pll100M:gen_100MHz|altpll:altpll_component|pll100M_altpll:auto_generated
+inclk[0] => pll1.CLK
+inclk[1] => pll1.CLK1
+
+

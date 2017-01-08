@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Jan 23 19:33:32 2016
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : spi_rcv
+Top-level Entity Name : spi_rcv
+Family : MAX II
+Device : EPM240T100A5
+Timing Models : Final
+Total logic elements : 29 / 240 ( 12 % )
+Total pins : 17 / 80 ( 21 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -74,39 +74,15 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_location_assignment PIN_144 -to key0
 set_location_assignment PIN_74 -to MIDI_IN
-set_instance_assignment -name IO_STANDARD "2.5 V" -to key0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to key0
 set_instance_assignment -name IO_STANDARD "2.5 V" -to MIDI_IN
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to MIDI_IN
 set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clk50M
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to key0
-set_location_assignment PIN_103 -to a1
-set_location_assignment PIN_101 -to a2
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to key0
 set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "2.5 V"
 set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "1.8 V"
 set_global_assignment -name OUTPUT_PIN_LOAD 10 -section_id "1.5 V"
-set_instance_assignment -name IO_STANDARD "2.5 V" -to a1
-set_instance_assignment -name IO_STANDARD "2.5 V" -to a2
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a2
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a1
-set_location_assignment PIN_100 -to ac1
-set_location_assignment PIN_99 -to ac2
-set_location_assignment PIN_97 -to ac3
-set_location_assignment PIN_96 -to ac4
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ac1
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ac2
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ac3
-set_instance_assignment -name IO_STANDARD "2.5 V" -to ac4
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ac1
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ac2
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ac4
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ac3
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
-set_location_assignment PIN_94 -to a3
-set_location_assignment PIN_93 -to a4
-set_instance_assignment -name IO_STANDARD "2.5 V" -to a3
-set_instance_assignment -name IO_STANDARD "2.5 V" -to a4
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a3
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to a4
 set_global_assignment -name VERILOG_FILE ../../modules/svca.v
 set_global_assignment -name VERILOG_FILE ../../modules/prio_encoder.v
 set_global_assignment -name VERILOG_FILE ../../modules/reg7.v
@@ -117,7 +93,46 @@ set_global_assignment -name VERILOG_FILE ../../modules/opencores/uart/uart_rx.v
 set_global_assignment -name VERILOG_FILE ../../modules/opencores/uart/baud_gen.v
 set_global_assignment -name SDC_FILE EP2C5.sdc
 set_global_assignment -name VERILOG_FILE EP2C5.v
-set_location_assignment PIN_73 -to clkout
-set_instance_assignment -name IO_STANDARD "2.5 V" -to clkout
-set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to clkout
+set_location_assignment PIN_113 -to DA[0]
+set_location_assignment PIN_112 -to DA[1]
+set_location_assignment PIN_115 -to DA[2]
+set_location_assignment PIN_114 -to DA[3]
+set_location_assignment PIN_119 -to DA[4]
+set_location_assignment PIN_118 -to DA[5]
+set_location_assignment PIN_121 -to DA[6]
+set_location_assignment PIN_120 -to DA[7]
+set_location_assignment PIN_125 -to CLOCK
+set_location_assignment PIN_133 -to BDIR
+set_location_assignment PIN_122 -to NRES
+set_location_assignment PIN_129 -to BC1
+set_location_assignment PIN_126 -to BC2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to NRES
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to NRES
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BC1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BC2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BDIR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DA[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to BC1
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to BC2
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to BDIR
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to CLOCK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to DA[0]
+set_location_assignment PIN_21 -to clk1750K
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk1750K
+set_instance_assignment -name CURRENT_STRENGTH_NEW 24MA -to clk1750K
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

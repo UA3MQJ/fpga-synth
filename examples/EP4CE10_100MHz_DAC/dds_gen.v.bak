@@ -1,0 +1,18 @@
+module dds_gen(clk, key1, key2, da_clk, da_db);
+input wire clk;
+input wire key1;
+input wire key2;
+input wire da_clk;
+output wire [7:0] da_db;
+
+reg [31:0] dds_accum; initial dds_accum <= 32'd0;
+reg [31:0] dds_adder; initial dds_adder <= 32'd18898; // 440 Hz
+
+always @(posedge clk100M) begin
+	dds_accum <= dds_accum + dds_adder;
+end
+
+assign da_db = dds_accum[31:31-7]; //high bits of dds accum
+assign da_clk = clk100M;
+
+endmodule

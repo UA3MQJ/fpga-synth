@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="dds_gen">
+		<CBX_INST_ENTRY INSTANCE_NAME="|dds_gen|pll100M:gen_100MHz|altpll:altpll_component" CBX_FILE_NAME="pll100M_altpll.v"/>
+	</PROJECT>
+</LOG_ROOT>

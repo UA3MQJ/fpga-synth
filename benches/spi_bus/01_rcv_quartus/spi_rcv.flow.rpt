@@ -1,0 +1,106 @@
+Flow report for spi_rcv
+Mon Jan 25 09:40:58 2016
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Flow Summary                                                          ;
++---------------------------+-------------------------------------------+
+; Flow Status               ; Successful - Mon Jan 25 09:40:58 2016     ;
+; Quartus II 32-bit Version ; 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name             ; spi_rcv                                   ;
+; Top-level Entity Name     ; spi_rcv                                   ;
+; Family                    ; MAX II                                    ;
+; Device                    ; EPM240T100A5                              ;
+; Timing Models             ; Final                                     ;
+; Total logic elements      ; 0                                         ;
+; Total pins                ; 18                                        ;
+; Total virtual pins        ; 0                                         ;
+; UFM blocks                ; 0 / 1 ( 0 % )                             ;
++---------------------------+-------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 01/25/2016 09:40:56 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; spi_rcv             ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++---------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                       ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++---------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID                 ; 105996038739929.145370405609600 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT                ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                   ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP                ; 125                             ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP                ; -40                             ; --            ; --          ; --             ;
+; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                            ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION         ; No Heat Sink With Still Air     ; --            ; --          ; --             ;
++---------------------------------------+---------------------------------+---------------+-------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 291 MB              ; 00:00:01                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:01                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; sea-note         ; Windows 7 ; 6.1        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off spi_rcv -c spi_rcv
+
+
+

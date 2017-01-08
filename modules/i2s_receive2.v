@@ -10,18 +10,27 @@ module i2s_receive2 #
    output reg [width-1:0] data_left,
    output reg [width-1:0] data_right
    );
+	
+  initial data_left <= 0;
+  initial data_right <= 0;
 
-  reg wsd = 0;
+  reg wsd;
+  initial wsd <= 1'b0;
+  
   always @(posedge sck)
     wsd <= ws;
 
   reg wsdd;
+  initial wsdd <= 1'b0;
+
   always @(posedge sck)
     wsdd <= wsd;
 
   wire wsp = wsd ^ wsdd;
 
   reg [$clog2(width+1)-1:0] counter;
+  initial counter <= 0;
+  
   always @(negedge sck)
     if (wsp)
       counter <= 0;
@@ -29,6 +38,8 @@ module i2s_receive2 #
       counter <= counter+1;
 
   reg [0:width-1] shift;
+  initial shift <= 0;
+  
   always @(posedge sck)
     begin
       if (wsp)

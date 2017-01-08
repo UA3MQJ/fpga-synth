@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jan 07 18:58:49 2017
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : dds_gen
+Top-level Entity Name : dds_gen
+Family : Cyclone IV E
+Total logic elements : 145
+    Total combinational functions : 141
+    Dedicated logic registers : 98
+Total registers : 98
+Total pins : 12
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

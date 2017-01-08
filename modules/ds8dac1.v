@@ -1,4 +1,4 @@
-module ds8dac1(clk, in_data, sout);
+/*module ds8dac1(clk, in_data, sout);
 input clk;
 input [7:0] in_data;
 output reg sout;
@@ -21,9 +21,9 @@ always @(negedge clk) begin
 	sout <= PWM_accumulator[8];
 end
 
-endmodule
+endmodule*/
 
-/*
+
 // Delta-Sigma DAC
 module ds8dac1(clk, DACin, DACout);
 output DACout; // This is the average output that feeds low pass filter
@@ -53,4 +53,4 @@ begin
   DACout <=  SigmaLatch[9];
 end
 
-endmodule*/
+endmodule

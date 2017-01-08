@@ -1,20 +1,23 @@
-module EP2C5(clk50M, key0, led0, led1, led2, MIDI_IN, a1, a2, a3, a4, ac1, ac2, ac3, ac4, clkout);
+module EP2C5(clk50M, key0, led0, led1, led2, MIDI_IN, 
+				//VCA
+				a1, a2, a3, a4, ac1, ac2, ac3, ac4
+);
 //ports
 input wire clk50M, key0, MIDI_IN;
 output wire led0, led1, led2;
 
+//генератор сброса
+wire rst;
+powerup_reset res_gen(.clk(clk50M), .key(~key0), .rst(rst));
+
+//Organ outputs
 //audio out's
 output wire a1, a2, a3, a4;
 //control out's
 output wire ac1,ac2,ac3,ac4;
 
-output wire clkout;
 
 //synth
-
-//генератор сброса
-wire rst;
-powerup_reset res_gen(.clk(clk50M), .key(~key0), .rst(rst));
 
 //MIDI вход
 wire [3:0] CH_MESSAGE;
@@ -22,9 +25,6 @@ wire [3:0] CHAN;
 wire [6:0] NOTE;
 wire [6:0] LSB;
 wire [6:0] MSB;
-
-
-
 
 midi_in midi_in_0(.clk(clk50M), 
 					   .rst(rst), 
@@ -40,12 +40,23 @@ wire NOTE_ON  = ((CH_MESSAGE==4'b1001)&&(CHAN!=4'd9)); //строб призна
 wire NOTE_OFF = ((CH_MESSAGE==4'b1000)&&(CHAN!=4'd9)); //строб признак появления сообщения note off
 
 reg note_on_reg;
+initial note_on_reg <= 0;
+
+/*
+always @(posedge clk50M) begin
+	if (NOTE_ON) begin
+		note_on_reg <= 1;
+	end else if (NOTE_OFF) begin
+		note_on_reg <= 0;
+	end
+end */
 
 assign led0 = MIDI_IN;
 assign led1 = ~note_on_reg;
 assign led2 = 1'b1;
 
-/*
+
+
 //523,31 герц А1
 //50.000.000 / 523,31 = 95545,661271521660201410253960368
 //frqdivmod #(.DIV(95546)) divider2(.clk(clk50M), .s_out(a1));
@@ -378,7 +389,7 @@ always @(posedge clk50M) begin
 		note_on_reg <= 1'b0;
 		keys[NOTE] <= 1'b0;
 	end
-end */
+end
 
 endmodule
 

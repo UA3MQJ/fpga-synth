@@ -1,5 +1,5 @@
 Flow report for EP2C5
-Mon Sep 21 15:32:18 2015
+Wed May 25 15:40:04 2016
 Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Mon Sep 21 15:32:18 2015     ;
+; Flow Status                        ; Successful - Wed May 25 15:40:03 2016     ;
 ; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
 ; Revision Name                      ; EP2C5                                     ;
 ; Top-level Entity Name              ; EP2C5                                     ;
 ; Family                             ; Cyclone II                                ;
 ; Device                             ; EP2C5T144C7                               ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 79 / 4,608 ( 2 % )                        ;
-;     Total combinational functions  ; 79 / 4,608 ( 2 % )                        ;
-;     Dedicated logic registers      ; 64 / 4,608 ( 1 % )                        ;
-; Total registers                    ; 64                                        ;
-; Total pins                         ; 15 / 89 ( 17 % )                          ;
+; Total logic elements               ; 2,343 / 4,608 ( 51 % )                    ;
+;     Total combinational functions  ; 2,326 / 4,608 ( 50 % )                    ;
+;     Dedicated logic registers      ; 582 / 4,608 ( 13 % )                      ;
+; Total registers                    ; 582                                       ;
+; Total pins                         ; 14 / 89 ( 16 % )                          ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                            ;
+; Embedded Multiplier 9-bit elements ; 4 / 26 ( 15 % )                           ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                             ;
 +------------------------------------+-------------------------------------------+
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/21/2015 15:32:13 ;
+; Start date & time ; 05/25/2016 15:39:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; EP2C5               ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+--------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id   ;
 +-------------------------------------+---------------------------------------+---------------+-------------+--------------+
-; COMPILER_SIGNATURE_ID               ; 105996038739929.144283873311988       ; --            ; --          ; --           ;
+; COMPILER_SIGNATURE_ID               ; 105996038739929.146417998107200       ; --            ; --          ; --           ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --           ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --           ;
 ; OUTPUT_PIN_LOAD                     ; 10                                    ; --            ; --          ; 3.3-V LVTTL  ;
@@ -96,11 +96,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 293 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:02     ; 1.0                     ; 374 MB              ; 00:00:02                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 268 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 284 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
+; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 316 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:07     ; 1.0                     ; 392 MB              ; 00:00:06                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 277 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 303 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

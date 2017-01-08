@@ -1,0 +1,5 @@
+PLL_Name	pll100M:gen_100MHz|altpll:altpll_component|pll100M_altpll:auto_generated|pll1
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+

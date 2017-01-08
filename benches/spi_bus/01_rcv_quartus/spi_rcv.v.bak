@@ -1,0 +1,3 @@
+module spi_rcv();
+
+endmodule
