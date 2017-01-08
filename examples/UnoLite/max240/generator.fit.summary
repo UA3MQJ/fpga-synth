@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Oct 13 14:16:23 2016
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : generator
+Top-level Entity Name : generator
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 204 / 240 ( 85 % )
+Total pins : 9 / 80 ( 11 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

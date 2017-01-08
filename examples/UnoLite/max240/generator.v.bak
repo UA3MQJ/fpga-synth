@@ -1,0 +1,15 @@
+module generator(clk, out1);
+input wire clk;
+
+output wire out1;
+
+reg [7:0] counter1;
+
+initial counter1 <= 8'd0;
+
+always @ (posedge clk50M) begin
+	trg04 <= clk4;
+	if (clk4!=trg04) rg04 <= rg04 + 1'b1;
+end
+
+end

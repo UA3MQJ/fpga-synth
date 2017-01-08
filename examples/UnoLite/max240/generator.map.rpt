@@ -1,0 +1,339 @@
+Analysis & Synthesis report for generator
+Thu Oct 13 14:16:19 2016
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                            ;
++-----------------------------+-------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Oct 13 14:16:19 2016     ;
+; Quartus II 32-bit Version   ; 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name               ; generator                                 ;
+; Top-level Entity Name       ; generator                                 ;
+; Family                      ; MAX II                                    ;
+; Total logic elements        ; 270                                       ;
+; Total pins                  ; 9                                         ;
+; Total virtual pins          ; 0                                         ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                             ;
++-----------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                      ; generator          ; generator          ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+
+; generator.v                      ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/examples/UnoLite/max240/generator.v ;
+; divmod.v                         ; yes             ; User Verilog HDL File  ; D:/FPGA_Projects/fpga-synth(git)/examples/UnoLite/max240/divmod.v    ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 270   ;
+;     -- Combinational with no register       ; 110   ;
+;     -- Register only                        ; 72    ;
+;     -- Combinational with a register        ; 88    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 24    ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 151   ;
+;     -- 1 input functions                    ; 23    ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 120   ;
+;     -- arithmetic mode                      ; 150   ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 80    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 160   ;
+; Total logic cells in carry chains           ; 159   ;
+; I/O pins                                    ; 9     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 160   ;
+; Total fan-out                               ; 821   ;
+; Average fan-out                             ; 2.94  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name    ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
+; |generator                 ; 270 (166)   ; 160          ; 0          ; 9    ; 0            ; 110 (86)     ; 72 (72)           ; 88 (8)           ; 159 (79)        ; 0 (0)      ; |generator             ; work         ;
+;    |divmod:div1|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div1 ; work         ;
+;    |divmod:div2|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div2 ; work         ;
+;    |divmod:div3|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div3 ; work         ;
+;    |divmod:div4|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div4 ; work         ;
+;    |divmod:div5|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div5 ; work         ;
+;    |divmod:div6|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div6 ; work         ;
+;    |divmod:div7|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div7 ; work         ;
+;    |divmod:div8|           ; 13 (13)     ; 10           ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |generator|divmod:div8 ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; d1_max[80..129]                        ; Lost fanout        ;
+; Total Number of Removed Registers = 50 ;                    ;
++----------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 160   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 80    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; d1_max[2]                              ; 2       ;
+; d1_max[3]                              ; 2       ;
+; d1_max[4]                              ; 2       ;
+; d1_max[5]                              ; 2       ;
+; d1_max[7]                              ; 2       ;
+; d1_max[8]                              ; 2       ;
+; d1_max[9]                              ; 2       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
+    Info: Processing started: Thu Oct 13 14:16:18 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off generator -c generator
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file generator.v
+    Info (12023): Found entity 1: generator
+Info (12021): Found 1 design units, including 1 entities, in source file div_5_13.bdf
+    Info (12023): Found entity 1: div_5_13
+Info (12021): Found 1 design units, including 1 entities, in source file div_73.bdf
+    Info (12023): Found entity 1: div_73
+Info (12021): Found 1 design units, including 1 entities, in source file div_31.bdf
+    Info (12023): Found entity 1: div_31
+Info (12021): Found 1 design units, including 1 entities, in source file div_58.bdf
+    Info (12023): Found entity 1: div_58
+Info (12021): Found 1 design units, including 1 entities, in source file div_41.bdf
+    Info (12023): Found entity 1: div_41
+Info (12021): Found 1 design units, including 1 entities, in source file div_23.bdf
+    Info (12023): Found entity 1: div_23
+Info (12021): Found 1 design units, including 1 entities, in source file testbench.v
+    Info (12023): Found entity 1: testbench
+Info (12021): Found 1 design units, including 1 entities, in source file divmod.v
+    Info (12023): Found entity 1: divmod
+Info (12127): Elaborating entity "generator" for the top level hierarchy
+Info (12128): Elaborating entity "divmod" for hierarchy "divmod:div1"
+Info (17049): 50 registers lost all their fanouts during netlist optimizations. The first 50 are displayed below.
+    Info (17050): Register "d1_max[80]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[81]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[82]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[83]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[84]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[85]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[86]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[87]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[88]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[89]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[90]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[91]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[92]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[93]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[94]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[95]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[96]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[97]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[98]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[99]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[100]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[101]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[102]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[103]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[104]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[105]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[106]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[107]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[108]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[109]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[110]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[111]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[112]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[113]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[114]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[115]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[116]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[117]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[118]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[119]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[120]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[121]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[122]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[123]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[124]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[125]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[126]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[127]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[128]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "d1_max[129]" lost all its fanouts during netlist optimizations.
+Info (21057): Implemented 279 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 270 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 277 megabytes
+    Info: Processing ended: Thu Oct 13 14:16:19 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

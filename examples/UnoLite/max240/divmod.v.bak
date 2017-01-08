@@ -1,0 +1,6 @@
+module divmod(clk, max_val, out_clk);
+input wire clk;
+input wire [9:0] max_val;
+output wire out_clk;
+
+endmodule
