@@ -1,0 +1,48 @@
+Quartus II Archive log --	D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5_tmp_archive.qarlog
+
+Archive:	D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5_tmp_archive.qar
+Date:		Mon Feb 22 11:21:19 2016
+Quartus II 32-bit		11.1 Build 173 11/01/2011 SJ Full Version
+
+	=========== Files Selected: ===========
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5.qpf
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5.qsf
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5.sdc
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5.v
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5_tmp_archive.qarlog
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/__test.auto.qarlog
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/ay_note_ram.v
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/description.txt
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/incremental_db/compiled_partitions/EP2C5.db_info
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/incremental_db/compiled_partitions/test.db_info
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/stp1.stp
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/test.flow.rpt
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/test.map.rpt
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/test.map.summary
+D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/test.qsf
+D:/FPGA_Projects/fpga-synth(git)/modules/adsr32.v
+D:/FPGA_Projects/fpga-synth(git)/modules/bitscan.v
+D:/FPGA_Projects/fpga-synth(git)/modules/dds.v
+D:/FPGA_Projects/fpga-synth(git)/modules/frqdivmod.v
+D:/FPGA_Projects/fpga-synth(git)/modules/lin2exp_t.v
+D:/FPGA_Projects/fpga-synth(git)/modules/midi_in.v
+D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v
+D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v
+D:/FPGA_Projects/fpga-synth(git)/modules/powerup_reset.v
+D:/FPGA_Projects/fpga-synth(git)/modules/prio_encoder.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg14w.v
+D:/FPGA_Projects/fpga-synth(git)/modules/reg7.v
+D:/FPGA_Projects/fpga-synth(git)/modules/signal_cross_domain.v
+D:/FPGA_Projects/fpga-synth(git)/modules/svca.v
+D:/altera/11.1/quartus/bin/assignment_defaults.qdf
+d:/altera/11.1/quartus/bin/assignment_defaults.qdf
+	======= Total: 31 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Feb 22 11:21:21 2016
+Source archive file:	D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5_tmp_archive.qar
+Archive was extracted into	D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_I2S_DAC/
+		 - successfully.

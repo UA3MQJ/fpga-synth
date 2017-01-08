@@ -1,0 +1,1597 @@
+Analysis & Synthesis report for EP2C5
+Sat Feb 20 13:07:42 2016
+Quartus II 32-bit Version 11.1 Build 173 11/01/2011 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Partition Status Summary
+  7. Dependent File Changes for Partition Top
+  8. Partition for Top-Level Resource Utilization by Entity
+  9. State Machine - |EP2C5|state
+ 10. State Machine - |EP2C5|ENV_SCR_change
+ 11. State Machine - |EP2C5|adsr32:adsr3|state
+ 12. State Machine - |EP2C5|adsr32:adsr2|state
+ 13. State Machine - |EP2C5|adsr32:adsr1|state
+ 14. State Machine - |EP2C5|midi_in:midi_in_0|rcv_state
+ 15. Registers Protected by Synthesis
+ 16. Registers Removed During Synthesis
+ 17. Registers Packed Into Inferred Megafunctions
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for Top-level Entity: |EP2C5
+ 20. Source assignments for ay_note_ram:ram3|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated
+ 21. Source assignments for ay_note_ram:ram2|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated
+ 22. Source assignments for ay_note_ram:ram1|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated
+ 23. Parameter Settings for User Entity Instance: powerup_reset:res_gen
+ 24. Parameter Settings for User Entity Instance: dds:lvcf_osc1
+ 25. Parameter Settings for User Entity Instance: bitscan:bs1
+ 26. Parameter Settings for User Entity Instance: prio_encoder:pe1
+ 27. Parameter Settings for User Entity Instance: bitscan:bs2
+ 28. Parameter Settings for User Entity Instance: prio_encoder:pe2
+ 29. Parameter Settings for User Entity Instance: bitscan:bs3
+ 30. Parameter Settings for User Entity Instance: prio_encoder:pe3
+ 31. Parameter Settings for User Entity Instance: adsr32:adsr1
+ 32. Parameter Settings for User Entity Instance: adsr32:adsr2
+ 33. Parameter Settings for User Entity Instance: adsr32:adsr3
+ 34. Parameter Settings for Inferred Entity Instance: ay_note_ram:ram3|altsyncram:note_ram_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: ay_note_ram:ram2|altsyncram:note_ram_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: ay_note_ram:ram1|altsyncram:note_ram_rtl_0
+ 37. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 38. Partition Dependent Files
+ 39. Port Connectivity Checks: "adsr32:adsr3"
+ 40. Port Connectivity Checks: "adsr32:adsr2"
+ 41. Port Connectivity Checks: "adsr32:adsr1"
+ 42. Port Connectivity Checks: "dds:lvcf_osc1"
+ 43. Port Connectivity Checks: "reg7:ENV_FRM_reg"
+ 44. Port Connectivity Checks: "lin2exp_t:exp"
+ 45. Port Connectivity Checks: "midi_in:midi_in_0|baud_gen:BG"
+ 46. Port Connectivity Checks: "midi_in:midi_in_0"
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++------------------------------------+-------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Feb 20 13:07:42 2016     ;
+; Quartus II 32-bit Version          ; 11.1 Build 173 11/01/2011 SJ Full Version ;
+; Revision Name                      ; EP2C5                                     ;
+; Top-level Entity Name              ; EP2C5                                     ;
+; Family                             ; Cyclone II                                ;
+; Total logic elements               ; N/A until Partition Merge                 ;
+;     Total combinational functions  ; N/A until Partition Merge                 ;
+;     Dedicated logic registers      ; N/A until Partition Merge                 ;
+; Total registers                    ; N/A until Partition Merge                 ;
+; Total pins                         ; N/A until Partition Merge                 ;
+; Total virtual pins                 ; N/A until Partition Merge                 ;
+; Total memory bits                  ; N/A until Partition Merge                 ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                 ;
+; Total PLLs                         ; N/A until Partition Merge                 ;
++------------------------------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C7        ;                    ;
+; Top-level entity name                                                      ; EP2C5              ; EP2C5              ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                    ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                       ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+; ../../modules/dds.v                        ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/dds.v                                                     ;
+; ../../modules/reg14w.v                     ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/reg14w.v                                                  ;
+; ../../modules/adsr32.v                     ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/adsr32.v                                                  ;
+; ../../modules/lin2exp_t.v                  ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/lin2exp_t.v                                               ;
+; ../../modules/bitscan.v                    ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/bitscan.v                                                 ;
+; ../../modules/prio_encoder.v               ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/prio_encoder.v                                            ;
+; ../../modules/reg7.v                       ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/reg7.v                                                    ;
+; ../../modules/midi_in.v                    ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/midi_in.v                                                 ;
+; ../../modules/powerup_reset.v              ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/powerup_reset.v                                           ;
+; ../../modules/opencores/uart/uart_rx.v     ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v                                  ;
+; ../../modules/opencores/uart/baud_gen.v    ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v                                 ;
+; EP2C5.v                                    ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/EP2C5.v                                    ;
+; ay_note_ram.v                              ; yes             ; User Verilog HDL File                                 ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/ay_note_ram.v                              ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altsyncram.tdf                                      ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/stratix_ram_block.inc                               ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_mux.inc                                         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_decode.inc                                      ;
+; aglobal111.inc                             ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/aglobal111.inc                                      ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/a_rdenreg.inc                                       ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altrom.inc                                          ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altram.inc                                          ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altdpram.inc                                        ;
+; db/altsyncram_ho71.tdf                     ; yes             ; Auto-Generated Megafunction                           ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/db/altsyncram_ho71.tdf                     ;
+; db/ep2c5.ram0_ay_note_ram_cd1ef132.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/db/ep2c5.ram0_ay_note_ram_cd1ef132.hdl.mif ;
+; lpm_mult.tdf                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_mult.tdf                                        ;
+; lpm_add_sub.inc                            ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                     ;
+; multcore.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/multcore.inc                                        ;
+; bypassff.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/bypassff.inc                                        ;
+; altshift.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altshift.inc                                        ;
+; multcore.tdf                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/multcore.tdf                                        ;
+; csa_add.inc                                ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/csa_add.inc                                         ;
+; mpar_add.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/mpar_add.inc                                        ;
+; muleabz.inc                                ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/muleabz.inc                                         ;
+; mul_lfrg.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/mul_lfrg.inc                                        ;
+; mul_boothc.inc                             ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/mul_boothc.inc                                      ;
+; alt_ded_mult.inc                           ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/alt_ded_mult.inc                                    ;
+; alt_ded_mult_y.inc                         ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc                                  ;
+; dffpipe.inc                                ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/dffpipe.inc                                         ;
+; mpar_add.tdf                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/mpar_add.tdf                                        ;
+; lpm_add_sub.tdf                            ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                     ;
+; addcore.inc                                ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/addcore.inc                                         ;
+; look_add.inc                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/look_add.inc                                        ;
+; alt_stratix_add_sub.inc                    ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                             ;
+; db/add_sub_6ch.tdf                         ; yes             ; Auto-Generated Megafunction                           ; D:/FPGA_Projects/fpga-synth(git)/examples/EP2C5_YM2149f/db/add_sub_6ch.tdf                         ;
+; altshift.tdf                               ; yes             ; Megafunction                                          ; d:/altera/11.1/quartus/libraries/megafunctions/altshift.tdf                                        ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Partition Status Summary                               ;
++----------------+-------------+-------------------------+
+; Partition Name ; Synthesized ; Reason                  ;
++----------------+-------------+-------------------------+
+; Top            ; yes         ; Dependent files changed ;
++----------------+-------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                   ;
++-----------+-----------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy ; File Name ; Relative Location ; Change   ; Old                              ; New                              ;
++-----------+-----------+-------------------+----------+----------------------------------+----------------------------------+
+; |         ; EP2C5.v   ; Project Directory ; Checksum ; a62a6e5fb82aa88c32698d393fd0d096 ; 352c83833f7a654a3417e824532ba282 ;
++-----------+-----------+-------------------+----------+----------------------------------+----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                                                            ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Library Name ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
+; |EP2C5                                      ; 3293 (1421)       ; 1051 (761)   ; 4608        ; 0            ; 0       ; 0         ; 8    ; 0            ; |EP2C5                                                                                                   ; work         ;
+;    |adsr32:adsr1|                           ; 231 (231)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|adsr32:adsr1                                                                                      ; work         ;
+;    |adsr32:adsr2|                           ; 232 (232)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|adsr32:adsr2                                                                                      ; work         ;
+;    |adsr32:adsr3|                           ; 232 (232)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|adsr32:adsr3                                                                                      ; work         ;
+;    |ay_note_ram:ram1|                       ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram1                                                                                  ; work         ;
+;       |altsyncram:note_ram_rtl_0|           ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram1|altsyncram:note_ram_rtl_0                                                        ; work         ;
+;          |altsyncram_ho71:auto_generated|   ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram1|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated                         ; work         ;
+;    |ay_note_ram:ram2|                       ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram2                                                                                  ; work         ;
+;       |altsyncram:note_ram_rtl_0|           ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram2|altsyncram:note_ram_rtl_0                                                        ; work         ;
+;          |altsyncram_ho71:auto_generated|   ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram2|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated                         ; work         ;
+;    |ay_note_ram:ram3|                       ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram3                                                                                  ; work         ;
+;       |altsyncram:note_ram_rtl_0|           ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram3|altsyncram:note_ram_rtl_0                                                        ; work         ;
+;          |altsyncram_ho71:auto_generated|   ; 0 (0)             ; 0 (0)        ; 1536        ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|ay_note_ram:ram3|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated                         ; work         ;
+;    |bitscan:bs1|                            ; 140 (140)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|bitscan:bs1                                                                                       ; work         ;
+;    |bitscan:bs2|                            ; 138 (138)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|bitscan:bs2                                                                                       ; work         ;
+;    |bitscan:bs3|                            ; 138 (138)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|bitscan:bs3                                                                                       ; work         ;
+;    |dds:lvcf_osc1|                          ; 34 (34)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|dds:lvcf_osc1                                                                                     ; work         ;
+;    |lin2exp_t:exp|                          ; 117 (117)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lin2exp_t:exp                                                                                     ; work         ;
+;    |lpm_mult:Mult0|                         ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lpm_mult:Mult0                                                                                    ; work         ;
+;       |multcore:mult_core|                  ; 43 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lpm_mult:Mult0|multcore:mult_core                                                                 ; work         ;
+;          |mpar_add:padder|                  ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; work         ;
+;             |lpm_add_sub:adder[0]|          ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; work         ;
+;                |add_sub_6ch:auto_generated| ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_6ch:auto_generated ; work         ;
+;    |midi_in:midi_in_0|                      ; 95 (40)           ; 71 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0                                                                                 ; work         ;
+;       |baud_gen:BG|                         ; 37 (37)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0|baud_gen:BG                                                                     ; work         ;
+;       |uart_rx:URX|                         ; 18 (18)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|midi_in:midi_in_0|uart_rx:URX                                                                     ; work         ;
+;    |powerup_reset:res_gen|                  ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|powerup_reset:res_gen                                                                             ; work         ;
+;    |prio_encoder:pe1|                       ; 154 (154)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|prio_encoder:pe1                                                                                  ; work         ;
+;    |prio_encoder:pe2|                       ; 155 (155)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|prio_encoder:pe2                                                                                  ; work         ;
+;    |prio_encoder:pe3|                       ; 155 (155)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|prio_encoder:pe3                                                                                  ; work         ;
+;    |reg14w:A1reg|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg14w:A1reg                                                                                      ; work         ;
+;    |reg14w:D1reg|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg14w:D1reg                                                                                      ; work         ;
+;    |reg14w:R1reg|                           ; 0 (0)             ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg14w:R1reg                                                                                      ; work         ;
+;    |reg7:C1_reg|                            ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:C1_reg                                                                                       ; work         ;
+;    |reg7:ENV_FRM_reg|                       ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:ENV_FRM_reg                                                                                  ; work         ;
+;    |reg7:ENV_MODE_reg|                      ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:ENV_MODE_reg                                                                                 ; work         ;
+;    |reg7:ENV_SP1_reg|                       ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:ENV_SP1_reg                                                                                  ; work         ;
+;    |reg7:ENV_SP2_reg|                       ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:ENV_SP2_reg                                                                                  ; work         ;
+;    |reg7:S1reg|                             ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |EP2C5|reg7:S1reg                                                                                        ; work         ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |EP2C5|state                                                                        ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; Name           ; state.00000011 ; state.00000010 ; state.00000001 ; state.00000000 ; state.00000100 ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; state.00000000 ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; state.00000001 ; 0              ; 0              ; 1              ; 1              ; 0              ;
+; state.00000010 ; 0              ; 1              ; 0              ; 1              ; 0              ;
+; state.00000011 ; 1              ; 0              ; 0              ; 1              ; 0              ;
+; state.00000100 ; 0              ; 0              ; 0              ; 1              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |EP2C5|ENV_SCR_change                                                                                                                                                                                                   ;
++-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+; Name                    ; ENV_SCR_change.00001111 ; ENV_SCR_change.00001110 ; ENV_SCR_change.00001101 ; ENV_SCR_change.00001100 ; ENV_SCR_change.00001011 ; ENV_SCR_change.00001010 ; ENV_SCR_change.00001000 ; ENV_SCR_change.00000000 ;
++-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+; ENV_SCR_change.00000000 ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ;
+; ENV_SCR_change.00001000 ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ; 1                       ;
+; ENV_SCR_change.00001010 ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ; 0                       ; 1                       ;
+; ENV_SCR_change.00001011 ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ; 0                       ; 0                       ; 1                       ;
+; ENV_SCR_change.00001100 ; 0                       ; 0                       ; 0                       ; 1                       ; 0                       ; 0                       ; 0                       ; 1                       ;
+; ENV_SCR_change.00001101 ; 0                       ; 0                       ; 1                       ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ;
+; ENV_SCR_change.00001110 ; 0                       ; 1                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ;
+; ENV_SCR_change.00001111 ; 1                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 0                       ; 1                       ;
++-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------+
+; State Machine - |EP2C5|adsr32:adsr3|state                                              ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; Name          ; state.SUSTAIN ; state.DECAY ; state.ATTACK ; state.000 ; state.RELEASE ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; state.000     ; 0             ; 0           ; 0            ; 0         ; 0             ;
+; state.ATTACK  ; 0             ; 0           ; 1            ; 1         ; 0             ;
+; state.DECAY   ; 0             ; 1           ; 0            ; 1         ; 0             ;
+; state.SUSTAIN ; 1             ; 0           ; 0            ; 1         ; 0             ;
+; state.RELEASE ; 0             ; 0           ; 0            ; 1         ; 1             ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------+
+; State Machine - |EP2C5|adsr32:adsr2|state                                              ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; Name          ; state.SUSTAIN ; state.DECAY ; state.ATTACK ; state.000 ; state.RELEASE ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; state.000     ; 0             ; 0           ; 0            ; 0         ; 0             ;
+; state.ATTACK  ; 0             ; 0           ; 1            ; 1         ; 0             ;
+; state.DECAY   ; 0             ; 1           ; 0            ; 1         ; 0             ;
+; state.SUSTAIN ; 1             ; 0           ; 0            ; 1         ; 0             ;
+; state.RELEASE ; 0             ; 0           ; 0            ; 1         ; 1             ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------+
+; State Machine - |EP2C5|adsr32:adsr1|state                                              ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; Name          ; state.SUSTAIN ; state.DECAY ; state.ATTACK ; state.000 ; state.RELEASE ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+; state.000     ; 0             ; 0           ; 0            ; 0         ; 0             ;
+; state.ATTACK  ; 0             ; 0           ; 1            ; 1         ; 0             ;
+; state.DECAY   ; 0             ; 1           ; 0            ; 1         ; 0             ;
+; state.SUSTAIN ; 1             ; 0           ; 0            ; 1         ; 0             ;
+; state.RELEASE ; 0             ; 0           ; 0            ; 1         ; 1             ;
++---------------+---------------+-------------+--------------+-----------+---------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |EP2C5|midi_in:midi_in_0|rcv_state                                ;
++--------------------+--------------------+--------------------+--------------------+
+; Name               ; rcv_state.00000000 ; rcv_state.00000010 ; rcv_state.00000001 ;
++--------------------+--------------------+--------------------+--------------------+
+; rcv_state.00000000 ; 0                  ; 0                  ; 0                  ;
+; rcv_state.00000001 ; 1                  ; 0                  ; 1                  ;
+; rcv_state.00000010 ; 1                  ; 1                  ; 0                  ;
++--------------------+--------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                              ;
++---------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++---------------+------------------------------------------------------------------+--------------------------------------------+
+; ram_addr[0]   ; yes                                                              ; yes                                        ;
+; ram_addr[1]   ; yes                                                              ; yes                                        ;
+; ram_addr[2]   ; yes                                                              ; yes                                        ;
+; ram_addr[3]   ; yes                                                              ; yes                                        ;
+; nRF[0]        ; yes                                                              ; yes                                        ;
+; nRF[1]        ; yes                                                              ; yes                                        ;
+; nRF[2]        ; yes                                                              ; yes                                        ;
+; nRF[3]        ; yes                                                              ; yes                                        ;
+; nRF[4]        ; yes                                                              ; yes                                        ;
+; nRF[5]        ; yes                                                              ; yes                                        ;
+; nRF[6]        ; yes                                                              ; yes                                        ;
+; nRF[7]        ; yes                                                              ; yes                                        ;
+; nRE[0]        ; yes                                                              ; yes                                        ;
+; nRE[1]        ; yes                                                              ; yes                                        ;
+; nRE[2]        ; yes                                                              ; yes                                        ;
+; nRE[3]        ; yes                                                              ; yes                                        ;
+; nRE[4]        ; yes                                                              ; yes                                        ;
+; nRE[5]        ; yes                                                              ; yes                                        ;
+; nRE[6]        ; yes                                                              ; yes                                        ;
+; nRE[7]        ; yes                                                              ; yes                                        ;
+; nRD[0]        ; yes                                                              ; yes                                        ;
+; nRD[1]        ; yes                                                              ; yes                                        ;
+; nRD[2]        ; yes                                                              ; yes                                        ;
+; nRD[3]        ; yes                                                              ; yes                                        ;
+; nRD[4]        ; yes                                                              ; yes                                        ;
+; nRD[5]        ; yes                                                              ; yes                                        ;
+; nRD[6]        ; yes                                                              ; yes                                        ;
+; nRD[7]        ; yes                                                              ; yes                                        ;
+; nRC[0]        ; yes                                                              ; yes                                        ;
+; nRC[1]        ; yes                                                              ; yes                                        ;
+; nRC[2]        ; yes                                                              ; yes                                        ;
+; nRC[3]        ; yes                                                              ; yes                                        ;
+; nRC[4]        ; yes                                                              ; yes                                        ;
+; nRC[5]        ; yes                                                              ; yes                                        ;
+; nRC[6]        ; yes                                                              ; yes                                        ;
+; nRC[7]        ; yes                                                              ; yes                                        ;
+; nRB[0]        ; yes                                                              ; yes                                        ;
+; nRB[1]        ; yes                                                              ; yes                                        ;
+; nRB[2]        ; yes                                                              ; yes                                        ;
+; nRB[3]        ; yes                                                              ; yes                                        ;
+; nRB[4]        ; yes                                                              ; yes                                        ;
+; nRB[5]        ; yes                                                              ; yes                                        ;
+; nRB[6]        ; yes                                                              ; yes                                        ;
+; nRB[7]        ; yes                                                              ; yes                                        ;
+; nRA[0]        ; yes                                                              ; yes                                        ;
+; nRA[1]        ; yes                                                              ; yes                                        ;
+; nRA[2]        ; yes                                                              ; yes                                        ;
+; nRA[3]        ; yes                                                              ; yes                                        ;
+; nRA[4]        ; yes                                                              ; yes                                        ;
+; nRA[5]        ; yes                                                              ; yes                                        ;
+; nRA[6]        ; yes                                                              ; yes                                        ;
+; nRA[7]        ; yes                                                              ; yes                                        ;
+; nR9[0]        ; yes                                                              ; yes                                        ;
+; nR9[1]        ; yes                                                              ; yes                                        ;
+; nR9[2]        ; yes                                                              ; yes                                        ;
+; nR9[3]        ; yes                                                              ; yes                                        ;
+; nR9[4]        ; yes                                                              ; yes                                        ;
+; nR9[5]        ; yes                                                              ; yes                                        ;
+; nR9[6]        ; yes                                                              ; yes                                        ;
+; nR9[7]        ; yes                                                              ; yes                                        ;
+; nR8[0]        ; yes                                                              ; yes                                        ;
+; nR8[1]        ; yes                                                              ; yes                                        ;
+; nR8[2]        ; yes                                                              ; yes                                        ;
+; nR8[3]        ; yes                                                              ; yes                                        ;
+; nR8[4]        ; yes                                                              ; yes                                        ;
+; nR8[5]        ; yes                                                              ; yes                                        ;
+; nR8[6]        ; yes                                                              ; yes                                        ;
+; nR8[7]        ; yes                                                              ; yes                                        ;
+; nR7[0]        ; yes                                                              ; yes                                        ;
+; nR7[1]        ; yes                                                              ; yes                                        ;
+; nR7[2]        ; yes                                                              ; yes                                        ;
+; nR7[3]        ; yes                                                              ; yes                                        ;
+; nR7[4]        ; yes                                                              ; yes                                        ;
+; nR7[5]        ; yes                                                              ; yes                                        ;
+; nR7[6]        ; yes                                                              ; yes                                        ;
+; nR7[7]        ; yes                                                              ; yes                                        ;
+; nR6[0]        ; yes                                                              ; yes                                        ;
+; nR6[1]        ; yes                                                              ; yes                                        ;
+; nR6[2]        ; yes                                                              ; yes                                        ;
+; nR6[3]        ; yes                                                              ; yes                                        ;
+; nR6[4]        ; yes                                                              ; yes                                        ;
+; nR6[5]        ; yes                                                              ; yes                                        ;
+; nR6[6]        ; yes                                                              ; yes                                        ;
+; nR6[7]        ; yes                                                              ; yes                                        ;
+; nR5[0]        ; yes                                                              ; yes                                        ;
+; nR5[1]        ; yes                                                              ; yes                                        ;
+; nR5[2]        ; yes                                                              ; yes                                        ;
+; nR5[3]        ; yes                                                              ; yes                                        ;
+; nR5[4]        ; yes                                                              ; yes                                        ;
+; nR5[5]        ; yes                                                              ; yes                                        ;
+; nR5[6]        ; yes                                                              ; yes                                        ;
+; nR5[7]        ; yes                                                              ; yes                                        ;
+; nR4[0]        ; yes                                                              ; yes                                        ;
+; nR4[1]        ; yes                                                              ; yes                                        ;
+; nR4[2]        ; yes                                                              ; yes                                        ;
+; nR4[3]        ; yes                                                              ; yes                                        ;
+; nR4[4]        ; yes                                                              ; yes                                        ;
+; nR4[5]        ; yes                                                              ; yes                                        ;
+; nR4[6]        ; yes                                                              ; yes                                        ;
+; nR4[7]        ; yes                                                              ; yes                                        ;
+; nR3[0]        ; yes                                                              ; yes                                        ;
+; nR3[1]        ; yes                                                              ; yes                                        ;
+; nR3[2]        ; yes                                                              ; yes                                        ;
+; nR3[3]        ; yes                                                              ; yes                                        ;
+; nR3[4]        ; yes                                                              ; yes                                        ;
+; nR3[5]        ; yes                                                              ; yes                                        ;
+; nR3[6]        ; yes                                                              ; yes                                        ;
+; nR3[7]        ; yes                                                              ; yes                                        ;
+; nR2[0]        ; yes                                                              ; yes                                        ;
+; nR2[1]        ; yes                                                              ; yes                                        ;
+; nR2[2]        ; yes                                                              ; yes                                        ;
+; nR2[3]        ; yes                                                              ; yes                                        ;
+; nR2[4]        ; yes                                                              ; yes                                        ;
+; nR2[5]        ; yes                                                              ; yes                                        ;
+; nR2[6]        ; yes                                                              ; yes                                        ;
+; nR2[7]        ; yes                                                              ; yes                                        ;
+; nR1[0]        ; yes                                                              ; yes                                        ;
+; nR1[1]        ; yes                                                              ; yes                                        ;
+; nR1[2]        ; yes                                                              ; yes                                        ;
+; nR1[3]        ; yes                                                              ; yes                                        ;
+; nR1[4]        ; yes                                                              ; yes                                        ;
+; nR1[5]        ; yes                                                              ; yes                                        ;
+; nR1[6]        ; yes                                                              ; yes                                        ;
+; nR1[7]        ; yes                                                              ; yes                                        ;
+; nR0[0]        ; yes                                                              ; yes                                        ;
+; nR0[1]        ; yes                                                              ; yes                                        ;
+; nR0[2]        ; yes                                                              ; yes                                        ;
+; nR0[3]        ; yes                                                              ; yes                                        ;
+; nR0[4]        ; yes                                                              ; yes                                        ;
+; nR0[5]        ; yes                                                              ; yes                                        ;
+; nR0[6]        ; yes                                                              ; yes                                        ;
+; nR0[7]        ; yes                                                              ; yes                                        ;
++---------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; endv_period_change[14,15]              ; Stuck at GND due to stuck port data_in ;
+; vcf_adder[28..31]                      ; Stuck at GND due to stuck port data_in ;
+; reg14w:R1reg|data_out[13]              ; Stuck at GND due to stuck port data_in ;
+; reg14w:D1reg|data_out[13]              ; Stuck at GND due to stuck port data_in ;
+; reg14w:A1reg|data_out[13]              ; Stuck at GND due to stuck port data_in ;
+; rBC2                                   ; Merged with rBDIR                      ;
+; vcf_adder[0,5]                         ; Stuck at VCC due to stuck port data_in ;
+; vcf_adder[3]                           ; Merged with vcf_adder[1]               ;
+; vcf_adder[4]                           ; Merged with vcf_adder[2]               ;
+; reg7:ENV_MODE_reg|data_out[0..5]       ; Lost fanout                            ;
+; state~7                                ; Lost fanout                            ;
+; state~8                                ; Lost fanout                            ;
+; state~10                               ; Lost fanout                            ;
+; state~11                               ; Lost fanout                            ;
+; state~12                               ; Lost fanout                            ;
+; state~13                               ; Lost fanout                            ;
+; state~14                               ; Lost fanout                            ;
+; ENV_SCR_change~2                       ; Lost fanout                            ;
+; ENV_SCR_change~3                       ; Lost fanout                            ;
+; ENV_SCR_change~4                       ; Lost fanout                            ;
+; ENV_SCR_change~6                       ; Lost fanout                            ;
+; ENV_SCR_change~7                       ; Lost fanout                            ;
+; ENV_SCR_change~8                       ; Lost fanout                            ;
+; ENV_SCR_change~9                       ; Lost fanout                            ;
+; adsr32:adsr3|state~7                   ; Lost fanout                            ;
+; adsr32:adsr3|state~8                   ; Lost fanout                            ;
+; adsr32:adsr2|state~7                   ; Lost fanout                            ;
+; adsr32:adsr2|state~8                   ; Lost fanout                            ;
+; adsr32:adsr1|state~7                   ; Lost fanout                            ;
+; adsr32:adsr1|state~8                   ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~7          ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~8          ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~9          ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~10         ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~11         ; Lost fanout                            ;
+; midi_in:midi_in_0|rcv_state~12         ; Lost fanout                            ;
+; Total Number of Removed Registers = 46 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                  ;
++----------------------+---------------------------------+------+
+; Register Name        ; Megafunction                    ; Type ;
++----------------------+---------------------------------+------+
+; chan3_tp_last[0..11] ; ay_note_ram:ram3|note_ram_rtl_0 ; RAM  ;
+; chan2_tp_last[0..11] ; ay_note_ram:ram2|note_ram_rtl_0 ; RAM  ;
+; chan1_tp_last[0..11] ; ay_note_ram:ram1|note_ram_rtl_0 ; RAM  ;
++----------------------+---------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                 ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; |EP2C5|nR7[4]                              ;                            ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; |EP2C5|nR4[7]                              ;                            ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; |EP2C5|nR2[5]                              ;                            ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; |EP2C5|nR0[7]                              ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |EP2C5|nRA[0]                              ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |EP2C5|nR9[2]                              ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |EP2C5|nR8[3]                              ;                            ;
+; 4:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; |EP2C5|nRC[1]                              ;                            ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |EP2C5|midi_in:midi_in_0|byte2[1]          ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; |EP2C5|rBDIR                               ;                            ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; |EP2C5|midi_in:midi_in_0|byte3[4]          ;                            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; |EP2C5|nRD[4]                              ;                            ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |EP2C5|nRD[1]                              ;                            ;
+; 10:1               ; 25 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; |EP2C5|adsr32:adsr1|sout[1]                ;                            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; |EP2C5|adsr32:adsr1|sout[28]               ;                            ;
+; 10:1               ; 25 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; |EP2C5|adsr32:adsr3|sout[22]               ;                            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; |EP2C5|adsr32:adsr3|sout[28]               ;                            ;
+; 10:1               ; 25 bits   ; 150 LEs       ; 75 LEs               ; 75 LEs                 ; |EP2C5|adsr32:adsr2|sout[12]               ;                            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; |EP2C5|adsr32:adsr2|sout[28]               ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |EP2C5|powerup_reset:res_gen|tick_timer[0] ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |EP2C5|rDA[7]                              ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |EP2C5|rDA[3]                              ;                            ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; |EP2C5|nRX_data[1]                         ;                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |EP2C5|state                               ;                            ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; |EP2C5|adsr32:adsr3|Selector2              ;                            ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; |EP2C5|adsr32:adsr3|Selector1              ;                            ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; |EP2C5|adsr32:adsr2|Selector2              ;                            ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; |EP2C5|adsr32:adsr2|Selector0              ;                            ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 15 LEs               ; 9 LEs                  ; |EP2C5|adsr32:adsr1|Selector4              ;                            ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; |EP2C5|adsr32:adsr1|Selector0              ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+--------------------------------------------+----------------------------+
+
+
++----------------------------------------------------------------------+
+; Source assignments for Top-level Entity: |EP2C5                      ;
++------------------------------+-------+------+------------------------+
+; Assignment                   ; Value ; From ; To                     ;
++------------------------------+-------+------+------------------------+
+; PRESERVE_REGISTER            ; on    ; -    ; ram_addr[0]            ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; ram_addr[0]            ;
+; PRESERVE_REGISTER            ; on    ; -    ; ram_addr[1]            ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; ram_addr[1]            ;
+; PRESERVE_REGISTER            ; on    ; -    ; ram_addr[2]            ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; ram_addr[2]            ;
+; PRESERVE_REGISTER            ; on    ; -    ; ram_addr[3]            ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; ram_addr[3]            ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRF[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRF[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRE[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRE[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRD[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRD[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRC[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRC[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRB[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRB[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nRA[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nRA[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR9[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR9[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR8[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR8[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR7[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR7[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR6[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR6[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR5[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR5[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR4[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR4[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR3[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR3[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR2[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR2[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR1[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR1[7]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[0]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[0]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[1]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[1]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[2]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[2]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[3]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[3]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[4]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[4]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[5]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[5]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[6]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[6]                 ;
+; PRESERVE_REGISTER            ; on    ; -    ; nR0[7]                 ;
+; PRESERVE_FANOUT_FREE_NODE    ; on    ; -    ; nR0[7]                 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan1_GATE_posedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan1_GATE_posedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan1_GATE_negedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan1_GATE_negedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan2_GATE_posedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan2_GATE_posedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan2_GATE_negedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan2_GATE_negedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan3_GATE_posedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan3_GATE_posedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan3_GATE_negedge     ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan3_GATE_negedge     ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan1_NOTE_change_flag ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan1_NOTE_change_flag ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan2_NOTE_change_flag ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan2_NOTE_change_flag ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; chan3_NOTE_change_flag ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; chan3_NOTE_change_flag ;
++------------------------------+-------+------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Source assignments for ay_note_ram:ram3|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------+
+; Assignment                      ; Value              ; From ; To                                 ;
++---------------------------------+--------------------+------+------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
++---------------------------------+--------------------+------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Source assignments for ay_note_ram:ram2|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------+
+; Assignment                      ; Value              ; From ; To                                 ;
++---------------------------------+--------------------+------+------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
++---------------------------------+--------------------+------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Source assignments for ay_note_ram:ram1|altsyncram:note_ram_rtl_0|altsyncram_ho71:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------+
+; Assignment                      ; Value              ; From ; To                                 ;
++---------------------------------+--------------------+------+------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
++---------------------------------+--------------------+------+------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: powerup_reset:res_gen ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; TICK           ; 1111  ; Unsigned Binary                           ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dds:lvcf_osc1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bitscan:bs1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 128   ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prio_encoder:pe1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; LINES          ; 128   ; Signed Integer                       ;
+; WIDTH          ; 7     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bitscan:bs2 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 128   ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prio_encoder:pe2 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; LINES          ; 128   ; Signed Integer                       ;
+; WIDTH          ; 7     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bitscan:bs3 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 128   ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prio_encoder:pe3 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; LINES          ; 128   ; Signed Integer                       ;
+; WIDTH          ; 7     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adsr32:adsr1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 000   ; Unsigned Binary                  ;
+; ATTACK         ; 001   ; Unsigned Binary                  ;
+; DECAY          ; 010   ; Unsigned Binary                  ;
+; SUSTAIN        ; 011   ; Unsigned Binary                  ;
+; RELEASE        ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adsr32:adsr2 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 000   ; Unsigned Binary                  ;
+; ATTACK         ; 001   ; Unsigned Binary                  ;
+; DECAY          ; 010   ; Unsigned Binary                  ;
+; SUSTAIN        ; 011   ; Unsigned Binary                  ;
+; RELEASE        ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: adsr32:adsr3 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; IDLE           ; 000   ; Unsigned Binary                  ;
+; ATTACK         ; 001   ; Unsigned Binary                  ;
+; DECAY          ; 010   ; Unsigned Binary                  ;
+; SUSTAIN        ; 011   ; Unsigned Binary                  ;
+; RELEASE        ; 100   ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ay_note_ram:ram3|altsyncram:note_ram_rtl_0      ;
++------------------------------------+--------------------------------------------+----------------+
+; Parameter Name                     ; Value                                      ; Type           ;
++------------------------------------+--------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                        ; Untyped        ;
+; WIDTH_A                            ; 12                                         ; Untyped        ;
+; WIDTHAD_A                          ; 7                                          ; Untyped        ;
+; NUMWORDS_A                         ; 128                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WIDTH_B                            ; 1                                          ; Untyped        ;
+; WIDTHAD_B                          ; 1                                          ; Untyped        ;
+; NUMWORDS_B                         ; 1                                          ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped        ;
+; BYTE_SIZE                          ; 8                                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; INIT_FILE                          ; db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ho71                            ; Untyped        ;
++------------------------------------+--------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ay_note_ram:ram2|altsyncram:note_ram_rtl_0      ;
++------------------------------------+--------------------------------------------+----------------+
+; Parameter Name                     ; Value                                      ; Type           ;
++------------------------------------+--------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                        ; Untyped        ;
+; WIDTH_A                            ; 12                                         ; Untyped        ;
+; WIDTHAD_A                          ; 7                                          ; Untyped        ;
+; NUMWORDS_A                         ; 128                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WIDTH_B                            ; 1                                          ; Untyped        ;
+; WIDTHAD_B                          ; 1                                          ; Untyped        ;
+; NUMWORDS_B                         ; 1                                          ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped        ;
+; BYTE_SIZE                          ; 8                                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; INIT_FILE                          ; db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ho71                            ; Untyped        ;
++------------------------------------+--------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ay_note_ram:ram1|altsyncram:note_ram_rtl_0      ;
++------------------------------------+--------------------------------------------+----------------+
+; Parameter Name                     ; Value                                      ; Type           ;
++------------------------------------+--------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                        ; Untyped        ;
+; WIDTH_A                            ; 12                                         ; Untyped        ;
+; WIDTHAD_A                          ; 7                                          ; Untyped        ;
+; NUMWORDS_A                         ; 128                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WIDTH_B                            ; 1                                          ; Untyped        ;
+; WIDTHAD_B                          ; 1                                          ; Untyped        ;
+; NUMWORDS_B                         ; 1                                          ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped        ;
+; BYTE_SIZE                          ; 8                                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; INIT_FILE                          ; db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_ho71                            ; Untyped        ;
++------------------------------------+--------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                   ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 7          ; Untyped             ;
+; LPM_WIDTHB                                     ; 20         ; Untyped             ;
+; LPM_WIDTHP                                     ; 27         ; Untyped             ;
+; LPM_WIDTHR                                     ; 27         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES        ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING    ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                                ;
++-----------------------------------------+-------------------+---------+----------------------------------+
+; File                                    ; Location          ; Library ; Checksum                         ;
++-----------------------------------------+-------------------+---------+----------------------------------+
+; ay_note_ram.v                           ; Project Directory ; work    ; 901f11aa3d8468245d434b1178dfbdd  ;
+; EP2C5.v                                 ; Project Directory ; work    ; 352c83833f7a654a3417e824532ba282 ;
+; ../../modules/adsr32.v                  ; Project Directory ; work    ; 8f5d81b8ac88df8e91638a0971049fa  ;
+; ../../modules/bitscan.v                 ; Project Directory ; work    ; dfda7096ea7a9b17e0b575fedc112a20 ;
+; ../../modules/dds.v                     ; Project Directory ; work    ; 27b3c68b85f15a7c8cf331ae5208019  ;
+; ../../modules/lin2exp_t.v               ; Project Directory ; work    ; e6cc6c2ed176ec51ff4cee86d2cb30af ;
+; ../../modules/midi_in.v                 ; Project Directory ; work    ; 11cdccbca41b46275157fc3321e015d7 ;
+; ../../modules/opencores/uart/baud_gen.v ; Project Directory ; work    ; 9da5fa42878c35c9a14c6bab5c26126a ;
+; ../../modules/opencores/uart/uart_rx.v  ; Project Directory ; work    ; 2fa04b4dff3dd464efd6bc877b1de5   ;
+; ../../modules/powerup_reset.v           ; Project Directory ; work    ; d9af68c5ab2c394df16492709e91c1   ;
+; ../../modules/prio_encoder.v            ; Project Directory ; work    ; e44733c195e3bfe0d534d2525fe89bc3 ;
+; ../../modules/reg14w.v                  ; Project Directory ; work    ; 622757a19d848dd2904ad8e3bddd514  ;
+; ../../modules/reg7.v                    ; Project Directory ; work    ; fb9521b22cc3bb44ea63c2b72951de1  ;
++-----------------------------------------+-------------------+---------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adsr32:adsr3"                                                                                                                                        ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                       ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; A           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "A[31..14]" will be connected to GND. ;
+; D           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "D[31..14]" will be connected to GND. ;
+; S[24..0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
+; R           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "R[31..14]" will be connected to GND. ;
+; sout[27..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adsr32:adsr2"                                                                                                                                        ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                       ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; A           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "A[31..14]" will be connected to GND. ;
+; D           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "D[31..14]" will be connected to GND. ;
+; S[24..0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
+; R           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "R[31..14]" will be connected to GND. ;
+; sout[27..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adsr32:adsr1"                                                                                                                                        ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                       ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; A           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "A[31..14]" will be connected to GND. ;
+; D           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "D[31..14]" will be connected to GND. ;
+; S[24..0]    ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
+; R           ; Input  ; Warning  ; Input port expression (14 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "R[31..14]" will be connected to GND. ;
+; sout[27..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
++-------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dds:lvcf_osc1"                                                                                   ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; signal_out[30..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg7:ENV_FRM_reg"                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lin2exp_t:exp"                                                                                  ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out[31..14] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "midi_in:midi_in_0|baud_gen:BG"                                                                                                                                                                  ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; baud_freq         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; baud_freq[11..1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; baud_freq[0]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; baud_limit[6..5]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit[1..0]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; baud_limit[15..7] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; baud_limit[4..2]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "midi_in:midi_in_0"                                                                                           ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; velocity ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:17     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 11.1 Build 173 11/01/2011 SJ Full Version
+    Info: Processing started: Sat Feb 20 13:07:25 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off EP2C5 -c EP2C5
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/dds.v
+    Info (12023): Found entity 1: dds
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/reg14w.v
+    Info (12023): Found entity 1: reg14w
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/adsr32.v
+    Info (12023): Found entity 1: adsr32
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/lin2exp_t.v
+    Info (12023): Found entity 1: lin2exp_t
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/signal_cross_domain.v
+    Info (12023): Found entity 1: signal_cross_domain
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/bitscan.v
+    Info (12023): Found entity 1: bitscan
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/svca.v
+    Info (12023): Found entity 1: svca
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/prio_encoder.v
+    Info (12023): Found entity 1: prio_encoder
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/reg7.v
+    Info (12023): Found entity 1: reg7
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/frqdivmod.v
+    Info (12023): Found entity 1: frqdivmod
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/midi_in.v
+    Info (12023): Found entity 1: midi_in
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/powerup_reset.v
+    Info (12023): Found entity 1: powerup_reset
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/opencores/uart/uart_rx.v
+    Info (12023): Found entity 1: uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file /fpga_projects/fpga-synth(git)/modules/opencores/uart/baud_gen.v
+    Info (12023): Found entity 1: baud_gen
+Info (12021): Found 1 design units, including 1 entities, in source file ep2c5.v
+    Info (12023): Found entity 1: EP2C5
+Info (12021): Found 1 design units, including 1 entities, in source file ay_note_ram.v
+    Info (12023): Found entity 1: ay_note_ram
+Info (12127): Elaborating entity "EP2C5" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at EP2C5.v(133): object "hi_out" assigned a value but never read
+Info (12128): Elaborating entity "powerup_reset" for hierarchy "powerup_reset:res_gen"
+Info (12128): Elaborating entity "midi_in" for hierarchy "midi_in:midi_in_0"
+Warning (10034): Output port "velocity" at midi_in.v(13) has no driver
+Info (12128): Elaborating entity "baud_gen" for hierarchy "midi_in:midi_in_0|baud_gen:BG"
+Info (12128): Elaborating entity "uart_rx" for hierarchy "midi_in:midi_in_0|uart_rx:URX"
+Info (12128): Elaborating entity "lin2exp_t" for hierarchy "lin2exp_t:exp"
+Info (12128): Elaborating entity "reg14w" for hierarchy "reg14w:A1reg"
+Info (12128): Elaborating entity "reg7" for hierarchy "reg7:S1reg"
+Info (12128): Elaborating entity "dds" for hierarchy "dds:lvcf_osc1"
+Info (12128): Elaborating entity "bitscan" for hierarchy "bitscan:bs1"
+Info (12128): Elaborating entity "prio_encoder" for hierarchy "prio_encoder:pe1"
+Info (12128): Elaborating entity "ay_note_ram" for hierarchy "ay_note_ram:ram1"
+Warning (10030): Net "note_ram.data_a" at ay_note_ram.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "note_ram.waddr_a" at ay_note_ram.v(5) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "note_ram.we_a" at ay_note_ram.v(5) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "adsr32" for hierarchy "adsr32:adsr1"
+Info (12205): 1 design partition requires Analysis and Synthesis
+    Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
+Info (12209): No design partitions will skip synthesis in the current incremental compilation
+Info (13005): Duplicate registers merged to single register
+Info (13005): Duplicate registers merged to single register
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "ram_arr" is uninferred due to asynchronous read logic
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ay_note_ram:ram3|note_ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 12
+        Info (286033): Parameter WIDTHAD_A set to 7
+        Info (286033): Parameter NUMWORDS_A set to 128
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ay_note_ram:ram2|note_ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 12
+        Info (286033): Parameter WIDTHAD_A set to 7
+        Info (286033): Parameter NUMWORDS_A set to 128
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "ay_note_ram:ram1|note_ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 12
+        Info (286033): Parameter WIDTHAD_A set to 7
+        Info (286033): Parameter NUMWORDS_A set to 128
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+Info (12130): Elaborated megafunction instantiation "ay_note_ram:ram3|altsyncram:note_ram_rtl_0"
+Info (12133): Instantiated megafunction "ay_note_ram:ram3|altsyncram:note_ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "12"
+    Info (12134): Parameter "WIDTHAD_A" = "7"
+    Info (12134): Parameter "NUMWORDS_A" = "128"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/EP2C5.ram0_ay_note_ram_cd1ef132.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ho71.tdf
+    Info (12023): Found entity 1: altsyncram_ho71
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "7"
+    Info (12134): Parameter "LPM_WIDTHB" = "20"
+    Info (12134): Parameter "LPM_WIDTHP" = "27"
+    Info (12134): Parameter "LPM_WIDTHR" = "27"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_6ch.tdf
+    Info (12023): Found entity 1: add_sub_6ch
+Info (12131): Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0"
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (17049): 32 registers lost all their fanouts during netlist optimizations. The first 32 are displayed below.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[1]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[2]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[3]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[4]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "reg7:ENV_MODE_reg|data_out[5]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~10" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~11" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~12" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~13" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "state~14" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~2" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~3" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~4" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~6" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "ENV_SCR_change~9" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr3|state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr3|state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr2|state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr2|state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr1|state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "adsr32:adsr1|state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~8" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~9" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~10" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~11" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "midi_in:midi_in_0|rcv_state~12" lost all its fanouts during netlist optimizations.
+Info (21057): Implemented 3674 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21060): Implemented 16 bidirectional pins
+    Info (21061): Implemented 3608 logic cells
+    Info (21064): Implemented 36 RAM segments
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 318 megabytes
+    Info: Processing ended: Sat Feb 20 13:07:42 2016
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:18
+
+

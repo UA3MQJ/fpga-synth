@@ -1,0 +1,17 @@
+module test(clk50M, key, led0, led1, led2);
+
+input wire clk50M, key;
+output wire led0, led1, led2;
+
+assign led0 = clk50M && key;
+assign led1 = clk50M && key;
+
+reg led2_;
+initial led2_ <= 1'b0;
+
+assign led2 = led2_;
+
+always @(posedge clk50M) led2_ <= ~led2_;
+
+endmodule
+
