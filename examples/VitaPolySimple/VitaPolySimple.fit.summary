@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Aug 23 02:44:55 2015
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Full Version
+Revision Name : VitaPolySimple
+Top-level Entity Name : VitaPolySimple
+Family : Cyclone IV E
+Device : EP4CE10E22C8
+Timing Models : Final
+Total logic elements : 1,999 / 10,320 ( 19 % )
+    Total combinational functions : 1,840 / 10,320 ( 18 % )
+    Dedicated logic registers : 705 / 10,320 ( 7 % )
+Total registers : 705
+Total pins : 28 / 92 ( 30 % )
+Total virtual pins : 0
+Total memory bits : 4,138 / 423,936 ( < 1 % )
+Embedded Multiplier 9-bit elements : 11 / 46 ( 24 % )
+Total PLLs : 0 / 2 ( 0 % )
